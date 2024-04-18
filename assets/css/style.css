@@ -5,8 +5,12 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #F6F7F8;
+}
+
 @font-face {
     font-family: 'Inter';
-    src: url('./assets/font/Inter-VariableFont_slnt\,wght.ttf');
+    src: url('./font/Inter-VariableFont_slnt\,wght.ttf');
 }
 

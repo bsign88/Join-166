@@ -65,8 +65,7 @@
     width: 232px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    padding: 243px 0px 0px 52px;
     gap: 4px;
 }
 
