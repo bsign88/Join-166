@@ -69,6 +69,7 @@ h2 {
 }
 
 .urgent-date-time {
+    display: flex;
     width: 560px;
     height: 168px;
     background-color: #ffffff;
