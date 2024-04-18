@@ -1,0 +1,98 @@
+.summary-container {
+    margin-left: 328px;
+    margin-top: 110px;
+}
+
+.title-area {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+h1 {
+    font-size: 61px;
+    color: #000000;
+}
+
+hr {
+    height: 59px;
+    width: 3px;
+    background-color: #29ABE2;
+    border: none;
+}
+
+.title-area p {
+    font-size: 27px;
+}
+
+.info-area {
+    display: flex;
+}
+
+.summary-area {
+    height: 562px;
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.to-do-and-done {
+    display: flex;
+    justify-content: space-between;
+    height: 168px;
+    width: 560px;
+    margin-top: 56px;
+}
+
+.to-do {
+    width: 264px;
+    height: 168px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 38px 19px 38px 19px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    gap: 18px;
+}
+
+.done {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 64px;
+    font-weight: 600px;
+}
+
+.urgent-date-time {
+    display: flex;
+    width: 560px;
+    height: 168px;
+    background-color: #ffffff;
+    border-radius: 30px;
+}
+
+.summary-greeting {
+    height: 562px;
+    margin-top: 56px;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+h3 {
+    font-size: 47px;
+    font-weight: 500px;
+}
+
+h4 {
+    font-size: 64px;
+    font-weight: 700px;
+    color: #29ABE2;
+}
