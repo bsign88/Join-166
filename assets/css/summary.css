@@ -168,6 +168,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 h3 {

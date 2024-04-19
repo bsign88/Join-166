@@ -17,9 +17,20 @@ async function includeHTML() {
 
 document.addEventListener("DOMContentLoaded", includeHTML);
 
-function loadContent(newContent) {
+function loadContent(newContent, clickedId) {
     let contentDiv = document.getElementById('includeHtml');
     contentDiv.setAttribute('w3-include-html', newContent);
     includeHTML(); 
+    updateSelectedMenuPoint(clickedId);
 }
 
+function updateSelectedMenuPoint(newSelectedId) {
+    let currentSelected = document.querySelector('.selected-menu-point');
+    if (currentSelected) {
+        currentSelected.classList.remove('selected-menu-point');
+    }
+    let newSelected = document.getElementById(newSelectedId);
+    if (newSelected) {
+        newSelected.classList.add('selected-menu-point');
+    }
+}

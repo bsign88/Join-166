@@ -51,6 +51,10 @@
     background-color: #091931;
 }
 
+.selected-menu-point span {
+    color: #ffffff;
+}
+
 .selected-menu-point:hover {
     cursor: context-menu !important;
     background-color: #091931;
