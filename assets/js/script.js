@@ -23,7 +23,6 @@ function loadContent(newContent, clickedId) {
     includeHTML(); 
     updateSelectedMenuPoint(clickedId);
 }
-
 function updateSelectedMenuPoint(newSelectedId) {
     let currentSelected = document.querySelector('.selected-menu-point');
     if (currentSelected) {
@@ -34,3 +33,4 @@ function updateSelectedMenuPoint(newSelectedId) {
         newSelected.classList.add('selected-menu-point');
     }
 }
+
