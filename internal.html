@@ -15,27 +15,31 @@
                 <img src="./assets/img/logosmall.png" alt="logo">
             </div>
             <div class="nav-bar-menu">
-                <a href="summary.html" onclick="loadContent('summary.html'); return false;" style="text-decoration: none; color: inherit;">
-                    <div class="nav-bar-menu-point selected-menu-point">
+                <a href="summary.html" onclick="loadContent('summary.html', 'menuPointSummary'); return false;" style="text-decoration: none; color: inherit;">
+                    <div id="menuPointSummary" class="nav-bar-menu-point selected-menu-point">
                         <img src="./assets/img/icons/selected/summarysmall.png" alt="SummaryLogo">
+                        <img class="d-none" src="./assets/img/icons/unselected/summarysmall.png" alt="UnselectedSummaryLogo">
                         <span style="cursor: context-menu;">Summary</span>
                     </div>
                 </a>
-                <a href="addtask.html" style="text-decoration: none; color: inherit;">
-                    <div class="nav-bar-menu-point">
+                <a href="addtask.html" onclick="loadContent('addtask.html', 'menuPointAddTask'); return false;" style="text-decoration: none; color: inherit;">
+                    <div id="menuPointAddTask" class="nav-bar-menu-point">
                         <img src="./assets/img/icons/unselected/addtasksmall.png" alt="AddTaskLogo">
+                        <img class="d-none" src="./assets/img/icons/selected/addtasksmall.png" alt="AddTaskLogo">    
                         <span>Add Task</span>
                     </div>
                 </a>
-                <a href="board.html" style="text-decoration: none; color: inherit;"> 
-                    <div class="nav-bar-menu-point">
+                <a href="board.html" onclick="loadContent('board.html', 'menuPointBoard'); return false;" style="text-decoration: none; color: inherit;"> 
+                    <div id="menuPointBoard" class="nav-bar-menu-point">
                         <img src="./assets/img/icons/unselected/boardsmall.png" alt="BoardLogo">
+                        <img class="d-none" src="./assets/img/icons/selected/boardsmall.png" alt="BoardLogo">
                         <span>Board</span>
                     </div>
                 </a>
-                <a href="contacts.html" style="text-decoration: none; color: inherit;"> 
-                    <div class="nav-bar-menu-point">
+                <a href="contacts.html" onclick="loadContent('contacts.html', 'menuPointContacts'); return false;" style="text-decoration: none; color: inherit;"> 
+                    <div id="menuPointContacts" class="nav-bar-menu-point">
                         <img src="./assets/img/icons/unselected/contactssmall.png" alt="ContactsLogo">
+                        <img class="d-none" src="./assets/img/icons/selected/contactssmall.png" alt="ContactsLogo">
                         <span>Contacts</span>
                     </div>
                 </a>                
@@ -43,7 +47,7 @@
             <div class="nav-bar-info">
                 <a href="#" onclick="loadContent('privacypolicy.html'); return false;">Privacy Policy</a>
 
-                <a href="legalnotice.html">Legal notice</a>
+                <a href="#" onclick="loadContent('legalnotice.html'); return false;">Legal notice</a>
             </div>
         </section>
 
@@ -53,7 +57,7 @@
                 </div>
                 <div class="help-profile">
                     <div>
-                        <img src="./assets/img/icons/help.png" alt="">
+                        <img onclick="loadContent('help.html'); return false;" src="./assets/img/icons/help.png" alt="">
                     </div>
                     <div>
                         <img src="./assets/img/icons/profilpictureplaceholder.png" alt="">
@@ -62,7 +66,7 @@
                 </div>    
         </section>
 
-        <section id="includeHtml" w3-include-html="summary.html"></section>  
+        <section class="icludeHtml" id="includeHtml" w3-include-html="summary.html"></section>  
 
         <script src="./assets/js/script.js"></script>
         

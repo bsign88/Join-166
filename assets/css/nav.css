@@ -1,6 +1,6 @@
 .nav-bar-container {
     width: 232px;
-    background-color: #2A3647;
+    background-color: var(--main-color);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,7 +38,7 @@
 }
 
 .nav-bar-menu-point:hover {
-    background-color: #2A3D59;
+    background-color: var(--main-color);
 }
 
 .nav-bar-menu img {
@@ -48,12 +48,16 @@
 
 .selected-menu-point {
     color: #ffffff;
-    background-color: #091931;
+    background-color: var(--menu-selected-color);
+}
+
+.selected-menu-point span {
+    color: #ffffff;
 }
 
 .selected-menu-point:hover {
     cursor: context-menu !important;
-    background-color: #091931;
+    background-color: var(--menu-selected-color);
 }
 
 .nav-bar-info {
@@ -72,6 +76,6 @@
 }
 
 .nav-bar-info a:hover {
-    color: #29ABE2;
+    color: var(--second-color);
     font-weight: 700;
 }

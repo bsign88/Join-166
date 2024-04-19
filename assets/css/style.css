@@ -5,8 +5,41 @@
     box-sizing: border-box;
 }
 
+:root {
+    --background-color: #F6F7F8;
+    --main-color: #2A3647;
+    --second-color: #29ABE2;
+    --menu-selected-color: #091931;
+    
+    --black-color: #000000;
+    --white-color: #ffffff;
+
+    --urgent-color: #FF3D00;
+    --medium-color: #FFA800;
+    --low-color: #7AE229;
+
+    --userstory-color: #0038FF;
+    --technicaltask-color: #1FD7C1; 
+     
+    --color1: #FF7A00;
+    --color2: #FF5EB3;
+    --color3: #6E52FF;
+    --color4: #9327FF;
+    --color5: #00BEE8;
+    --color6: #1FD7C1;
+    --color7: #FF745E;
+    --color8: #FFA35E;
+    --color9: #FC71FF;
+    --color10: #FFC701;
+    --color11: #0038FF;
+    --color12: #C3FF2B;
+    --color13: #FFE62B;
+    --color14: #FF4646;
+    --color15: #FFBB2B;
+}
+
 body {
-    background-color: #F6F7F8;
+    background-color: var(--background-color);
 }
 
 @font-face {
@@ -27,10 +60,17 @@ h3 {
 }
 
 h4 {
-    font-size: 21px;
+    font-size: 27px;
 }
 
 h5 {
-    font-size: 27px;
+    font-size: 20px;
 }
   
+.icludeHtml {
+   
+}
+
+.d-none {
+    display: none;
+}
