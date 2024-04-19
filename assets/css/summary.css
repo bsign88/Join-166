@@ -30,7 +30,6 @@ hr {
 }
 
 .summary-area {
-    height: 562px;
     width: 560px;
     display: flex;
     flex-direction: column;
@@ -70,10 +69,24 @@ h2 {
 
 .urgent-date-time {
     display: flex;
+    justify-content: space-around;
     width: 560px;
     height: 168px;
     background-color: #ffffff;
     border-radius: 30px;
+}
+
+.urgent {
+    display: flex;
+    align-items: center;
+    width: 130px;
+    gap: 18px;
+}
+
+.urgent-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .summary-greeting {
