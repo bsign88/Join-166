@@ -70,10 +70,12 @@ h2 {
 .urgent-date-time {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 560px;
     height: 168px;
     background-color: #ffffff;
     border-radius: 30px;
+    padding: 28px 48px;
 }
 
 .urgent {
@@ -87,6 +89,13 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.separat-bar hr {
+    height: 102.02px;
+    width: 2px;
+    background-color: #D1D1D1; 
+
 }
 
 .summary-greeting {
@@ -104,8 +113,32 @@ h3 {
     font-weight: 500px;
 }
 
-h4 {
+.summary-greeting h2 {
     font-size: 64px;
     font-weight: 700px;
     color: #29ABE2;
+}
+
+.tasks-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 168px;
+    height: 168px;
+    background-color: #ffffff;
+    padding: 25px;
+    gap: 13px;
+    border-radius: 30px;
+}
+
+.task p {
+    text-align: center;
+    font-size: 20px;
+    word-wrap: break-word;
 }

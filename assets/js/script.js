@@ -20,6 +20,6 @@ document.addEventListener("DOMContentLoaded", includeHTML);
 function loadContent(newContent) {
     let contentDiv = document.getElementById('includeHtml');
     contentDiv.setAttribute('w3-include-html', newContent);
-    includeHTML();  // rufe die Funktion auf, um den neuen Inhalt zu laden
+    includeHTML(); 
 }
 

@@ -13,12 +13,12 @@
     font-size: 20px;
 }
 
-.profile {
+.help-profile {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.profile img {
+.help-profile img {
     cursor: pointer;
 }

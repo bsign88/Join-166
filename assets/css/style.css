@@ -14,3 +14,23 @@ body {
     src: url('./font/Inter-VariableFont_slnt\,wght.ttf');
 }
 
+h1 {
+    font-size: 61px;
+}
+
+h2 {
+    font-size: 64px;
+}
+
+h3 {
+    font-size: 47px;
+}
+
+h4 {
+    font-size: 21px;
+}
+
+h5 {
+    font-size: 27px;
+}
+
