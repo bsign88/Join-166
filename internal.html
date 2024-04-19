@@ -18,7 +18,7 @@
                 <img src="./assets/img/logosmall.png" alt="logo">
             </div>
             <div class="nav-bar-menu">
-                <a href="summary.html" style="text-decoration: none; color: inherit;">
+                <a href="summary.html" onclick="loadContent('summary.html'); return false;" style="text-decoration: none; color: inherit;">
                     <div class="nav-bar-menu-point selected-menu-point">
                         <img src="./assets/img/icons/selected/summarysmall.png" alt="SummaryLogo">
                         <span style="cursor: context-menu;">Summary</span>
@@ -44,7 +44,8 @@
                 </a>                
             </div>
             <div class="nav-bar-info">
-                <a href="privacypolicy.html">Privacy Policy</a>
+                <a href="#" onclick="loadContent('privacypolicy.html'); return false;">Privacy Policy</a>
+
                 <a href="legalnotice.html">Legal notice</a>
             </div>
         </section>
@@ -64,7 +65,7 @@
 
                 </div>    
             </div>
-            <div w3-include-html="summary.html"></div>  
+            <div id="includeHtml" w3-include-html="summary.html"></div>  
         </section>
     </div>
 </body>
