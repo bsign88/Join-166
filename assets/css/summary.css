@@ -10,7 +10,6 @@
 }
 
 h1 {
-    font-size: 61px;
     color: #000000;
 }
 
@@ -56,6 +55,60 @@ hr {
     gap: 18px;
 }
 
+.to-do:hover .done {
+    color: white;
+}
+
+.to-do:hover {
+    background-color: #2A3647;
+    cursor: pointer;
+}
+
+.to-do img:last-child {
+    display: none;
+}
+
+.to-do:hover img:last-child {
+    display: block;
+}
+
+.to-do:hover img:first-child {
+    display: none;
+}
+
+.to-do2 {
+    width: 264px;
+    height: 168px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 38px 19px 38px 19px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    gap: 18px;
+}
+
+.to-do2:hover .done {
+    color: white;
+}
+
+.to-do2:hover {
+    background-color: #2A3647;
+    cursor: pointer;
+}
+
+.to-do2 img:last-child {
+    display: none;
+}
+
+.to-do2:hover img:last-child {
+    display: block;
+}
+
+.to-do2:hover img:first-child {
+    display: none;
+}
+
 .done {
     display: flex;
     flex-direction: column;
@@ -76,6 +129,15 @@ h2 {
     background-color: #ffffff;
     border-radius: 30px;
     padding: 28px 48px;
+}
+
+.urgent-date-time:hover {
+    background-color: #2A3647;
+    cursor: pointer;
+}
+
+.urgent-date-time:hover .urgent-data {
+    color: white;
 }
 
 .urgent {
@@ -142,3 +204,19 @@ h3 {
     font-size: 20px;
     word-wrap: break-word;
 }
+
+.task:hover {
+    background-color: #2A3647;
+    cursor: pointer;
+}
+
+.task:hover h2, .task:hover p {
+    color: white;
+}
+
+.hover-effect:hover {
+    transform: scale(1.05);
+    transform-origin: top left; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
