@@ -40,7 +40,7 @@ function updateSelectedMenuPoint(newSelectedId) {
 // Diese Funktion öffnet oder schließt das Drop-Down-Menu
 
 function toggleMenu() {
-    var menu = document.getElementById("dropOutMenu");
+    let menu = document.getElementById("dropOutMenu");
     menu.classList.toggle("d-none");
 }
 
@@ -54,9 +54,35 @@ function menuPointClicked(page) {
 // Diese Funktion schließt das Drop-Down-Menu nachdem man einen Punkt ausgewählt hat
 
 function closeMenu() {
-    var menu = document.getElementById("dropOutMenu");
+    let menu = document.getElementById("dropOutMenu");
     if (!menu.classList.contains("d-none")) {
         menu.classList.add("d-none");
     }
 }
+
+function togglePasswordVisibility() {
+  var passwordInput = document.getElementById('password-input');
+  var passwordIcon = document.getElementById('password-icon');
+
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    passwordIcon.src = './assets/img/icons/visibility.png'; 
+  } else {
+    passwordInput.type = 'password';
+    passwordIcon.src = './assets/img/icons/visibility_off.png'; 
+  }
+}
+
+function autoFillEmail() {
+  var emailInput = document.getElementById('email-input');
+  var passwordInput = document.getElementById('password-input');
+  var passwordIcon = document.getElementById('password-icon');
+
+  emailInput.value = 'sofiam@gmail.com'; 
+  passwordInput.value = 'mypassword123'; 
+  passwordInput.type = 'password';
+  passwordIcon.src = './assets/img/icons/visibility_off.png'; 
+}
+
+  
 

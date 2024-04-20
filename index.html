@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Join</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/logoforfavicon .png">
+    <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/nav.css"/>
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/summary.css">
@@ -15,6 +16,44 @@
     <script src="./assets/js/script.js"></script>
 </head>
 <body>
-    
+    <section class="header-log-in">
+        <div>
+            <img src="./assets/img/logo.png" alt="">
+        </div>
+        <div class="sign-up">
+            <p>Not a joins user?</p>
+            <button>Sign up</button>
+        </div>
+    </section>
+    <section class="log-in-area">
+        <div class="log-in-container">
+            <h1>Log in</h1>
+            <hr>
+            <div class="input-container">
+                <input type="text" id="email-input" placeholder="Email">
+                <img src="./assets/img/icons/mail.png" alt="Email Icon" class="icon email-icon" onclick="autoFillEmail()" />
+              </div>
+              <div class="input-container">
+                <input type="password" id="password-input" placeholder="Password" value="">
+                <img src="./assets/img/icons/lock.png" alt="Toggle Password Visibility" class="icon toggle-password" id="password-icon" onclick="togglePasswordVisibility()" />
+              </div>
+                <div class="remeber-me">              
+                    <input id="remeberMeCheckbox" type="checkbox">
+                    <label for="remeberMeCheckbox">Remeber me</label>
+                </div>
+            <div class="log-in-buttons">
+                <div class="log-in-member">
+                    <a href="internal.html"><button>Log in</button></a>
+                </div>
+                <div class="log-in-guest">
+                    <button>Guest Log in</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="privacy-police-legal-notice">
+        <a href="privacy.html">Privacy Police</a>
+        <a href="legalnotice.html">Legal notice</a>
+    </section>
 </body>
 </html>
