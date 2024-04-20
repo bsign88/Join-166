@@ -23,6 +23,9 @@ function loadContent(newContent, clickedId) {
     includeHTML(); 
     updateSelectedMenuPoint(clickedId);
 }
+
+// Diese Funktion erstellt eine Markierung durch eine CSS Klasse für den Aktullen Menüpunkt
+
 function updateSelectedMenuPoint(newSelectedId) {
     let currentSelected = document.querySelector('.selected-menu-point');
     if (currentSelected) {
@@ -34,15 +37,21 @@ function updateSelectedMenuPoint(newSelectedId) {
     }
 }
 
+// Diese Funktion öffnet oder schließt das Drop-Down-Menu
+
 function toggleMenu() {
     var menu = document.getElementById("dropOutMenu");
     menu.classList.toggle("d-none");
 }
 
+// Diese Funktion öffnet die Seite die ausgewählt wurde und startet die Funktion closeMenu()
+
 function menuPointClicked(page) {
-    loadContent(page); // Lade die angegebene Seite.
-    closeMenu(); // Schließe das Menü.
+    loadContent(page);
+    closeMenu(); 
 }
+
+// Diese Funktion schließt das Drop-Down-Menu nachdem man einen Punkt ausgewählt hat
 
 function closeMenu() {
     var menu = document.getElementById("dropOutMenu");
