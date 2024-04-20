@@ -1,0 +1,29 @@
+.help-head {
+    display: flex;
+    width: 1014px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.help-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 1014px;
+}
+
+.help-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.how-to-use {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.how-to-use-li {
+    margin-left: 25px;
+}
