@@ -34,3 +34,20 @@ function updateSelectedMenuPoint(newSelectedId) {
     }
 }
 
+function toggleMenu() {
+    var menu = document.getElementById("dropOutMenu");
+    menu.classList.toggle("d-none");
+}
+
+function menuPointClicked(page) {
+    loadContent(page); // Lade die angegebene Seite.
+    closeMenu(); // Schließe das Menü.
+}
+
+function closeMenu() {
+    var menu = document.getElementById("dropOutMenu");
+    if (!menu.classList.contains("d-none")) {
+        menu.classList.add("d-none");
+    }
+}
+

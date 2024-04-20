@@ -79,3 +79,29 @@
     color: var(--second-color);
     font-weight: 700;
 }
+
+.drop-out-menu {
+    width: 150px;
+    height: 158px;
+    border-radius: 20px 0 20px 20px;
+    top: 98px;
+    right: 16px;
+    padding: 10px;
+    position: absolute;
+    background-color: var(--main-color);
+    color: #CDCDCD;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.drop-out-menu-point {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.drop-out-menu-point:hover {
+    background-color: #2A3D59;
+}
