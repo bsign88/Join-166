@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  background-color: #f6f7f8;
+  padding: 110px 0 0 96px;
+}
+
+h1 {
+  font-size: 61px;
+  font-weight: 700;
+  color: #000;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.asterisk {
+  color: #ff8190;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  margin-top: 48px;
+}
+
+.formbox {
+  display: flex;
+  flex-direction: column;
+  width: 440px;
+  height: 100%;
+}
+
+.line {
+  width: 1px;
+  background-color: #d1d1d1;
+  margin: 0 48px 0 48px;
+}
+
+::placeholder {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  color: #d1d1d1;
+}
+
+label {
+  margin-bottom: 8px;
+  display: flex;
+}
+
+input {
+  padding: 12px 21px 12px 21px;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+}
+
+textarea {
+  padding: 18px 16px 18px 16px;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+}
+
+select {
+  padding: 12px 16px 12px 16px;
+  font-size: 20px;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+}
+
+#date {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  color: #d1d1d1;
+}
+
+.prio {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.prio input[type="radio"] {
+  display: none;
+}
+
+.prio input[type="radio"]:checked + span {
+  background-color: gold;
+  color: black;
+}
+
+.prio span {
+  width: 136px;
+  height: 56px;
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
