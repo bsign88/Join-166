@@ -22,3 +22,20 @@
 .help-profile img {
     cursor: pointer;
 }
+
+.profile-logo img {
+    display: block;
+    vertical-align: top;
+}
+
+.profile-logo:hover img:first-child {
+    display: none;
+}
+
+.profile-logo img:last-child {
+    display: none;
+}
+
+.profile-logo:hover img:last-child {
+    display: block;
+}
