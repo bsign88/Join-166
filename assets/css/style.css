@@ -70,3 +70,7 @@ h5 {
 .d-none {
     display: none;
 }
+
+.g-16 {
+    gap: 16px;
+}

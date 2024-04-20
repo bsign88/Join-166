@@ -1,0 +1,14 @@
+.privacy-textbox {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    color: #000000;
+    width: 1016px;
+    height: 95px;
+}
+
+.headline-privacy-layout {
+    padding-top: 206px;
+    padding-left: 328px;
+    gap: 30px;
+}
