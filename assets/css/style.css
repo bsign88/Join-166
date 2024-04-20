@@ -73,10 +73,18 @@ h5 {
     display: none;
 }
 
+.g-8 {
+    gap: 8px;
+}
+
 .g-16 {
     gap: 16px;
 }
 
 .g-35 {
     gap: 35px;
+}
+
+.mt-32 {
+    margin-top: 32px;
 }
