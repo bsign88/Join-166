@@ -1,7 +1,6 @@
-<section>
+<section class="contacts">
     <aside class="contacts-aside" id="contacts-aside">
         <button id="add-contact-button">Add new contact <img src="./assets/img/icons/add-new-contatc-icon.png"></button>
-    </aside>
     </aside>
     <main class="contacts-main">
         <article class="contacts-header">
@@ -12,23 +11,25 @@
         <article>
             <div class="contact-box">
                 <div class="user-initials-icon" id="user-initials-icon">VN</div>
-                <div class="g-8">
-                    <span id="contacts-name">Vorname Nachname</span>
-                    <div>
-                        <div id="contacts-edit"><img src="./assets/img/icons/pen-icon.png"><span class="icon-text">Edit</span></div>
-                        <div id="contacts-delete"><img src="./assets/img/icons/trash-icon.png"><span class="icon-text">Delete</span></div>
+                <div class="d-flex g-8">
+                    <span class="contacts-name" id="contacts-name">Vorname Nachname</span>
+                    <div class="contacts-change-link">
+                        <a class="contacts-icon-text" id="contacts-edit"><img class="contacts-change-icons"
+                                src="./assets/img/icons/pen-icon.svg">Edit</a>
+                        <a class="contacts-icon-text" id="contacts-delete"><img class="contacts-change-icons"
+                                src="./assets/img/icons/trash-icon.svg">Delete</a>
                     </div>
                 </div>
             </div>
-            <p>Contact information</p>
+            <p class="contact-info-headline">Contact information</p>
             <div class="contacts-information-box">
                 <div>
-                    <p>Email</p>
-                    <a id="contacts-email">email@email.de</a>
+                    <p class="contacts-info-object-headline">Email</p>
+                    <a class="contacts-info-object" id="contacts-email">email@email.de</a>
                 </div>
                 <div>
-                    <p>Ehone</p>
-                    <a id="contacts-phone">+49 123 456 789</a>
+                    <p class="contacts-info-object-headline">Phone</p>
+                    <a class="contacts-info-object" id="contacts-phone">+49 123 456 789</a>
                 </div>
             </div>
         </article>
