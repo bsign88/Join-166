@@ -1,0 +1,29 @@
+.legalnotice-head {
+    display: flex;
+    width: 1014px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.legalnotice-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 1014px;
+}
+
+.legalnotice-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.imprint {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.imprint-li {
+    margin-left: 25px;
+}

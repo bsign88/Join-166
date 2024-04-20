@@ -4,11 +4,51 @@
     line-height: 19.2px;
     color: #000000;
     width: 1016px;
-    height: 95px;
+    padding-bottom: 16px;
 }
 
 .headline-privacy-layout {
-    padding-top: 206px;
-    padding-left: 328px;
     gap: 30px;
+}
+
+.privacy-head {
+    display: flex;
+    width: 1016px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.backarrow {
+    width: 37px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backarrow-link {
+    cursor: pointer;
+}
+
+.backarrow-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 18.5px;
+}
+
+.privacy-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.privacy-main {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.privacy-article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
