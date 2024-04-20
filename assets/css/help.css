@@ -10,6 +10,8 @@
     flex-direction: column;
     gap: 32px;
     width: 1014px;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .help-main {
@@ -18,12 +20,49 @@
     gap: 24px;
 }
 
+.highlighted {
+    color: var(--second-color);
+    font-size: 16px;
+    line-height: 19.2px;
+    font-weight: 400;
+}
+
 .how-to-use {
+    display: flex;
+    flex-direction: column;
+    width: 1014px;
+    gap: 16px;
+}
+
+.how-to-use-numbers {
+    display: flex;
+    gap: 35px;
+    font-size: 27px;
+    line-height: 32.4px;
+}
+
+.help-article {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
 .how-to-use-li {
-    margin-left: 25px;
+    display: flex;
+    align-items: flex-start;
+    font-size: 27px;
+    font-weight: 700;
+    gap: 35px;
+}
+
+.textbox-how-to-use-li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+p {
+    font-weight: 400;
+    font-size: 16px;
+
 }

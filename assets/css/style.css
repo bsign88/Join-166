@@ -64,7 +64,9 @@ h4 {
 }
 
 h5 {
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
 }
 
 .d-none {
