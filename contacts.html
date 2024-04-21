@@ -1,6 +1,13 @@
 <section class="contacts">
     <aside class="contacts-aside" id="contacts-aside">
-        <button id="add-contact-button">Add new contact <img src="./assets/img/icons/add-new-contatc-icon.png"></button>
+        <section class="aside-top-button-bar">
+        <button class="add-contact-button" id="add-contact-button">Add new contact <img src="./assets/img/icons/add-new-contatc-icon.svg"></button>
+        </section>
+        <section class="contacts-list-alphabet-order">
+            <!-- <div class="contacts-list-alphabet">A</div>
+            <div class="contacts-list-seperator"></div>
+            <div id="a-contacts"></div> -->
+        </section>
     </aside>
     <main class="contacts-main">
         <article class="contacts-header">
@@ -14,10 +21,10 @@
                 <div class="d-flex g-8">
                     <span class="contacts-name" id="contacts-name">Vorname Nachname</span>
                     <div class="contacts-change-link">
-                        <a class="contacts-icon-text" id="contacts-edit"><img class="contacts-change-icons"
-                                src="./assets/img/icons/pen-icon.svg">Edit</a>
-                        <a class="contacts-icon-text" id="contacts-delete"><img class="contacts-change-icons"
-                                src="./assets/img/icons/trash-icon.svg">Delete</a>
+                        <div class="contacts-icon-text" id="contacts-edit"><img class="contacts-change-icons"
+                                src="./assets/img/icons/pen-icon.svg">Edit</div>
+                        <div class="contacts-icon-text" id="contacts-delete"><img class="contacts-change-icons"
+                                src="./assets/img/icons/trash-icon.svg">Delete</div>
                     </div>
                 </div>
             </div>
@@ -25,11 +32,11 @@
             <div class="contacts-information-box">
                 <div>
                     <p class="contacts-info-object-headline">Email</p>
-                    <a class="contacts-info-object" id="contacts-email">email@email.de</a>
+                    <a class="contacts-info-object-email" id="contacts-email">email@email.de</a>
                 </div>
                 <div>
                     <p class="contacts-info-object-headline">Phone</p>
-                    <a class="contacts-info-object" id="contacts-phone">+49 123 456 789</a>
+                    <a class="contacts-info-object-phone" id="contacts-phone">+49 123 456 789</a>
                 </div>
             </div>
         </article>

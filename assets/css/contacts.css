@@ -1,6 +1,7 @@
 .contacts {
     display: flex;
 }
+
 .contacts-aside {
     width: 453px;
     height: 928px;
@@ -13,6 +14,66 @@
     // Navigate to: "Contacts default";
     // Animate: Instant;
     animation-duration: 0ms; */
+}
+
+.aside-top-button-bar {
+    display: flex;
+    width: 453px;
+    height: 101px;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-contact-button {
+    text-align: center;
+    width: 352px;
+    height: 56px;
+    top: 22.5px;
+    left: 52px;
+    padding: 12px 0px 12px 0px;
+    gap: 16px;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background: var(--main-color);
+    border: 1px solid var(--main-color);
+    color: var(--white-color);
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 25.2px;
+    /* // On click
+// Open overlay: "Overlay add contact";
+// Animate: Instant;
+animation-duration: 0ms; */
+}
+
+.contacts-list-alphabet-order {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 453px;
+}
+
+.contacts-list-seperator {
+
+    width: 352px;
+    border: 1px solid var(--contactlist-seperator);
+}
+
+.contacts-list-alphabet {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    width: 352px;
+    height: 58px;
+    padding: 17px 36px 17px 36px;
+    gap: 8px;
+    opacity: 0px;
 }
 
 .contact-box {
@@ -101,11 +162,12 @@
     line-height: 24px;
     width: 207px;
     height: 74px;
+    color: var(--main-color);
 }
 
 .contacts-information-box {
-    width: Hug (146px)px;
-    height: Hug (128px)px;
+    width: 146px;
+    height: 128px;
     gap: 22px;
     opacity: 0px;
 
@@ -116,6 +178,7 @@
     align-items: center;
     justify-content: center;
     gap: 13px;
+    color: var(--main-color);
 }
 
 .contacts-delete {
@@ -123,6 +186,7 @@
     align-items: center;
     justify-content: center;
     gap: 13px;
+    color: var(--main-color);
 }
 
 .contacts-info-object-headline {
@@ -130,11 +194,21 @@
     font-weight: 700;
     line-height: 19.2px;
     text-align: left;
+    color: var(--main-color);
 }
 
-.contacts-info-object {
+.contacts-info-object-email {
     font-size: 16px;
     font-weight: 400;
     line-height: 19.2px;
     text-align: left;
+    color: var(--link-color);
+}
+
+.contacts-info-object-phone {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+    color: var(--black-color);
 }
