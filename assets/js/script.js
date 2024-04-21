@@ -61,8 +61,8 @@ function closeMenu() {
 }
 
 function togglePasswordVisibility() {
-  var passwordInput = document.getElementById('password-input');
-  var passwordIcon = document.getElementById('password-icon');
+  let passwordInput = document.getElementById('password-input');
+  let passwordIcon = document.getElementById('password-icon');
 
   if (passwordInput.type === 'password') {
     passwordInput.type = 'text';
@@ -74,9 +74,9 @@ function togglePasswordVisibility() {
 }
 
 function autoFillEmail() {
-  var emailInput = document.getElementById('email-input');
-  var passwordInput = document.getElementById('password-input');
-  var passwordIcon = document.getElementById('password-icon');
+  let emailInput = document.getElementById('email-input');
+  let passwordInput = document.getElementById('password-input');
+  let passwordIcon = document.getElementById('password-icon');
 
   emailInput.value = 'sofiam@gmail.com'; 
   passwordInput.value = 'mypassword123'; 

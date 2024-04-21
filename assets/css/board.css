@@ -16,7 +16,7 @@ header {
 
 .header-bar {
   height: 73px;
-  padding: 80px 64px 0 64px;
+  /* padding: 80px 64px 0 64px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -99,7 +99,7 @@ h1 {
 
 .titles-columns {
   display: flex;
-  padding: 0px 64px 0px 64px;
+  /* padding: 0px 64px 0px 64px; */
 }
 
 .titles-columns .column {
