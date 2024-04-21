@@ -1,7 +1,7 @@
 .edit-contact-window {
     z-index: 1;
     background-color: var(--white-color);
-    display: none;
+    display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -57,6 +57,55 @@
 }
 
 .edit-contact-right-side {
+    display: flex;
+    height: 594px;
+    width: 100%;
+    gap: 72px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.user-initials-icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+}
+
+.edit-information-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.edit-close-box {
+    display: flex;
+    justify-content: flex-end;
+    padding: 48px 48px 57px 0px;
+    width: 100%;
+}
+
+.edit-details-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 32px;
+    padding-bottom: 48px;
+    padding-right: 48px;
+    width: 100%;
+}
+
+.edit-button-box{
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px;
+    width: 100%;
+    padding-left: 20px;
 }
 
 .edit-save-button {
@@ -75,6 +124,7 @@
     font-weight: 700;
     line-height: 25.2px;
     text-align: center;
+    cursor: pointer;
 }
 
 .edit-delete-button {
@@ -89,17 +139,19 @@
     border: 1px 0px 0px 0px;
     background: var(--white-color);
     border: 1px solid var(--main-color);
+    cursor: pointer;
     /* // On click
     // Navigate to: "Contacts - Anton Deleted";
     // Animate: Instant; */
     animation-duration: 0ms;
 }
 
-.edit-close-icon {
-    
-}
-
 .edit-input-name {
+    width: 422px;
+    Height:50px;
+    border-radius: 10px 10px 10px 10px;
+    padding: 13px 21px 13px 21px;
+    border: 1px solid var(--input-border);
     display: flex;
     justify-content: flex-end;
     padding-right: 8px;
@@ -107,6 +159,11 @@
 }
 
 .edit-input-phone {
+    width: 422px;
+    Height:50px;
+    border-radius: 10px 10px 10px 10px;
+    padding: 13px 21px 13px 21px;
+    border: 1px solid var(--input-border);
     display: flex;
     justify-content: flex-end;
     padding-right: 8px;
@@ -114,6 +171,11 @@
 }
 
 .edit-input-email {
+    width: 422px;
+    Height:50px;
+    border-radius: 10px 10px 10px 10px;
+    padding: 13px 21px 13px 21px;
+    border: 1px solid var(--input-border);
     display: flex;
     justify-content: flex-end;
     padding-right: 8px;
