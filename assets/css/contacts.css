@@ -1,7 +1,7 @@
 .edit-contact-window {
     z-index: 1;
     background-color: var(--white-color);
-    display: none;
+    display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -127,6 +127,11 @@
     cursor: pointer;
 }
 
+.edit-save-button:hover {
+    background-color: var(--line-color);
+    box-shadow: 0px 4px 8px var(--input-border);
+}
+
 .edit-delete-button {
     font-size: 21px;
     font-weight: 400;
@@ -146,6 +151,12 @@
     animation-duration: 0ms;
 }
 
+.edit-delete-button:hover {
+    color: var(--line-color);
+    border: 3px solid var(--line-color);
+    box-shadow: 0px 4px 8px var(--input-border);
+}
+
 .edit-input-name {
     width: 422px;
     Height:50px;
@@ -156,6 +167,15 @@
     justify-content: flex-end;
     padding-right: 8px;
     background-image: url('./assets/img/icons/user.svg');
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--black-color);
+}
+
+.edit-input-name:focus {
+    border-color: var(--line-color);
+
 }
 
 .edit-input-phone {
@@ -168,6 +188,10 @@
     justify-content: flex-end;
     padding-right: 8px;
     background-image: url('./assets/img/icons/phone.svg');
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--black-color);
 }
 
 .edit-input-email {
@@ -180,6 +204,10 @@
     justify-content: flex-end;
     padding-right: 8px;
     background-image: url('./assets/img/icons/email.svg');
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--black-color);
 }
 
 .contacts {
