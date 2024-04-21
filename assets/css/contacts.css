@@ -1,3 +1,125 @@
+.edit-contact-window {
+    z-index: 1;
+    background-color: var(--white-color);
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 592px;
+    width: 1212px;
+    border-radius: 30px 30px 30px 30px;
+}
+
+.h1-edit-contact {
+    position: relative;
+    width: 361px;
+    height: 90px;
+    gap: 0px;
+    opacity: 0px;
+    color: var(--white-color);
+    font-size: 61px;
+    font-weight: 700;
+    line-height: 73.2px;
+}
+
+.h1-edit-contact::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90px;
+    height: 3px; 
+    background-color: var(--line-color);
+    transform-origin: bottom left;
+}
+
+.edit-join-logo {
+    width: 53.93px;
+    height: 66.48px;
+    position: absolute;
+    top: 25%;
+    left: 46px;
+    
+}
+
+.edit-contact-left-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 453px;
+    height: 594px;
+    padding: 66px 46px 66px 46px;
+    border-radius: 30px 0 0 30px;
+    gap: 12px;
+    opacity: 0px;
+    background-color: var(--main-color);
+}
+
+.edit-contact-right-side {
+}
+
+.edit-save-button {
+    background: var(--main-color);
+    color: var(--white-color);
+    /* // On click
+    // Navigate to: "Contacts- View contact - Anton";
+    // Animate: Smart animate; */
+    animation-timing-function: ease-in-out;
+    animation-duration: 100ms;
+    width: 111px;
+    height: 57px;
+    padding: 16px 16px 16px 16px;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 25.2px;
+    text-align: center;
+}
+
+.edit-delete-button {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 25.2px;
+    text-align: center;
+    width: 113px;
+    height: 55px;
+    padding: 15px 24px 15px 24px;
+    border-radius: 8px 8px 8px 8px;
+    border: 1px 0px 0px 0px;
+    background: var(--white-color);
+    border: 1px solid var(--main-color);
+    /* // On click
+    // Navigate to: "Contacts - Anton Deleted";
+    // Animate: Instant; */
+    animation-duration: 0ms;
+}
+
+.edit-close-icon {
+    
+}
+
+.edit-input-name {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 8px;
+    background-image: url('./assets/img/icons/user.svg');
+}
+
+.edit-input-phone {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 8px;
+    background-image: url('./assets/img/icons/phone.svg');
+}
+
+.edit-input-email {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 8px;
+    background-image: url('./assets/img/icons/email.svg');
+}
+
 .contacts {
     display: flex;
 }
