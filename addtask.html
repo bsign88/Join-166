@@ -1,47 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Task</title>
-    <link rel="stylesheet" href="./assets/css/addtask.css" />
-
-</head>
-<body>
+<section class="addtask">
     <h1>Add Task</h1>
 
     <form onsubmit="">
 
     <div class="formbox">
         <label for="title">Title<span class="asterisk">*</span></label>
-        <input type="text" id="title" name="title" placeholder="Enter a title"><br><br>
+        <input type="text" id="title" name="title" placeholder="Enter a title">
 
         <label for="description">Description</label>
-        <textarea id="description" rows="4" cols="30" placeholder="Enter a description"></textarea><br><br>
+        <textarea id="description" rows="4" cols="30" placeholder="Enter a description"></textarea>
 
+        <!--
           <label for="contacts">Asigned to</label>
           <select id="contacts" name="contacts">
             <option value="" disabled selected>Select contacts to assign</option>
-            <option value="Max">Max</option>
+            <span class="profile">MM</span>Markus Meier
             <option value="Anna">Anna</option>
             <option value="Peter">Peter</option>
             <option value="Julia">Julia</option>
             <option value="David">David</option>
           </select>
-          <br><br>
         </div>
+        -->
+
+        <label for="contacts">Asigned to</label>
+        <input id="contacts" name="contacts">
+              </select>
+      </div>
 
         <div class="line"></div>
 
         <div class="formbox">
           <label for="date">Due date<span class="asterisk">*</span></label>
-          <input type="date" id="date" name="date"><br><br>
+          <input type="date" id="date" name="date">
 
           <label for="prio">Prio</label>
             <p class="prio" id="prio">
-                <label><input type="radio" name="prio" value="1"><span>Urgent</span></label>
-                <label><input type="radio" name="prio" value="2"><span>Medium</span></label>
-                <label><input type="radio" name="prio" value="3"><span>Low</span></label>
+                <label><input id="urgent" type="radio" name="prio" value="1"><span>Urgent<img src="./assets/img/icons/prio_urgent_default.svg"></span></label>
+                <label><input id="medium" type="radio" name="prio" value="2"><span>Medium<img src="./assets/img/icons/prio_medium_default.svg"></span></label>
+                <label><input id="low" type="radio" name="prio" value="3"><span>Low<img src="./assets/img/icons/prio_low_default.svg"></span></label>
             </p>
 
             <label for="category">Category<span class="asterisk">*</span></label>
@@ -50,7 +47,6 @@
               <option value="technicaltask">Technical Task</option>
               <option value="userstory">User Story</option>
             </select>
-            <br><br>
 
             <label for="subtask">Subtask</label>
             <select id="subtask" name="subtask">
@@ -65,5 +61,4 @@
 
     </form>
 
-</body>
-</html>
+</section>

@@ -1,11 +1,6 @@
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
+.addtask {
   font-size: 20px;
   font-weight: 400;
-  color: #000;
-  background-color: #f6f7f8;
-  /* padding: 110px 0 0 96px; */
 }
 
 h1 {
@@ -51,22 +46,27 @@ label {
 }
 
 input {
+  height: 48px;
   padding: 12px 21px 12px 21px;
   border: 1px solid #d1d1d1;
   border-radius: 10px;
+  margin-bottom: 32px;
 }
 
 textarea {
   padding: 18px 16px 18px 16px;
   border: 1px solid #d1d1d1;
   border-radius: 10px;
+  margin-bottom: 32px;
 }
 
 select {
-  padding: 12px 16px 12px 16px;
+  height: 48px;
+  padding: 10px 16px 10px 16px;
   font-size: 20px;
   border: 1px solid #d1d1d1;
   border-radius: 10px;
+  margin-bottom: 32px;
 }
 
 #date {
@@ -79,15 +79,36 @@ select {
   display: flex;
   flex-direction: row;
   gap: 16px;
+  margin-bottom: 32px;
 }
 
 .prio input[type="radio"] {
   display: none;
 }
 
+/*
 .prio input[type="radio"]:checked + span {
   background-color: gold;
-  color: black;
+}
+*/
+
+#urgent:checked + span {
+  background-color: #FF3D00;
+  color: #fff;
+}
+
+#medium:checked + span {
+  background-color: #FFA800;
+  color: #fff;
+}
+
+#low:checked + span {
+  background-color: #7AE229;
+  color: #fff;
+}
+
+.prio input[type="radio"]:hover + span {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .prio span {
@@ -96,7 +117,23 @@ select {
   display: inline-block;
   border-radius: 10px;
   background-color: #fff;
+  color: black;
+  font-size: 20px;
+  font-weight: 400;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.prio span img {
+  margin-left: 8px;
+}
+
+.profile {
+  height: 42px;
+  width: 42px; 
+  border: 2px solid white;
+  background-color: red;
+  color: white;
 }
