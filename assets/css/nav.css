@@ -10,6 +10,7 @@
     position: absolute;
     inset: 0;
 }
+
 .nav-bar-menu {
     width: 232px;
     display: flex;
@@ -81,6 +82,72 @@
 .nav-bar-info a:hover {
     color: var(--second-color);
     font-weight: 700;
+}
+
+@media (max-width: 950px){
+    .left-container {
+        width: 100vw;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        padding: 0 16px;
+        position: fixed;
+        bottom: 0;
+        top: auto;
+    }
+
+    .nav-bar-menu {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        border-radius: 8px;
+        padding: 0 16px;
+    }    
+
+    .nav-bar-logo {
+        display: none;
+    }
+
+    .nav-bar-menu {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .nav-bar-menu-point {
+        padding: 0;
+        gap: 8px;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .nav-bar-menu img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .nav-bar-menu-point {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-bar-menu-point:hover {
+        background-color: #2A3D59;
+        border-radius: 8px;
+    }
+
+    .nav-bar-info {
+        display: none;
+    }
+    
 }
 
 
