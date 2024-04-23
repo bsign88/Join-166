@@ -119,6 +119,7 @@ hr {
 h2 {
     font-size: 64px;
     font-weight: 600px;
+    color: var(--black-color);
 }
 
 .urgent-date-time {
@@ -175,6 +176,7 @@ h2 {
 h3 {
     font-size: 47px;
     font-weight: 500px;
+    color: var(--black-color);
 }
 
 .summary-greeting h2 {
@@ -205,6 +207,7 @@ h3 {
     text-align: center;
     font-size: 20px;
     word-wrap: break-word;
+    color: var(--black-color);
 }
 
 .task:hover {

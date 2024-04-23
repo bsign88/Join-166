@@ -5,21 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join 166</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/logoforfavicon .png">
-    <link rel="stylesheet" href="./assets/css/nav.css"/>
-    <link rel="stylesheet" href="./assets/css/header.css">
-    <link rel="stylesheet" href="./assets/css/summary.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+        
     <link rel="stylesheet" href="./assets/css/addtask.css">
- 
+    <link rel="stylesheet" href="./assets/css/board.css">
+    <link rel="stylesheet" href="./assets/css/contacts.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/help.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/legalnotice.css">
+    <link rel="stylesheet" href="./assets/css/nav.css"/>
+    <link rel="stylesheet" href="./assets/css/privacy.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/summary.css">
     
+    <script src="./assets/js/script.js"></script>
 </head>
 <body>
-
-    <section class="nav-bar-container">
-        <div class="nav-bar-logo">
-            <img src="./assets/img/logosmall.png" alt="logo">
-        </div>
+    <section class="left-container">
         <div class="nav-bar-menu">
+
+            <div class="nav-bar-logo">
+                <img src="./assets/img/logosmall.png" alt="logo">
+            </div>
+            
             <a href="summary.html" onclick="loadContent('summary.html', 'menuPointSummary'); return false;" style="text-decoration: none; color: inherit;">
                 <div id="menuPointSummary" class="nav-bar-menu-point selected-menu-point">
                     <img src="./assets/img/icons/selected/summarysmall.png" alt="SummaryLogo">
@@ -51,12 +59,14 @@
         </div>
         <div class="nav-bar-info">
             <a href="#" onclick="loadContent('privacy.html'); return false;">Privacy Policy</a>
-    
+        
             <a href="#" onclick="loadContent('legalnotice.html'); return false;">Legal notice</a>
         </div>
     </section>
 
-        <section class="header-container">
+    <section class="right-container">
+
+        <div class="header-container">
                 <div>
                     <p>Kanban Project Management Tool</p>
                 </div>
@@ -69,7 +79,7 @@
                         <img src="./assets/img/icons/profilpictureplaceholderhover.png" alt="">                        
                     </div>
                 </div>    
-        </section>
+        </div>
 
         <div id="dropOutMenu" class="drop-out-menu d-none">
             <div onclick="menuPointClicked('legalnotice.html');" class="drop-out-menu-point">
@@ -83,9 +93,9 @@
             </div>
         </div>
 
-        <section class="icludeHtml summary-container" id="includeHtml" w3-include-html="summary.html"></section>  
+       <section class="icludeHtml summary-container" id="includeHtml" w3-include-html="summary.html"></section>
 
-        <script src="./assets/js/script.js"></script>
         
+    </section>
 </body>
 </html>
