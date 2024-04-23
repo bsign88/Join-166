@@ -3,9 +3,11 @@
 
     <form onsubmit="">
 
+    <div class="form-wrapper">
+
     <div class="formbox">
         <label for="title">Title<span class="asterisk">*</span></label>
-        <input type="text" id="title" name="title" placeholder="Enter a title">
+        <input required type="text" id="title" name="title" placeholder="Enter a title">
 
         <label for="description">Description</label>
         <textarea id="description" rows="4" cols="30" placeholder="Enter a description"></textarea>
@@ -25,13 +27,12 @@
 
         <label for="contacts">Asigned to</label>
         <input id="contacts" name="contacts">
-              </select>
       </div>
 
-        <div class="line"></div>
+        <div class="form-line"></div>
 
         <div class="formbox">
-          <label for="date">Due date<span class="asterisk">*</span></label>
+          <label required for="date">Due date<span class="asterisk">*</span></label>
           <input type="date" id="date" name="date">
 
           <label for="prio">Prio</label>
@@ -42,7 +43,7 @@
             </p>
 
             <label for="category">Category<span class="asterisk">*</span></label>
-            <select id="category" name="category">
+            <select required id="category" name="category">
               <option value="" disabled selected>Select task category</option>
               <option value="technicaltask">Technical Task</option>
               <option value="userstory">User Story</option>
@@ -54,11 +55,19 @@
               <option value="technicaltask">1</option>
               <option value="userstory">2</option>
             </select>
-
         </div>
+</div>
 
+<footer>
+  <p><sup><span class="asterisk">* </span></sup>This field is required</p>
+    <div class="buttons"> 
+       <button class="clear-form" id="clear-form">Clear<img src="./assets/img/icons/cancel.svg" /></button>
+       <button class="create-task" id="create-task">Create Task<img src="./assets/img/icons/check.svg" /></button>
+    </div>
+      </footer>
 
-
-    </form>
+</form>
 
 </section>
+
+

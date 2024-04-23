@@ -1,4 +1,5 @@
 .addtask {
+  width: fit-content;
   font-size: 20px;
   font-weight: 400;
 }
@@ -15,7 +16,7 @@ h1 {
   color: #ff8190;
 }
 
-form {
+.form-wrapper {
   display: flex;
   flex-direction: row;
   margin-top: 48px;
@@ -28,7 +29,7 @@ form {
   height: 100%;
 }
 
-.line {
+.form-line {
   width: 1px;
   background-color: #d1d1d1;
   margin: 0 48px 0 48px;
@@ -93,17 +94,17 @@ select {
 */
 
 #urgent:checked + span {
-  background-color: #FF3D00;
+  background-color: #ff3d00;
   color: #fff;
 }
 
 #medium:checked + span {
-  background-color: #FFA800;
+  background-color: #ffa800;
   color: #fff;
 }
 
 #low:checked + span {
-  background-color: #7AE229;
+  background-color: #7ae229;
   color: #fff;
 }
 
@@ -132,8 +133,100 @@ select {
 
 .profile {
   height: 42px;
-  width: 42px; 
-  border: 2px solid white;
+  width: 42px;
+  border: 2px solid #fff;
   background-color: red;
+  color: #fff;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 146px;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.clear-form {
+  width: 110px;
+  height: 56px;
+  border-radius: 10px;
+  border: 1px solid var(--main-color);
+  background-color: var(--background-color);
+  color: var(--main-color);
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.clear-form:hover {
+  border: 2px solid var(--second-color);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: var(--second-color);
+}
+
+.clear-form:active {
+  border: 2px solid var(--menu-selected-color);
+  color: var(--menu-selected-color);
+}
+
+.clear-form img {
+  margin-left: 4px;
+}
+
+.create-task {
+  width: 183px;
+  height: 56px;
+  border-radius: 10px;
+  border: 1px solid var(--main-color);
+  background-color: var(--main-color);
   color: white;
+  font-size: 21px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.create-task img {
+  margin-left: 4px;
+}
+
+.create-task:hover {
+  background-color: var(--second-color);
+  border: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.create-task:active {
+  background-color: var(--menu-selected-color);
+}
+
+/* responsive */
+
+@media (max-width: 1340px) {
+  .form-wrapper {
+    flex-direction: column;
+  }
+  .form-line {
+    display: none;
+  }
+  .addtask {
+    padding-bottom: 75px;
+  }
+
+  footer {
+    margin-top: 0;
+  }
+
+  #clear-form {
+    display: none;
+  }
 }
