@@ -60,7 +60,6 @@
     display: flex;
     height: 594px;
     width: 100%;
-    gap: 72px;
     justify-content: space-around;
     align-items: center;
 }
@@ -70,33 +69,36 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 40%;
+    width: 50%;
 }
 
 .edit-information-box {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     height: 100%;
-    width: 100%;
 }
 
 .edit-close-box {
     display: flex;
-    justify-content: flex-end;
-    padding: 48px 48px 57px 0px;
+    flex-direction: column;
+    align-items: flex-end;
     width: 100%;
+    padding-right: 20px;
+}
+
+.edit-close-icon {
+    height: 32px;
+    width: 32px;
 }
 
 .edit-details-box {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 32px;
-    padding-bottom: 48px;
-    padding-right: 48px;
     width: 100%;
 }
 
@@ -105,7 +107,6 @@
     justify-content: flex-start;
     gap: 25px;
     width: 100%;
-    padding-left: 20px;
 }
 
 .edit-save-button {
@@ -130,6 +131,7 @@
 .edit-save-button:hover {
     background-color: var(--line-color);
     box-shadow: 0px 4px 8px var(--input-border);
+    border-color: var(--input-border);
 }
 
 .edit-delete-button {
@@ -162,7 +164,6 @@
     Height:50px;
     border-radius: 10px 10px 10px 10px;
     padding: 13px 21px 13px 21px;
-    border: 1px solid var(--input-border);
     display: flex;
     justify-content: flex-end;
     padding-right: 8px;
@@ -174,7 +175,7 @@
 }
 
 .edit-input-name:focus {
-    border-color: var(--line-color);
+    border-color: #29ABE2;
 
 }
 
@@ -183,7 +184,6 @@
     Height:50px;
     border-radius: 10px 10px 10px 10px;
     padding: 13px 21px 13px 21px;
-    border: 1px solid var(--input-border);
     display: flex;
     justify-content: flex-end;
     padding-right: 8px;
@@ -199,7 +199,6 @@
     Height:50px;
     border-radius: 10px 10px 10px 10px;
     padding: 13px 21px 13px 21px;
-    border: 1px solid var(--input-border);
     display: flex;
     justify-content: flex-end;
     padding-right: 8px;

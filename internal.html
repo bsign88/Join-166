@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join 166</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/logoforfavicon .png">
-        
+
     <link rel="stylesheet" href="./assets/css/addtask.css">
     <link rel="stylesheet" href="./assets/css/board.css">
     <link rel="stylesheet" href="./assets/css/contacts.css">
@@ -13,13 +14,14 @@
     <link rel="stylesheet" href="./assets/css/help.css">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/legalnotice.css">
-    <link rel="stylesheet" href="./assets/css/nav.css"/>
+    <link rel="stylesheet" href="./assets/css/nav.css" />
     <link rel="stylesheet" href="./assets/css/privacy.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/summary.css">
     <link rel="stylesheet" href="./assets/css/content.css">
     <script src="./assets/js/script.js"></script>
 </head>
+
 <body>
     <div class="edit-contact-window" id="edit-contact-window">
         <div class="edit-contact-left-side">
@@ -27,20 +29,24 @@
             <img class="edit-join-logo" src="assets/img/icons/join-logo.svg">
         </div>
         <div class="edit-contact-right-side">
-            <div class="user-initials-icon" id="user-initial-icon-edit">VN</div>
-            <div class="">
+            <div class="user-initials-icon-box">
+                <div class="user-initials-icon" id="user-initial-icon-edit">VN</div>
+            </div>
+            <div class="edit-close-box">
                 <img src="./assets/img/icons/close.svg" class="edit-close-icon" id="edit-close-icon">
-                <div>
+                <div class="edit-details-box">
                     <input class="edit-input-name" type="name" placeholder="Name ">
                     <input class="edit-input-email" type="email" placeholder="Email">
                     <input class="edit-input-phone" type="phone" placeholder="Phone">
                 </div>
-                <div>
+                <div class="edit-button-box">
                     <button class="edit-delete-button" id="edit-delete-button">Delete</button>
-                    <button class="edit-save-button" id="edit-save-button">Save <img class="tick" src="./assets/img/icons/tick.svg"></button>
+                    <button class="edit-save-button" id="edit-save-button">Save <img class="tick"
+                            src="./assets/img/icons/tick.svg"></button>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <section class="left-container">
         <div class="nav-bar-menu">
@@ -48,39 +54,44 @@
             <div class="nav-bar-logo">
                 <img src="./assets/img/logosmall.png" alt="logo">
             </div>
-            
-            <a href="summary.html" onclick="loadContent('summary.html', 'menuPointSummary'); return false;" style="text-decoration: none; color: inherit;">
+
+            <a href="summary.html" onclick="loadContent('summary.html', 'menuPointSummary'); return false;"
+                style="text-decoration: none; color: inherit;">
                 <div id="menuPointSummary" class="nav-bar-menu-point selected-menu-point">
                     <img src="./assets/img/icons/selected/summarysmall.png" alt="SummaryLogo">
-                    <img class="d-none" src="./assets/img/icons/unselected/summarysmall.png" alt="UnselectedSummaryLogo">
+                    <img class="d-none" src="./assets/img/icons/unselected/summarysmall.png"
+                        alt="UnselectedSummaryLogo">
                     <span style="cursor: context-menu;">Summary</span>
                 </div>
             </a>
-            <a href="addtask.html" onclick="loadContent('addtask.html', 'menuPointAddTask'); return false;" style="text-decoration: none; color: inherit;">
+            <a href="addtask.html" onclick="loadContent('addtask.html', 'menuPointAddTask'); return false;"
+                style="text-decoration: none; color: inherit;">
                 <div id="menuPointAddTask" class="nav-bar-menu-point">
                     <img src="./assets/img/icons/unselected/addtasksmall.png" alt="AddTaskLogo">
-                    <img class="d-none" src="./assets/img/icons/selected/addtasksmall.png" alt="AddTaskLogo">    
+                    <img class="d-none" src="./assets/img/icons/selected/addtasksmall.png" alt="AddTaskLogo">
                     <span>Add Task</span>
                 </div>
             </a>
-            <a href="board.html" onclick="loadContent('board.html', 'menuPointBoard'); return false;" style="text-decoration: none; color: inherit;"> 
+            <a href="board.html" onclick="loadContent('board.html', 'menuPointBoard'); return false;"
+                style="text-decoration: none; color: inherit;">
                 <div id="menuPointBoard" class="nav-bar-menu-point">
                     <img src="./assets/img/icons/unselected/boardsmall.png" alt="BoardLogo">
                     <img class="d-none" src="./assets/img/icons/selected/boardsmall.png" alt="BoardLogo">
                     <span>Board</span>
                 </div>
             </a>
-            <a href="contacts.html" onclick="loadContent('contacts.html', 'menuPointContacts'); return false;" style="text-decoration: none; color: inherit;"> 
+            <a href="contacts.html" onclick="loadContent('contacts.html', 'menuPointContacts'); return false;"
+                style="text-decoration: none; color: inherit;">
                 <div id="menuPointContacts" class="nav-bar-menu-point">
                     <img src="./assets/img/icons/unselected/contactssmall.png" alt="ContactsLogo">
                     <img class="d-none" src="./assets/img/icons/selected/contactssmall.png" alt="ContactsLogo">
                     <span>Contacts</span>
                 </div>
-            </a>                
+            </a>
         </div>
         <div class="nav-bar-info">
             <a href="#" onclick="loadContent('privacy.html'); return false;">Privacy Policy</a>
-        
+
             <a href="#" onclick="loadContent('legalnotice.html'); return false;">Legal notice</a>
         </div>
     </section>
@@ -88,18 +99,18 @@
     <section class="right-container">
 
         <div class="header-container">
-                <div>
-                    <p>Kanban Project Management Tool</p>
+            <div>
+                <p>Kanban Project Management Tool</p>
+            </div>
+            <div class="help-profile">
+                <div class="help">
+                    <img onclick="loadContent('help.html'); return false;" src="./assets/img/icons/help.png" alt="">
                 </div>
-                <div class="help-profile">
-                    <div class="help">
-                        <img onclick="loadContent('help.html'); return false;" src="./assets/img/icons/help.png" alt="">
-                    </div>
-                    <div class="profile-logo" onclick="toggleMenu()">
-                        <img src="./assets/img/icons/profilpictureplaceholder.png" alt="">
-                        <img src="./assets/img/icons/profilpictureplaceholderhover.png" alt="">                        
-                    </div>
-                </div>    
+                <div class="profile-logo" onclick="toggleMenu()">
+                    <img src="./assets/img/icons/profilpictureplaceholder.png" alt="">
+                    <img src="./assets/img/icons/profilpictureplaceholderhover.png" alt="">
+                </div>
+            </div>
         </div>
 
         <div id="dropOutMenu" class="drop-out-menu d-none">
@@ -114,9 +125,10 @@
             </div>
         </div>
 
-       <section class="icludeHtml summary-container" id="includeHtml" w3-include-html="summary.html"></section>
+        <section class="icludeHtml summary-container" id="includeHtml" w3-include-html="summary.html"></section>
 
-        
+
     </section>
 </body>
+
 </html>
