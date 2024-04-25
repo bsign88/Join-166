@@ -39,69 +39,32 @@ hr {
     width: 560px;
 }
 
-.to-do {
+.to-do, .to-do2 {
     width: 264px;
     height: 168px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 38px 19px 38px 19px;
+    padding: 38px 19px;
     border-radius: 30px;
     background-color: var(--white-color);
     gap: 18px;
 }
 
-.to-do:hover .done {
-    color: var(--white-color);
-}
-
-.to-do:hover {
+.to-do:hover, .to-do2:hover {
     background-color: var(--main-color);
     cursor: pointer;
 }
 
-.to-do img:last-child {
+.to-do img:last-child, .to-do2 img:last-child {
     display: none;
 }
 
-.to-do:hover img:last-child {
+.to-do:hover img:last-child, .to-do2:hover img:last-child {
     display: block;
 }
 
-.to-do:hover img:first-child {
-    display: none;
-}
-
-.to-do2 {
-    width: 264px;
-    height: 168px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 38px 19px 38px 19px;
-    border-radius: 30px;
-    background-color: var(--white-color);
-    gap: 18px;
-}
-
-.to-do2:hover .done {
-    color: white;
-}
-
-.to-do2:hover {
-    background-color: var(--main-color);
-    cursor: pointer;
-}
-
-.to-do2 img:last-child {
-    display: none;
-}
-
-.to-do2:hover img:last-child {
-    display: block;
-}
-
-.to-do2:hover img:first-child {
+.to-do:hover img:first-child, .to-do2:hover img:first-child {
     display: none;
 }
 
@@ -133,10 +96,6 @@ h2 {
     cursor: pointer;
 }
 
-.urgent-date-time:hover .urgent-data {
-    color: var(--white-color);
-}
-
 .urgent {
     display: flex;
     align-items: center;
@@ -154,7 +113,6 @@ h2 {
     height: 102.02px;
     width: 2px;
     background-color: #D1D1D1; 
-
 }
 
 .summary-greeting {
@@ -218,108 +176,87 @@ h3 {
     transform-origin: top left; 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3); 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
+}
 
-  @media (max-width: 1200px){
-        .summary-greeting {
-            display: none;
-        }
-  }
-
-  @media (max-width: 950px){
-    .summary-container {
-        margin-left: 16px;
-        margin-top: 128px;
+@media (max-width: 1200px) {
+    .summary-greeting {
+        display: none;
     }
+}
 
+@media (max-width: 650px) {
     .title-area {
-        display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
-        width: 100vw;
+        gap: 0px;
         margin-left: 16px;
     }
-
-    .title-area p {
-        font-size: 14px;
-    }
     
-
     h1 {
         font-size: 47px;
     }
-
-    h2 {
-        font-size: 47px;
-    }
-
-    h4 {
-        font-size: 16px;
-    }
-
+    
     hr {
-        display: none;
+       display: none;
     }
-
+    
+    .title-area p {
+        font-size: 20px;
+    }
+    
     .info-area {
-        margin-top: 40px;
-        height: 384px;
+        height: unset;
+        margin-top: unset;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
     .summary-area {
-        width: 100vw;
-        height: 384px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .to-do-and-done {
-        display: flex;
-        justify-content: space-between;
-        height: 168px;
-        width: 396px;
+        margin-top: 40px;
         margin-left: 16px;
+        width: 396px;
+        height: 384px;
     }
-
-    .info-area img {
+    
+    .summary-area img {
         height: 40px;
         width: 40px;
     }
-
-    .to-do {
-        width: 168px;
+    
+    .to-do-and-done {
         height: 110px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 396px;
+    }
+    
+    .to-do, .to-do2 {
+        width: 186px;
+        height: 110px;
         padding: 38px 19px;
         border-radius: 20px;
-        background-color: var(--white-color);
         gap: 10px;
     }
-
-    .to-do2 {
-        width: 168px;
-        height: 110px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 38px 19px 38px 19px;
-        border-radius: 20px;
-        background-color: var(--white-color);
-        gap: 10px;
-    }
-
+    
     .urgent-date-time {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 100vw;
+        width: 396px;
         height: 110px;
-        background-color: var(--white-color);
-        border-radius: 20px;
-        padding: 28px 0px;
+        padding: 28px 56.5px;
+        gap: 20px;
     }
-  }
+    
+    .tasks-container {
+        height: 110px;
+        width: 396px;
+    }
+    
+    .task {
+        width: 116px;
+        height: 116px;
+        padding: 25px;
+        border-radius: 20px;
+    }
+    
+    .task p {
+        font-size: 16px;
+    }
+}
