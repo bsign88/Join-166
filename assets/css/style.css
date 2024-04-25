@@ -69,7 +69,10 @@ body {
 
 h1 {
     font-size: 61px;
-}
+    font-weight: 700;
+    color: var(--black-color);
+    margin-block-start: 0;
+    margin-block-end: 0;}
 
 h2 {
     font-size: 64px;

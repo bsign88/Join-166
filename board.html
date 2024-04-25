@@ -1,83 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Board</title>
-    <link rel="stylesheet" href="./assets/css/board.css" />
-  </head>
-  <body>
-    <header>
-      <section class="header-bar">
-        <h1>Board</h1>
-        <div class="action">
-          <div class="search-wrapper">
-            <input type="text" id="findtask" placeholder="Find Task" />
-            <div class="search">
-              <img src="./assets/img/icons/search.svg" />
-            </div>
-          </div>
-          <button class="secondary-plus">
-            Add task<img src="./assets/img/icons/add.svg" />
-          </button>
-        </div>
-      </section>
-
-      <div class="titles-columns">
-        <div class="column">
-          <div class="title">
-            To do<img src="./assets/img/icons/plus button.svg" />
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="title">
-            In progress<img src="./assets/img/icons/plus button.svg" />
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="title">
-            Await feedback<img src="./assets/img/icons/plus button.svg" />
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="title">Done</div>
+<section class="board">
+  <header>
+    <h1>Board</h1>
+    <div class="action">
+      <div class="search-wrapper">
+        <input type="text" id="findtask" placeholder="Find Task" />
+        <div class="search">
+          <img src="./assets/img/icons/search.svg" />
         </div>
       </div>
-    </header>
+      <button class="secondary-plus">
+        Add task<img src="./assets/img/icons/add.svg" />
+      </button>
+    </div>
+  </header>
 
-    <section class="board-distribution">
-      <div class="column">
+  <section class="board-distribution">
+    <div class="column">
+      <div class="column-title">
+        To do<img src="./assets/img/icons/plus button.svg" />
+      </div>
+      <div id="cards-todo">
         <div class="notask">No tasks To Do</div>
       </div>
+    </div>
 
-      <div class="column">
+    <div class="column">
+      <div class="column-title">
+        In progress<img src="./assets/img/icons/plus button.svg" />
+      </div>
+      <div id="cards-progess">
         <div class="card">
           <div class="label user-story">User Story</div>
           <div class="content">
-            <div class="title">Kochwelt Page & Recipe Recommender</div>
+            <div class="card-title">Kochwelt Page & Recipe Recommender</div>
             <div class="text">
               Build start page with recipe recommendation...
             </div>
           </div>
-        </div>
-      </div>
 
-      <div class="column">
+          <div class="subtasks">
+            <div class="progressbar">
+              <div class="fill"></div>
+            </div>
+            <div class="text">1/2 Subtasks</div>
+          </div>
+
+          <div class="card-footer">
+            <div class="user">
+              <div class="profile">BB</div>
+              <div class="profile add-profile">TB</div>
+            </div>
+            <div class="priority"><img src="./assets/img/icons/prio_low_default.svg"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="column-title">
+        Await feedback<img src="./assets/img/icons/plus button.svg" />
+      </div>
+      <div id="cards-feedback">
         <div class="card">
           <div class="label technical-task">Technical Task</div>
           <div class="content">
-            <div class="title">HTML Base Template Creation</div>
+            <div class="card-title">HTML Base Template Creation</div>
             <div class="text">Create reusable HTML base templates...</div>
           </div>
+
+          <div class="card-footer">
           <div class="user">
-          <div class="profile">BB</div>
-          <div class="profile test">TB</div>
+            <div class="profile">BB</div>
+            <div class="profile add-profile">TB</div>
+          </div>
+          <div class="priority"><img src="./assets/img/icons/prio_urgent_default.svg"></div>
         </div>
+
         </div>
       </div>
-    </section>
-  </body>
-</html>
+    </div>
+
+    <div class="column">
+      <div class="column-title">
+        Done<img src="./assets/img/icons/plus button.svg" />
+      </div>
+      <div id="cards-done"></div>
+    </div>
+  </section>
+</section>
