@@ -73,13 +73,7 @@
 @media (max-width: 950px){
     .header-container {
         height: 80px;
-        width: 100vw;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-        padding: 20px 40px 20px 348px;
-        background-color: #ffffff;
+        padding: 20px 40px;
         position: fixed;
         top: 0;
         left: 0;

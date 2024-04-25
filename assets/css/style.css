@@ -50,6 +50,18 @@ body {
     height: 100vh;
 }
 
+.icludeHtml {
+    margin-left: 328px;
+    margin-top: 110px;
+}
+
+@media (max-width: 950px){
+    .icludeHtml {
+        margin-left: 0px;
+        margin-top: 128px;
+    }
+}
+
 @font-face {
     font-family: 'Inter';
     src: url('./font/Inter-VariableFont_slnt\,wght.ttf');

@@ -1,8 +1,3 @@
-.summary-container {
-    margin-left: 328px;
-    margin-top: 110px;
-}
-
 .title-area {
     display: flex;
     align-items: center;
@@ -26,10 +21,12 @@ hr {
 
 .info-area {
     display: flex;
+    height: 562px;
+    margin-top: 56px;
 }
 
 .summary-area {
-    width: 560px;
+    width: 560px;    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -40,7 +37,6 @@ hr {
     justify-content: space-between;
     height: 168px;
     width: 560px;
-    margin-top: 56px;
 }
 
 .to-do {
@@ -163,7 +159,6 @@ h2 {
 
 .summary-greeting {
     height: 562px;
-    margin-top: 56px;
     margin-left: 80px;
     display: flex;
     flex-direction: column;
@@ -223,4 +218,108 @@ h3 {
     transform-origin: top left; 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3); 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  @media (max-width: 1200px){
+        .summary-greeting {
+            display: none;
+        }
+  }
+
+  @media (max-width: 950px){
+    .summary-container {
+        margin-left: 16px;
+        margin-top: 128px;
+    }
+
+    .title-area {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        width: 100vw;
+        margin-left: 16px;
+    }
+
+    .title-area p {
+        font-size: 14px;
+    }
+    
+
+    h1 {
+        font-size: 47px;
+    }
+
+    h2 {
+        font-size: 47px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .info-area {
+        margin-top: 40px;
+        height: 384px;
+    }
+    
+    .summary-area {
+        width: 100vw;
+        height: 384px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .to-do-and-done {
+        display: flex;
+        justify-content: space-between;
+        height: 168px;
+        width: 396px;
+        margin-left: 16px;
+    }
+
+    .info-area img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .to-do {
+        width: 168px;
+        height: 110px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 38px 19px;
+        border-radius: 20px;
+        background-color: var(--white-color);
+        gap: 10px;
+    }
+
+    .to-do2 {
+        width: 168px;
+        height: 110px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 38px 19px 38px 19px;
+        border-radius: 20px;
+        background-color: var(--white-color);
+        gap: 10px;
+    }
+
+    .urgent-date-time {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100vw;
+        height: 110px;
+        background-color: var(--white-color);
+        border-radius: 20px;
+        padding: 28px 0px;
+    }
   }
