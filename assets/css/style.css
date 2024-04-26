@@ -44,12 +44,11 @@
 
 body {
     background-color: var(--background-color);
-    display: flex;
     width: 100vw;
     height: 100vh;
 }
 
-.includeHtml {
+/* .includeHtml {
     margin-left: 328px;
     margin-top: 110px;
 }
@@ -59,7 +58,7 @@ body {
         margin-left: 0px;
         margin-top: 128px;
     }
-}
+} */
 
 @font-face {
     font-family: 'Inter';
