@@ -1,7 +1,7 @@
 .edit-contact-window {
     z-index: 1;
     background-color: var(--white-color);
-    display: none;
+    display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -30,7 +30,7 @@
     left: 0;
     width: 90px;
     height: 3px; 
-    background-color: var(--line-color);
+    background-color: var(--second-color);
     transform-origin: bottom left;
 }
 
@@ -61,7 +61,7 @@
     height: 594px;
     width: 100%;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .user-initials-icon-box {
@@ -69,13 +69,15 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 50%;
+    width: 40%;
 }
 
 .edit-information-box {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    padding-top: 48px;
+    padding-right: 48px;
     align-items: flex-start;
     height: 100%;
 }
@@ -85,12 +87,18 @@
     flex-direction: column;
     align-items: flex-end;
     width: 100%;
-    padding-right: 20px;
+    padding-bottom: 32px;
 }
 
 .edit-close-icon {
     height: 32px;
     width: 32px;
+}
+
+.edit-close-icon:hover {
+    background-color: #E4E4E4;
+    border-radius: 24px;
+    cursor: pointer;
 }
 
 .edit-details-box {
@@ -99,6 +107,8 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
     width: 100%;
 }
 
@@ -129,7 +139,7 @@
 }
 
 .edit-save-button:hover {
-    background-color: var(--line-color);
+    background-color: var(--second-color);
     box-shadow: 0px 4px 8px var(--input-border);
     border-color: var(--input-border);
 }
@@ -154,8 +164,8 @@
 }
 
 .edit-delete-button:hover {
-    color: var(--line-color);
-    border: 3px solid var(--line-color);
+    color: var(--second-color);
+    border: 3px solid var(--second-color);
     box-shadow: 0px 4px 8px var(--input-border);
 }
 
@@ -167,16 +177,20 @@
     display: flex;
     justify-content: flex-end;
     padding-right: 8px;
-    background-image: url('./assets/img/icons/user.svg');
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
     color: var(--black-color);
+    margin: 0px;
+}
+
+.edit-input-name:before {
+    background-image: url('./assets/img/icons/user.svg');
 }
 
 .edit-input-name:focus {
-    border-color: #29ABE2;
-
+    outline: none;
+    border: 1px solid var(--second-color);
 }
 
 .edit-input-phone {
@@ -192,6 +206,12 @@
     font-weight: 400;
     line-height: 24px;
     color: var(--black-color);
+    margin: 0px;
+}
+
+.edit-input-phone:focus {
+    outline: none;
+    border: 1px solid var(--second-color);
 }
 
 .edit-input-email {
@@ -207,6 +227,12 @@
     font-weight: 400;
     line-height: 24px;
     color: var(--black-color);
+    margin: 0px;
+}
+
+.edit-input-email:focus {
+    outline: none;
+    border: 1px solid var(--second-color);
 }
 
 .contacts {
