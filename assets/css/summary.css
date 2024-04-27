@@ -186,18 +186,15 @@ h3 {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.includeHtml {
+.main-margin {
     margin-left: 328px;
     margin-top: 110px;
 }
 
 @media (max-width: 950px){
-    .includeHtml {
+    .main-margin {
         margin-left: 0px;
         margin-top: 128px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 }
 
