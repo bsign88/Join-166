@@ -190,3 +190,9 @@ h5 {
     background: url(../img/icons/phone.svg) no-repeat scroll;
     background-position: top 0px right 21px;
   }
+
+  input[type=search]::-webkit-input-placeholder {
+    background-color: #D4D4D4;
+    background: url(../img/icons/search.svg) no-repeat scroll;
+    background-position: top 0px right 21px;
+  }
