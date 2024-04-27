@@ -173,17 +173,20 @@ h5 {
     background: url(../img/icons/calender.svg) no-repeat scroll;
   }
 
-  input[type=text]::-webkit-input-paceholder {
+  input[type=text]::-webkit-input-placeholder {
     background-color: #D4D4D4;
     background: url(../img/icons/user.svg) no-repeat scroll;
+    background-position: top 0px right 21px;
   }
 
-  input[type=email]::-webkit-input-paceholder {
+  input[type=email]::-webkit-input-placeholder {
     background-color: #D4D4D4;
     background: url(../img/icons/email.svg) no-repeat scroll;
+    background-position: top 0px right 21px;
   }
 
-  input[type=tel]::-webkit-input-paceholder {
+  input[type=tel]::-webkit-input-placeholder {
     background-color: #D4D4D4;
     background: url(../img/icons/phone.svg) no-repeat scroll;
+    background-position: top 0px right 21px;
   }
