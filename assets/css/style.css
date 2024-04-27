@@ -161,6 +161,9 @@ h5 {
     color: var(--menu-selected-color);
   }
 
-  input[type="text"] {
-    background-image: url(Join-166/assets/img/icons/email.svg);
+  #title {
+    background: url(../img/icons/email.svg) no-repeat scroll;
+    background-position: top 12px right 21px;
   }
+
+  
