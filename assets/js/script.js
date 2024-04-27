@@ -15,7 +15,7 @@ async function includeHTML() {
     }
 }
 
-init() {
+function init() {
     includeHTML();
 } 
 
