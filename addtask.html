@@ -1,88 +1,85 @@
-
-
-
 <section class="addtask">
-    <h1>Add Task</h1>
+  <h1>Add Task</h1>
 
-    <form onsubmit="">
-
+  <form onsubmit="">
     <div class="form-wrapper">
-
-    <div class="formbox">
+      <div class="formbox">
         <label for="title">Title<span class="asterisk">*</span></label>
-        <input required type="text" id="title" name="title" placeholder="Enter a title">
+        <input required type="text" id="title" name="title" placeholder="Enter a title"/>
 
         <label for="description">Description</label>
         <textarea id="description" rows="4" cols="30" placeholder="Enter a description"></textarea>
 
-        <!--
-          <label for="contacts">Asigned to</label>
-          <select id="contacts" name="contacts">
-            <option value="" disabled selected>Select contacts to assign</option>
-            <span class="profile">MM</span>Markus Meier
-            <option value="Anna">Anna</option>
-            <option value="Peter">Peter</option>
-            <option value="Julia">Julia</option>
-            <option value="David">David</option>
-          </select>
-        </div>
-        -->
-
         <div id="list1" class="dropdown-check-list" tabindex="100">
           <span class="anchor" onclick="openDropdown()">Assigned to:</span>
           <ul class="items">
-            <li><span class="profile">MM</span> Marco<input type="checkbox" /></li>
-            <li><span class="profile">BB</span>Björn<input type="checkbox" /></li>
-            <li><span class="profile">AK</span>Adrian<input type="checkbox" /></li>
+            <li>
+              <span class="profile">MM</span> Marco<input type="checkbox" />
+            </li>
+            <li>
+              <span class="profile">BB</span>Björn<input type="checkbox" />
+            </li>
+            <li>
+              <span class="profile">AK</span>Adrian<input type="checkbox" />
+            </li>
           </ul>
         </div>
-    
-        <script>
-    
-            </script>
-
-
-        <label for="contacts">Asigned to</label>
-        <input id="contacts" name="contacts">
       </div>
 
-        <div class="form-line"></div>
+      <div class="form-line"></div>
 
-        <div class="formbox">
-          <label required for="date">Due date<span class="asterisk">*</span></label>
-          <input type="date" id="date" name="date">
+      <div class="formbox">
+        <label required for="date"
+          >Due date<span class="asterisk">*</span></label
+        >
+        <input type="date" id="date" name="date" />
 
-          <label for="prio">Prio</label>
-            <p class="prio" id="prio">
-                <label><input id="urgent" type="radio" name="prio" value="1"><span>Urgent<img src="./assets/img/icons/prio_urgent_default.svg"></span></label>
-                <label><input id="medium" type="radio" name="prio" value="2"><span>Medium<img src="./assets/img/icons/prio_medium_default.svg"></span></label>
-                <label><input id="low" type="radio" name="prio" value="3"><span>Low<img src="./assets/img/icons/prio_low_default.svg"></span></label>
-            </p>
+        <label for="prio">Prio</label>
+        <p class="prio" id="prio">
+          <label
+            ><input id="urgent" type="radio" name="prio" value="1" /><span
+              >Urgent<img
+                src="./assets/img/icons/prio_urgent_default.svg" /></span
+          ></label>
+          <label
+            ><input id="medium" type="radio" name="prio" value="2" /><span
+              >Medium<img
+                src="./assets/img/icons/prio_medium_default.svg" /></span
+          ></label>
+          <label
+            ><input id="low" type="radio" name="prio" value="3" /><span
+              >Low<img src="./assets/img/icons/prio_low_default.svg" /></span
+          ></label>
+        </p>
 
-            <label for="category">Category<span class="asterisk">*</span></label>
-            <select required id="category" name="category">
-              <option value="" disabled selected>Select task category</option>
-              <option value="technicaltask">Technical Task</option>
-              <option value="userstory">User Story</option>
-            </select>
+        <label for="category">Category<span class="asterisk">*</span></label>
+        <select required id="category" name="category">
+          <option value="" disabled selected>Select task category</option>
+          <option value="technicaltask">Technical Task</option>
+          <option value="userstory">User Story</option>
+        </select>
 
-            <label for="subtask">Subtask</label>
-            <select id="subtask" name="subtask">
-              <option value="" disabled selected>Add new subtask</option>
-              <option value="technicaltask">1</option>
-              <option value="userstory">2</option>
-            </select>
-        </div>
-</div>
-
-<footer>
-  <p><sup><span class="asterisk">* </span></sup>This field is required</p>
-    <div class="buttons"> 
-       <button class="clear-form" id="clear-form">Clear<img src="./assets/img/icons/cancel.svg" /></button>
-       <button class="create-task" id="create-task">Create Task<img src="./assets/img/icons/check.svg" /></button>
+        <label for="subtask">Subtask</label>
+        <select id="subtask" name="subtask">
+          <option value="" disabled selected>Add new subtask</option>
+          <option value="technicaltask">1</option>
+          <option value="userstory">2</option>
+        </select>
+      </div>
     </div>
-  </footer>
 
-</form>
-
+    <footer>
+      <p>
+        <sup><span class="asterisk">* </span></sup>This field is required
+      </p>
+      <div class="buttons">
+        <button class="clear-form" id="clear-form">
+          Clear<img src="./assets/img/icons/cancel.svg" />
+        </button>
+        <button class="create-task" id="create-task">
+          Create Task<img src="./assets/img/icons/check.svg" />
+        </button>
+      </div>
+    </footer>
+  </form>
 </section>

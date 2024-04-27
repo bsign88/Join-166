@@ -51,11 +51,14 @@
   margin-bottom: 0 !important;
 }
 
-textarea {
-  padding: 18px 16px 18px 16px;
+.formbox textarea {
+  height: 120px;
+  padding: 12px 21px 12px 21px;
   border: 1px solid #d1d1d1;
   border-radius: 10px;
   margin-bottom: 32px;
+  resize: none;
+  font-size: 20px;
 }
 
 select {
@@ -215,10 +218,11 @@ footer {
   position: relative;
   cursor: pointer;
   display: inline-block;
-  padding: 5px 50px 5px 10px;
+  padding: 12px 21px 12px 21px;
   border: 1px solid #d1d1d1;
   border-radius: 10px;
   background-color: #fff;
+  color: #000;
   width: 100%;
   height: 48px;
   font-size: 20px;
@@ -259,10 +263,6 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-top: 8px;
-}
-
-.dropdown-check-list.visible .anchor {
-  color: #0094ff;
 }
 
 .dropdown-check-list.visible .items {
