@@ -187,7 +187,7 @@
 
 .contacts {
     display: flex;
-    margin-left: 328px;
+    margin-left: 232px;
     margin-top: 110px;
 }
 
@@ -266,10 +266,9 @@ animation-duration: 0ms; */
 }
 
 .contact-box {
-    margin: 7px;
-    gap: 21px;
     display: flex;
     align-items: center;
+    gap:54px;
 }
 
 .contacts-name {
@@ -293,6 +292,12 @@ animation-duration: 0ms; */
     gap: 30px;
 }
 
+.contacts-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .contacts-seperator {
     height: 59px;
     border: 3px solid var(--second-color);
@@ -313,7 +318,7 @@ animation-duration: 0ms; */
     height: 120px;
     color: white;
     background-color: var(--color10);
-    border-radius: 70px;
+    border-radius: 50%;
     box-shadow: 0px 0px 4px 0px #0000001A;
     border: 3px solid #FFFFFF;
     line-height: 56.4px;
@@ -355,11 +360,15 @@ animation-duration: 0ms; */
 }
 
 .contacts-information-box {
-    width: 146px;
-    height: 128px;
+    display: flex;
+    flex-direction: column;
     gap: 22px;
-    opacity: 0px;
+}
 
+.contact-details-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .contacts-edit {
