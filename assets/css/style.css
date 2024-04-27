@@ -172,3 +172,18 @@ h5 {
     background-color: #0038FF;
     background: url(../img/icons/calender.svg) no-repeat scroll;
   }
+
+  input[type=text]::-webkit-input-paceholder {
+    background-color: #D4D4D4;
+    background: url(../img/icons/user.svg) no-repeat scroll;
+  }
+
+  input[type=email]::-webkit-input-paceholder {
+    background-color: #D4D4D4;
+    background: url(../img/icons/email.svg) no-repeat scroll;
+  }
+
+  input[type=tel]::-webkit-input-paceholder {
+    background-color: #D4D4D4;
+    background: url(../img/icons/phone.svg) no-repeat scroll;
+  }
