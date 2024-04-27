@@ -96,10 +96,6 @@ h2 {
     cursor: pointer;
 }
 
-.urgent-date-time h4, .task:hover p {
-    color: var(--white-color);
-}
-
 .urgent {
     display: flex;
     align-items: center;
