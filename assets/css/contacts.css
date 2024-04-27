@@ -187,6 +187,8 @@
 
 .contacts {
     display: flex;
+    margin-left: 328px;
+    margin-top: 110px;
 }
 
 .contacts-aside {

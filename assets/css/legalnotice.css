@@ -8,6 +8,8 @@
 .legalnotice-section {
     display: flex;
     flex-direction: column;
+    margin-left: 328px;
+    margin-top: 110px;
     gap: 32px;
     width: 1014px;
 }

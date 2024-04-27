@@ -39,6 +39,8 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    margin-left: 328px;
+    margin-top: 110px;
 }
 
 .privacy-main {
