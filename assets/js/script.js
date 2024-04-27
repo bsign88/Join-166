@@ -87,6 +87,3 @@ function autoFillEmail() {
   passwordInput.type = 'password';
   passwordIcon.src = './assets/img/icons/visibility_off.png'; 
 }
-
-  
-

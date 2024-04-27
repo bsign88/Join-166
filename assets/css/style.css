@@ -161,9 +161,14 @@ h5 {
     color: var(--menu-selected-color);
   }
 
-  #title {
+/* inputs */
+
+  #input-id {
     background: url(../img/icons/email.svg) no-repeat scroll;
     background-position: top 12px right 21px;
   }
 
-  
+  input[type=date]::-webkit-calendar-picker-indicator {
+    background-color: #0038FF;
+    background: url(../img/icons/calender.svg) no-repeat scroll;
+  }

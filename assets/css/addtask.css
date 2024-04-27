@@ -88,12 +88,6 @@ select {
   display: none;
 }
 
-/*
-.prio input[type="radio"]:checked + span {
-  background-color: gold;
-}
-*/
-
 #urgent:checked + span {
   background-color: #ff3d00;
   color: #fff;
@@ -221,7 +215,12 @@ footer {
   cursor: pointer;
   display: inline-block;
   padding: 5px 50px 5px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  background-color: #fff;
+  height: 48px;
+  font-size: 20px;
+  margin-bottom: 32px;
 }
 
 .dropdown-check-list .anchor:after {
@@ -280,8 +279,11 @@ footer {
   .form-line {
     display: none;
   }
+}
+
+@media (max-width: 950px) {
   .addtask {
-    margin: 110px 0 0 110px;
+    margin: 110px 20px 0 20px;
     padding-bottom: 75px;
   }
 
