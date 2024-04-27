@@ -1,6 +1,5 @@
 .board {
-  margin-left: 328px;
-  margin-top: 110px;
+  margin: 110px 0 0 328px;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -228,4 +227,12 @@ header {
   display: flex;
   flex-direction: column;
 
+}
+
+/* responsove */
+
+@media (max-width: 1340px) {
+  .board {
+    margin: 110px 0 0 110px;
+  }
 }

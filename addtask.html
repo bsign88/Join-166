@@ -1,3 +1,13 @@
+<script>
+  var checkList = document.getElementById("list1");
+  checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
+    if (checkList.classList.contains("visible"))
+      checkList.classList.remove("visible");
+    else checkList.classList.add("visible");
+  };
+</script>
+
+
 <section class="addtask">
     <h1>Add Task</h1>
 
@@ -24,6 +34,18 @@
           </select>
         </div>
         -->
+
+        <div id="list1" class="dropdown-check-list" tabindex="100">
+          <span class="anchor">Assigned to:</span>
+          <ul class="items">
+            <li><div class="profile">MM</div> Marco<input type="checkbox" /></li>
+            <li><div class="profile">BB</div>Björn<input type="checkbox" /></li>
+            <li><div class="profile">AK</div>Adrian<input type="checkbox" /></li>
+          </ul>
+        </div>
+    
+
+
 
         <label for="contacts">Asigned to</label>
         <input id="contacts" name="contacts">
@@ -69,5 +91,3 @@
 </form>
 
 </section>
-
-
