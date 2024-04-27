@@ -1,25 +1,29 @@
-<div class="edit-contact-window" id="add-contact-window">
-    <div class="edit-contact-left-side">
-        <h1 class="h1-edit-contact">Edit contact</h1>
+<div class="add-contact-window" id="add-contact-window">
+    <div class="add-contact-left-side">
+        <h1 class="h1-contact">Add&nbsp;contact</h1>
+        <span class="under-headline">Tasks&nbsp;are&nbsp;better&nbsp;with&nbsp;a&nbsp;team!</span>
+        <div clasS="overlay-seperator"></div>
         <img class="edit-join-logo" src="assets/img/icons/join-logo.svg">
     </div>
     <div class="edit-contact-right-side">
         <div class="user-initials-icon-box">
-            <div class="user-initials-icon" id="user-initial-icon-edit">VN
+            <img class="user-initials-icon-add" id="user-initial-icon-add" src="assets/img/icons/new_user.svg">
             </div>
         </div>
         <div class="edit-information-box">
             <div class="edit-close-box">
-                <img src="./assets/img/icons/close.svg" class="edit-close-icon" id="edit-close-icon">
+                <img src="./assets/img/icons/close.svg" class="edit-close-icon" id="add-close-icon">
             </div>
             <div class="edit-details-box">
-                    <input class="edit-input-name" type="text" placeholder="Name">
-                    <input class="edit-input-email" type="email" placeholder="Email">
-                    <input class="edit-input-phone" type="tel" placeholder="Phone">
+                    <input id="add-input-name" class="edit-input-name" type="text" placeholder="Name">
+                    <input id="add-input-email" class="edit-input-email" type="email" placeholder="Email">
+                    <input id="add-input-phone" class="edit-input-phone" type="tel" placeholder="Phone">
             </div>
             <div class="edit-button-box">
-                <button class="secondary-button" id="delete-contact-button">Delete</button>
-                <button class="primary-button" id="save-contact-button">Save 
+                <button class="secondary-button" id="delete-add-contact-button">Cancel
+                    <img class="cross" src="./assets/img/icons/cancel.svg">
+                </button>
+                <button class="primary-button" id="save-add-contact-button">Add Contact 
                     <img class="tick" src="./assets/img/icons/tick.svg">
                 </button>
             </div>
