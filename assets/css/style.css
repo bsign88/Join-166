@@ -111,8 +111,8 @@ h5 {
 }
 
 .primary-button {
-    width: 183px;
-    height: 56px;
+    padding: 16px;
+    gap: 4px;
     border-radius: 10px;
     border: 1px solid var(--main-color);
     background-color: var(--main-color);
@@ -125,10 +125,6 @@ h5 {
     cursor: pointer;
   }
 
-  .primary-button img {
-    margin-left: 4px;
-  }
-  
   .primary-button:hover {
     background-color: var(--second-color);
     border: none;
@@ -140,8 +136,8 @@ h5 {
   }
 
   .secondary-button {
-    width: 110px;
-    height: 56px;
+    padding: 16px;
+    gap: 4px;
     border-radius: 10px;
     border: 1px solid var(--main-color);
     background-color: var(--background-color);
@@ -164,7 +160,7 @@ h5 {
     border: 2px solid var(--menu-selected-color);
     color: var(--menu-selected-color);
   }
-  
-  .secondary-button img {
-    margin-left: 4px;
+
+  input[type="text"] {
+    background-image: url(Join-166/assets/img/icons/email.svg);
   }
