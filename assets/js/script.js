@@ -15,6 +15,10 @@ async function includeHTML() {
     }
 }
 
+init() {
+    includeHTML();
+} 
+
 document.addEventListener("DOMContentLoaded", includeHTML);
 
 function loadContent(newContent, clickedId) {
