@@ -1,4 +1,3 @@
-let contacts;
 
 // Sortiere die Kontakte alphabetisch nach dem Namen
 contacts.sort((a, b) => (a.name > b.name) ? 1 : -1);
