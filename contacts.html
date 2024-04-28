@@ -1,12 +1,10 @@
+<script src="./assets/js/contacts.js"></script>
 <section class="contacts">
     <aside class="contacts-aside" id="contacts-aside">
         <section class="aside-top-button-bar">
         <button class="primary-button" id="add-contact-button">Add new contact <img src="./assets/img/icons/add-new-contatc-icon.svg"></button>
         </section>
         <section id="contacts-list" class="contacts-list-alphabet-order">
-            <!-- <div class="contacts-list-alphabet">A</div>
-            <div class="contacts-list-seperator"></div>
-            <div id="a-contacts"></div> -->
         </section>
     </aside>
     <main class="contacts-main">
@@ -16,7 +14,7 @@
             <span class="contacts-slogan">Better with a team</span>
         </div>
         <div class="contacts-content">
-            <!-- <div class="contact-box">
+            <div class="contact-box">
                 <div class="user-initials-icon" id="user-initials-icon">VN</div>
                 <div class="user-edit-delete">
                     <span class="contacts-name" id="contacts-name">Vorname Nachname</span>
@@ -38,8 +36,13 @@
                     <p class="contacts-info-object-headline">Phone</p>
                     <a class="contacts-info-object-phone" id="contacts-phone">+49 123 456 789</a>
                 </div>
-            </div> -->
+            </div>
         </div>
     </main>
 </section>
-<script src="./assets/js/contacts.js"></script>
+<script>
+    // Füge die renderContacts() Funktion hinzu, um sie aufzurufen, sobald die Seite geladen ist
+    window.addEventListener('DOMContentLoaded', (event) => {
+        renderContacts();
+    });
+</script>
