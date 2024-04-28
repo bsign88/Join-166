@@ -17,6 +17,7 @@ async function includeHTML() {
 
 function init() {
     includeHTML();
+    loadUsers();
 } 
 
 document.addEventListener("DOMContentLoaded", includeHTML);
