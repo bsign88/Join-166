@@ -9,7 +9,7 @@ function renderContacts() {
 
     alphabet.forEach(letter => {
         let contactsByLetter = contacts.filter(contact => contact.name.toLowerCase().startsWith(letter));
-
+        
         if (contactsByLetter.length > 0) {
             let alphabetDiv = document.createElement('div');
             alphabetDiv.classList.add('contacts-list-alphabet');
@@ -25,10 +25,34 @@ function renderContacts() {
             contactsDiv.appendChild(contactsByLetterDiv);
 
             contactsByLetter.forEach(contact => {
-                let contactDiv = document.createElement('div');
-                contactDiv.classList.add('contact');
-                contactDiv.textContent = contact.name;
-                contactsByLetterDiv.appendChild(contactDiv);
+                let outerDiv = document.createElement('div');
+                outerDiv.classList.add('outerDiv');
+
+
+                let firstInnerDiv = document.createElement('div');
+                firstInnerDiv.classList.add('firstInnerDiv');
+                firstInnerDiv.style.backgroundColor = contact.color;
+                firstInnerDiv.innerHTML = 'O';
+
+                let secondInnerDiv = document.createElement('div');
+                secondInnerDiv.classList.add('secondInnerDiv');
+
+                let contactDivName = document.createElement('div');
+                contactDivName.classList.add('contactDivName');
+                contactDivName.textContent = contact.name;
+                let contactDivEmail = document.createElement('div');
+                contactDivEmail.classList.add('contactDivEmail');
+                contactDivEmail.textContent = contact.email;
+
+
+
+                secondInnerDiv.appendChild(contactDivName);
+                secondInnerDiv.appendChild(contactDivEmail);
+                
+                outerDiv.appendChild(firstInnerDiv);
+                outerDiv.appendChild(secondInnerDiv);
+              
+                contactsByLetterDiv.appendChild(outerDiv);
             });
         }
     });

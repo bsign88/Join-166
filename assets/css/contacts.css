@@ -238,10 +238,57 @@
     width: 453px;
 }
 
-.contacts-list-seperator {
-
+.contacts-list-separator {
     width: 352px;
     border: 1px solid var(--contactlist-seperator);
+    margin: 8px 0px 8px 0px;
+}
+
+.outerDiv {
+    display: flex;
+    width: 100%;
+    padding: 15px 24px 15px 24px;
+    gap: 35px;
+    border-radius: 10px 10px;
+    cursor: pointer;
+}
+
+.outerDiv:hover {
+    background-color: var(--main-color);
+}
+
+.outerDiv:hover .contactDivName {
+    color: var(--white-color);
+}
+
+.firstInnerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--white-color);
+    border-radius: 45px;
+    height: 45px;
+    width: 45px;
+}
+
+.secondInnerDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactDivName {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.contactDivEmail {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: var(--link-color);
 }
 
 .contacts-list-alphabet {
