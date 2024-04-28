@@ -254,6 +254,7 @@ footer {
   margin: 0;
   border: 1px solid #ccc;
   border-top: none;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .dropdown-check-list ul.items li {
@@ -263,10 +264,12 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-top: 8px;
+  padding: 0 21px 0 21px;
 }
 
 .dropdown-check-list.visible .items {
   display: block;
+  background-color: #fff;
 }
 
 /* responsive */
