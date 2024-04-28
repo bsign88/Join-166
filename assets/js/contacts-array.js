@@ -29,7 +29,7 @@ let contacts = [
     "color": 'var(--color5)',
 },
 {
-    "name": "Emmanuel mauer",
+    "name": "Emmanuel Mauer",
     "email": "emmanuelma@gmail.com",
     "phone": "+49 666 666 666",
     "color": 'var(--color6)',

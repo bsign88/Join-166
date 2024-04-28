@@ -27,12 +27,20 @@ function renderContacts() {
             contactsByLetter.forEach(contact => {
                 let outerDiv = document.createElement('div');
                 outerDiv.classList.add('outerDiv');
+                
 
 
                 let firstInnerDiv = document.createElement('div');
                 firstInnerDiv.classList.add('firstInnerDiv');
                 firstInnerDiv.style.backgroundColor = contact.color;
-                firstInnerDiv.innerHTML = 'O';
+                let name = contact.name;
+                let nameParts = name.split(' ');
+                let initials = '';
+                nameParts.forEach (part => { initials += part.charAt(0);});
+                firstInnerDiv.innerHTML = `${initials}`;
+                outerDiv.addEventListener('click', function() {
+                    openContact(initials);
+                });
 
                 let secondInnerDiv = document.createElement('div');
                 secondInnerDiv.classList.add('secondInnerDiv');
@@ -60,3 +68,35 @@ function renderContacts() {
 
 // Aufruf der Funktion zum Rendern der Kontaktliste
 renderContacts();
+
+//zeigt die Kontaktdaten des ausgewählten Kontakt
+function openContact() {
+    let content = document.getElementById('contacts-content');
+    content.innerHTML = `
+    <div class="contact-box">
+                <div class="user-initials-icon" id="user-initials-icon">VN</div>
+                <div class="user-edit-delete">
+                    <span class="contacts-name" id="contacts-name">Vorname Nachname</span>
+                    <div class="contacts-change-link">
+                        <div class="contacts-icon-text" id="contacts-edit"><img class="contacts-change-icons"
+                                src="./assets/img/icons/pen-icon.svg">Edit</div>
+                        <div class="contacts-icon-text" id="contacts-delete"><img class="contacts-change-icons"
+                                src="./assets/img/icons/trash-icon.svg">Delete</div>
+                    </div>
+                </div>
+            </div>
+            <p class="contact-info-headline">Contact information</p>
+            <div class="contacts-information-box">
+                <div class="contact-details-box">
+                    <p class="contacts-info-object-headline">Email</p>
+                    <a class="contacts-info-object-email" id="contacts-email">email@email.de</a>
+                </div>
+                <div class="contact-details-box">
+                    <p class="contacts-info-object-headline">Phone</p>
+                    <a class="contacts-info-object-phone" id="contacts-phone">+49 123 456 789</a>
+                </div>
+            </div>
+    `;
+    let userInitials = document.getElementById('user-initials-icons');
+    userInitials = initials;
+}

@@ -162,6 +162,11 @@
     border: 1px solid var(--second-color);
 }
 
+.add-contact-button {
+    width: 352px;
+    color: var(--main-color);
+}
+
 .edit-input-phone {
     width: 422px;
     Height:50px;
@@ -269,6 +274,7 @@
     border-radius: 45px;
     height: 45px;
     width: 45px;
+    color: var(--white-color);
 }
 
 .secondInnerDiv{
