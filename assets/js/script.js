@@ -15,9 +15,10 @@ async function includeHTML() {
     }
 }
 
-function init() {
+async function init() {
     includeHTML();
     loadUsers();
+    loadContacts();
 } 
 
 document.addEventListener("DOMContentLoaded", includeHTML);
