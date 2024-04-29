@@ -94,14 +94,3 @@ function autoFillEmail() {
   passwordInput.type = 'password';
   passwordIcon.src = './assets/img/icons/visibility_off.png'; 
 }
-
-// Öffnet das dropdown "Assignet to" bei Addtask
-
-function openDropdown() {
-    var checkList = document.getElementById("list1");
-    checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
-      if (checkList.classList.contains("visible"))
-        checkList.classList.remove("visible");
-      else checkList.classList.add("visible");
-    };
-  }

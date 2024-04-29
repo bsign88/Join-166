@@ -1,7 +1,9 @@
+<script src="./assets/js/addtask.js"></script>
+
 <section class="addtask">
   <h1>Add Task</h1>
 
-  <form onsubmit="">
+  <form>
     <div class="form-wrapper">
       <div class="formbox">
         <label for="title">Title<span class="asterisk">*</span></label>
@@ -10,7 +12,7 @@
         <label for="description">Description</label>
         <textarea id="description" rows="4" cols="30" placeholder="Enter a description"></textarea>
 
-        <div id="list1" class="dropdown-check-list" tabindex="100">
+        <div id="assignedto" class="dropdown-check-list" tabindex="100">
           <span class="anchor" onclick="openDropdown()">Assigned to:</span>
           <ul class="items">
             <li>
@@ -32,10 +34,10 @@
         <label required for="date"
           >Due date<span class="asterisk">*</span></label
         >
-        <input type="date" id="date" name="date" />
+        <input required type="date" id="date" name="date" />
 
-        <label for="prio">Prio</label>
-        <p class="prio" id="prio">
+        <label>Prio</label>
+        <div class="prio" id="prio">
           <label
             ><input id="urgent" type="radio" name="prio" value="1" /><span
               >Urgent<img
@@ -50,7 +52,7 @@
             ><input id="low" type="radio" name="prio" value="3" /><span
               >Low<img src="./assets/img/icons/prio_low_default.svg" /></span
           ></label>
-        </p>
+        </div>
 
         <label for="category">Category<span class="asterisk">*</span></label>
         <select required id="category" name="category">
@@ -62,8 +64,8 @@
         <label for="subtask">Subtask</label>
         <select id="subtask" name="subtask">
           <option value="" disabled selected>Add new subtask</option>
-          <option value="technicaltask">1</option>
-          <option value="userstory">2</option>
+          <option value="subtask1">subtask1</option>
+          <option value="subtask2">subtask2</option>
         </select>
       </div>
     </div>
@@ -76,7 +78,7 @@
         <button class="clear-form" id="clear-form">
           Clear<img src="./assets/img/icons/cancel.svg" />
         </button>
-        <button class="create-task" id="create-task">
+        <button class="create-task" id="create-task" onclick="addTask()">
           Create Task<img src="./assets/img/icons/check.svg" />
         </button>
       </div>
