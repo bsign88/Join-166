@@ -23,11 +23,16 @@ async function init() {
 
 document.addEventListener("DOMContentLoaded", includeHTML);
 
-function loadContent(newContent, clickedId) {
+async function loadContent(newContent, clickedId) {
     let contentDiv = document.getElementById('includeHtml');
     contentDiv.setAttribute('w3-include-html', newContent);
-    includeHTML(); 
+    await includeHTML(); 
     updateSelectedMenuPoint(clickedId);
+
+    // Überprüfe, ob die neue Seite die Contacts-Seite ist und rufe dann renderContacts auf
+    if (newContent === 'contacts.html') {
+        renderContacts();
+    }
 }
 
 // Diese Funktion erstellt eine Markierung durch eine CSS Klasse für den Aktullen Menüpunkt
