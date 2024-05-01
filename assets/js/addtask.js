@@ -21,6 +21,8 @@ function addTask() {
         'date': date,
         'category': category
     }
+
+    tasks.push(task);
 }
 
 
