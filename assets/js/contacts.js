@@ -6,7 +6,7 @@ function renderContacts() {
     let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
     let contactsDiv = document.getElementById('contacts-list');
     let contactInformation = document.getElementById('contacts-content');
-
+    contactsDiv.innerHTML = '';
     alphabet.forEach(letter => {
         let contactsByLetter = contacts.filter(contact => contact.name.toLowerCase().startsWith(letter));
 
@@ -145,4 +145,29 @@ function closeColorPicker(color) {
     colorPickerPopup.style.display = 'none';
     let userColor = document.getElementById('user-initial-icon-add');
     userColor.style.backgroundColor = color;
+}
+
+async function createNewContact() {
+    let color = document.getElementById('user-initial-icon-add').style.backgroundColor;
+    let name = document.getElementById('add-input-name').value;
+    let email = document.getElementById('add-input-email').value;
+    let phone =  document.getElementById('add-input-phone').value;
+    let nameParts = name.split(' ');
+    let initials = '';
+    nameParts.forEach(part => { initials += part.charAt(0); });
+    await getItem('userId');
+    userId + 1;
+    let newContact = {
+        "name": name,
+        "email": email,
+        "phone": phone,
+        "color": color,
+        "userId": userId,
+        "initials": initials
+    }
+    contacts.push(newContact);
+    await setItem('contacts', contacts);
+    closeAddNewContact();
+    renderContacts();
+    setItem('userId', userId);
 }
