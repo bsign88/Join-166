@@ -1,7 +1,7 @@
 const STORAGE_TOKEN = 'MIIEDSNHP1WLD4CM84PW1A7YLVKDMMJ5BQRZ6PYI';
 const STORAGE_URL = 'https://remote-storage.developerakademie.org/item';
-let usersData = [];
-// let contacts = [];
+let usersData;
+let contacts;
 let userId;
 
 async function setItem(key, value) {
@@ -13,6 +13,16 @@ async function setItem(key, value) {
 async function getItem(key) {
     const url = `${STORAGE_URL}?key=${key}&token=${STORAGE_TOKEN}`;
     return fetch(url).then(res => res.json());
+}
+
+async function getUserId(key) {
+    const url = `${STORAGE_URL}?key=${key}&token=${STORAGE_TOKEN}`;
+    return userId = fetch(url);
+}
+
+async function setUserId(key, value) {
+    const payload = { key, value, token: STORAGE_TOKEN };
+    return fetch(STORAGE_URL, { method: 'POST', body: payload});
 }
 
 async function loadUsers(){

@@ -17,7 +17,7 @@ async function includeHTML() {
 
 async function init() {
     includeHTML();
-    await getItem('contacts');
+    content = await getItem('contacts');
 } 
 
 document.addEventListener("DOMContentLoaded", includeHTML);

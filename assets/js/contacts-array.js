@@ -1,4 +1,4 @@
-let contacts = [
+let contacts2 = [
 {   "name": "Anton Mayer",
     "email": "anton@gmail.com",
     "phone": "+49 111 111 111",
