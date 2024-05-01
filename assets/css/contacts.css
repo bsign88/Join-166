@@ -1,5 +1,5 @@
 .edit-contact-window {
-    z-index: 1;
+    z-index: 10;
     background-color: var(--white-color);
     display: none;
     position: absolute;
@@ -12,7 +12,7 @@
 }
 
 .add-contact-window {
-    z-index: 1;
+    z-index: 10;
     background-color: var(--white-color);
     display: none;
     position: absolute;
@@ -378,15 +378,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 120px;;
     width: 120px;
     height: 120px;
-    color: white;
+    background-color: #d1d1d1;
     border-radius: 50%;
     box-shadow: 0px 0px 4px 0px #0000001A;
     line-height: 56.4px;
     font-size: 47px;
     font-weight: 500;
     gap: 10px;
+    cursor: pointer;
+}
+
+.user-placeholder {
+    width: 64px;
+    height: 64px;
 }
 
 .contacts-change-icons {
@@ -475,4 +482,26 @@
     line-height: 19.2px;
     text-align: left;
     color: var(--black-color);
+}
+
+.color-picker-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--main-color);
+    padding: 20px;
+    border: 1px solid var(--second-color);
+    border-radius: 5px;
+    z-index: 30;
+    display: none;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    background-color: var(--bg-color);
 }

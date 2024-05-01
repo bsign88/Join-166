@@ -24,8 +24,9 @@
 </head>
 
 <body onload="init()">
-   <section w3-include-html="edit-contact.html"></section>
-   <section w3-include-html="add-contact.html"></section>
+    <div id="background-overlay" class="background-overlay"></div>
+    <section w3-include-html="edit-contact.html"></section>
+    <section w3-include-html="add-contact.html"></section>
     <section class="nav-bar-container">
         <div class="nav-bar-menu">
             <div class="nav-bar-logo">
@@ -75,18 +76,18 @@
     <section class="right-container">
 
         <section class="header-container">
-                <div>
-                    <p>Kanban Project Management Tool</p>
+            <div>
+                <p>Kanban Project Management Tool</p>
+            </div>
+            <div class="help-profile">
+                <div class="help">
+                    <img onclick="loadContent('help.html'); return false;" src="./assets/img/icons/help.png" alt="">
                 </div>
-                <div class="help-profile">
-                    <div class="help">
-                        <img onclick="loadContent('help.html'); return false;" src="./assets/img/icons/help.png" alt="">
-                    </div>
-                    <div class="profile-logo" onclick="toggleMenu()">
-                        <img src="./assets/img/icons/profilpictureplaceholder.png" alt="">
-                        <img src="./assets/img/icons/profilpictureplaceholderhover.png" alt="">                        
-                    </div>
-                </div>    
+                <div class="profile-logo" onclick="toggleMenu()">
+                    <img src="./assets/img/icons/profilpictureplaceholder.png" alt="">
+                    <img src="./assets/img/icons/profilpictureplaceholderhover.png" alt="">
+                </div>
+            </div>
         </section>
 
         <div id="dropOutMenu" class="drop-out-menu d-none">
@@ -101,10 +102,11 @@
             </div>
         </div>
 
-       <section id="includeHtml" w3-include-html="summary.html"></section>
+        <section id="includeHtml" w3-include-html="summary.html"></section>
 
 
     </section>
 </body>
 <script src="./assets/js/contacts.js"></script>
+
 </html>
