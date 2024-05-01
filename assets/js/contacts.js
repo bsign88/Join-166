@@ -6,7 +6,6 @@ contacts.sort((a, b) => (a.name > b.name) ? 1 : -1);
 function renderContacts() {
     let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
     let contactsDiv = document.getElementById('contacts-list');
-    let content = document.getElementById('contacts-content');
 
     alphabet.forEach(letter => {
         let contactsByLetter = contacts.filter(contact => contact.name.toLowerCase().startsWith(letter));
@@ -38,7 +37,7 @@ function renderContacts() {
                 nameParts.forEach (part => { initials += part.charAt(0);});
                 firstInnerDiv.innerHTML = `${initials}`;
                 outerDiv.addEventListener('click', function() {
-                    openContact(content, contact, initials);
+                    openContact(contact, initials);
                 });
 
                 let secondInnerDiv = document.createElement('div');
@@ -64,7 +63,13 @@ function renderContacts() {
 }
 
 //zeigt die Kontaktdaten des ausgewählten Kontakt
-function openContact(content, contact, initials) {
+function openContact(contact, initials) {
+    let content = document.getElementById('contacts-content');
+    console.log(content, contact, initials); // Überprüfe die Eingabewerte
+    if (!content) {
+        console.error('Content element is not found!');
+        return;
+    }
     content.innerHTML = `
     <div class="contact-box">
                 <div class="user-initials-icon" id="user-initials-icon-${contact.id}">${initials}</div>
