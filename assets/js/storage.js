@@ -14,9 +14,10 @@ async function getItem(key) {
     return fetch(url).then(res => res.json());
 }
 
-async function getUserId(key) {
+async function loadUserId(key) {
     const url = `${STORAGE_URL}?key=${key}&token=${STORAGE_TOKEN}`;
-    return userId = fetch(url);
+    const payload = { key, value, token: STORAGE_TOKEN };
+    return userId = await fetch(url);
 }
 
 async function setUserId(key, value) {
@@ -34,7 +35,8 @@ async function loadUsers(){
 
 async function loadContacts(){
     try {
-        contacts = JSON.parse(await getItem('contacts'));
+        contactsAsText = await getItem('contacts');
+        contacts = JSON.parse(contactsAsText.data.value);
     } catch(e){
         console.error('Loading error:', e);
     }

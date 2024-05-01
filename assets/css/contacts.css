@@ -251,7 +251,7 @@
 
 .outerDiv {
     display: flex;
-    width: 100%;
+    width: 352px;
     padding: 15px 24px 15px 24px;
     gap: 35px;
     border-radius: 10px 10px;
@@ -264,6 +264,21 @@
 
 .outerDiv:hover .contactDivName {
     color: var(--white-color);
+}
+
+.contactInformation {
+    position: fixed;
+    top: 300px;
+    
+    right: -100%; /* Startposition: außerhalb des Bildschirms rechts */
+    width: 50%; /* Breite der Kontaktansicht */
+    height: 100%; /* Höhe der Kontaktansicht */
+    z-index: 1000;
+    transition: right 0.1s ease-in-out; /* Transitionseffekt für rechte Position */
+}
+
+.contactInformation.open {
+    right: -58px; /* Endposition: auf dem Bildschirm rechts */
 }
 
 .firstInnerDiv {
@@ -280,8 +295,8 @@
 .secondInnerDiv{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .contactDivName {

@@ -1,8 +1,9 @@
 // Sortiere die Kontakte alphabetisch nach dem Namen
-contacts.sort((a, b) => (a.name > b.name) ? 1 : -1);
+
 
 // Funktion zur Anzeige der Kontaktliste
 function renderContacts() {
+    contacts.sort((a, b) => (a.name > b.name) ? 1 : -1);
     let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
     let contactsDiv = document.getElementById('contacts-list');
     let contactInformation = document.getElementById('contacts-content');
@@ -36,8 +37,8 @@ function renderContacts() {
                 let initials = '';
                 nameParts.forEach(part => { initials += part.charAt(0); });
                 firstInnerDiv.innerHTML = `${initials}`;
-                outerDiv.addEventListener('click', function () {
-                    openContact(contactInformation, contact, initials);
+                outerDiv.addEventListener('click', () => {
+                    openContact(contactInformation, contact);
                 });
 
                 let secondInnerDiv = document.createElement('div');
@@ -63,15 +64,14 @@ function renderContacts() {
 }
 
 //zeigt die Kontaktdaten des ausgewählten Kontakt
-function openContact(contactInformation, contact, initials) {
-    console.log(contactInformation, contact, initials); // Überprüfe die Eingabewerte
+function openContact(contactInformation, contact) {
     if (!contactInformation) {
         console.error('contactInformation element is not found!');
         return;
     }
     contactInformation.innerHTML = `
     <div class="contact-box">
-                <div class="user-initials-icon" id="user-initials-icon-${contact.id}">${initials}</div>
+                <div class="user-initials-icon" id="user-initials-icon-${contact.id}">${contact.initials}</div>
                 <div class="user-edit-delete">
                     <span class="contacts-name" id="contacts-name-${contact.id}">${contact.name}</span>
                     <div class="contacts-change-link">
@@ -94,6 +94,7 @@ function openContact(contactInformation, contact, initials) {
                 </div>
             </div>
     `;
+    contactInformation.classList.add('open');
 }
 
 function openAddNewContact() {
@@ -134,13 +135,11 @@ function closeEditContact() {
 }
 
 function openColorPicker() {
-    // Zeige das Farbauswahl-Popup an
     let colorPickerPopup = document.getElementById('color-picker-popup');
     colorPickerPopup.style.display = 'block';
 }
 
 function closeColorPicker(color) {
-    // Verstecke das Farbauswahl-Popup
     let colorPickerPopup = document.getElementById('color-picker-popup');
     colorPickerPopup.style.display = 'none';
     let userColor = document.getElementById('user-initial-icon-add');
@@ -155,19 +154,15 @@ async function createNewContact() {
     let nameParts = name.split(' ');
     let initials = '';
     nameParts.forEach(part => { initials += part.charAt(0); });
-    await getItem('userId');
-    userId + 1;
     let newContact = {
         "name": name,
         "email": email,
         "phone": phone,
         "color": color,
-        "userId": userId,
         "initials": initials
     }
     contacts.push(newContact);
     await setItem('contacts', contacts);
     closeAddNewContact();
     renderContacts();
-    setItem('userId', userId);
 }

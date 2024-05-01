@@ -17,15 +17,7 @@ async function includeHTML() {
 
 async function init() {
     includeHTML();
-    try {
-        // Das Ergebnis von getItem('contacts') abrufen und der Variable contacts zuweisen
-        contacts = await getItem('contacts');
-        
-        // Jetzt kannst du mit der Variable contacts arbeiten
-        console.log('Kontakte wurden erfolgreich geladen:', contacts);
-    } catch (error) {
-        console.error('Fehler beim Laden der Kontakte:', error);
-    }
+    loadContacts();
 } 
 
 document.addEventListener("DOMContentLoaded", includeHTML);
