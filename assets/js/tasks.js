@@ -1,34 +1,35 @@
-let tasks = [
-    {
-      "title": "1 Test Kochweltpage",
-      "description": "1 Build start page...",
-      "category": "User Story",
-    },
-    {
-      "title": "2 Test Kochweltpage",
-      "description": "3 Build start page...",
-      "category": "Technical Task",
-    },
-    {
-      "title": "3 Test Kochweltpage",
-      "description": "3 Build start page...",
-      "category": "User Story",
-    },
-    {
-      "title": "4 Test Kochweltpage",
-      "description": "4 Build start page...",
-      "category": "Technical Task",
-    },
-  ];
-  
-
 function renderTasks() {
-    for (let index = 0; index < tasks.length; index++) {
-        const task = tasks[index];
+  for (let index = 0; index < tasks.length; index++) {
+    const task = tasks[index];
 
-    let cardsToDo = document.getElementById('cards-todo');
+    let notasks = document.getElementById("notasks");
+    let cardsToDo = document.getElementById("cards-todo");
+    let cardsProgress = document.getElementById("cards-progress");
+    let cardsFeedback = document.getElementById("cards-feedback");
+    let cardsDone = document.getElementById("cards-done");
+    
+    if (task["column"] === "todo") {
+      cardsToDo.innerHTML += generateCards(task, index);
+      notasks.classList.remove("d-none");
+    } else {
+      notasks.classList.add("d-none");
+    }
+    if (task["column"] === "progress") {
+      cardsProgress.innerHTML += generateCards(task, index);
+    }
+    if (task["column"] === "feedback") {
+      cardsFeedback.innerHTML += generateCards(task, index);
+    }
+    if (task["column"] === "done") {
+      cardsDone.innerHTML += generateCards(task, index);
+    }
+    checkLabel(index, task);
+  }
+}
 
-    cardsToDo.innerHTML += `
+// Generiert HTML der Karten in Spalte "To do"
+function generateCards(task, index) {
+  return /*HTML*/ `
     <div class="card" draggable="true">
         <div id="label${index}" class="label">${task["category"]}</div>
             <div class="content">
@@ -36,12 +37,16 @@ function renderTasks() {
                 <div class="description">${task["description"]}</div>
             </div> 
     </div>
-    `;
-        
-        if (task["description"] == "Technical Task") {
-            document.getElementById(`label${index}`).classList.add('technical-task');
-            
-        }
+  `;
+}
 
-    }
+//Überprüft welches Label definiert ist und wendet die entsprechende Klasse an
+function checkLabel(index, task) {
+  let label = document.getElementById(`label${index}`);
+
+  if (task["category"] === "Technical Task") {
+    label.classList.add("technical-task");
+  } else {
+    label.classList.add("user-story");
+  }
 }

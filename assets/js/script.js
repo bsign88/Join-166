@@ -32,6 +32,10 @@ async function loadContent(newContent, clickedId) {
     if (newContent === 'contacts.html') {
         renderContacts();
     }
+    // Überprüfe, ob die neue Seite die board-Seite ist und rufe dann renderTasks auf
+    if (newContent === 'board.html') {
+        renderTasks();
+    }
 }
 
 // Diese Funktion erstellt eine Markierung durch eine CSS Klasse für den Aktullen Menüpunkt
