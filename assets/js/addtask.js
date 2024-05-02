@@ -19,7 +19,8 @@ function addTask() {
         'title': title,
         'decription': description,
         'date': date,
-        'category': category
+        'category': category,
+        'column': todo
     }
 
     tasks.push(task);

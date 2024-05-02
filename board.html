@@ -1,4 +1,6 @@
-<section class="board">
+<script src="./assets/js/tasks.js"></script>
+
+<section class="board" onload="renderTasks()">
   <header class="board-top">
     <h1>Board</h1>
     <div class="action">
@@ -19,7 +21,7 @@
       <div class="column-title">
         To do<img src="./assets/img/icons/plus button.svg" />
       </div>
-      <div id="cards-todo">
+      <div id="cards-todo" class="cards">
         <div id="notasks" class="notasks">No tasks To Do</div>
       </div>
     </div>
@@ -28,12 +30,12 @@
       <div class="column-title">
         In progress<img src="./assets/img/icons/plus button.svg" />
       </div>
-      <div id="cards-progess">
+      <div id="cards-progess" class="cards">
         <div class="card" draggable="true" ondragstart="">
           <div class="label user-story">User Story</div>
           <div class="content">
             <div class="card-title">Kochwelt Page & Recipe Recommender</div>
-            <div class="text">
+            <div class="description">
               Build start page with recipe recommendation...
             </div>
           </div>
@@ -61,12 +63,12 @@
       <div class="column-title">
         Await feedback<img src="./assets/img/icons/plus button.svg" />
       </div>
-      <div id="cards-feedback">
+      <div id="cards-feedback" class="cards">
         <div class="card">
           <div class="label technical-task">Technical Task</div>
           <div class="content">
             <div class="card-title">HTML Base Template Creation</div>
-            <div class="text">Create reusable HTML base templates...</div>
+            <div class="description">Create reusable HTML base templates...</div>
           </div>
 
           <div class="card-footer">
@@ -85,7 +87,7 @@
       <div class="column-title">
         Done<img src="./assets/img/icons/plus button.svg" />
       </div>
-      <div id="cards-done"></div>
+      <div id="cards-done" class="cards"></div>
     </div>
   </section>
 </section>

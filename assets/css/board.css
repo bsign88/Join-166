@@ -118,6 +118,12 @@
   align-items: center;
 }
 
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .card {
   padding: 16px;
   gap: 10px;
@@ -181,7 +187,7 @@ rotate: 5deg;
   background-color: #4589ff;
 }
 
-.subtasks .text {
+.subtasks .description {
   font-size: 12px;
 }
 
@@ -212,6 +218,9 @@ rotate: 5deg;
   margin-left: -8px;
 }
 
+.d-none {
+  display: none;
+}
 
 /* Card-Overlay */
 
