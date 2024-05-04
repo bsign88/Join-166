@@ -22,22 +22,41 @@ async function init() {
 
 document.addEventListener("DOMContentLoaded", includeHTML);
 
+let previousContent = {}; // Dieses Objekt speichert den Inhalt und die ID
+
 async function loadContent(newContent, clickedId) {
     let contentDiv = document.getElementById('includeHtml');
+
+    // Speichern des aktuellen Inhalts und der aktuellen ID vor dem Laden neuer Inhalte
+    previousContent = {
+        html: contentDiv.innerHTML,
+        id: clickedId || null
+    };
+
     contentDiv.setAttribute('w3-include-html', newContent);
-    await includeHTML(); 
+    await includeHTML();
     updateSelectedMenuPoint(clickedId);
 
-    // Überprüfe, ob die neue Seite die Contacts-Seite ist und rufe dann renderContacts auf
     if (newContent === 'contacts.html') {
         renderContacts();
     }
-    // Überprüfe, ob die neue Seite die board-Seite ist und rufe dann renderTasks auf
     if (newContent === 'board.html') {
         renderTasks();
     }
 }
 
+function goBack() {
+    let contentDiv = document.getElementById('includeHtml');
+
+    // Überprüfen, ob zuvor gespeicherter Inhalt vorhanden ist
+    if (previousContent && previousContent.html) {
+        contentDiv.innerHTML = previousContent.html; // Wiederherstellung des gespeicherten Inhalts
+        updateSelectedMenuPoint(previousContent.id); // Aktualisieren des hervorgehobenen Menüpunktes
+    } else {
+        // Optional: Standardverhalten oder Weiterleitung, wenn kein gespeicherter Inhalt vorhanden ist
+        contentDiv.innerHTML = '<p>Kein vorheriger Inhalt verfügbar.</p>';
+    }
+}
 // Diese Funktion erstellt eine Markierung durch eine CSS Klasse für den Aktullen Menüpunkt
 
 function updateSelectedMenuPoint(newSelectedId) {
