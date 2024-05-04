@@ -32,10 +32,7 @@ function renderContacts() {
                 let firstInnerDiv = document.createElement('div');
                 firstInnerDiv.classList.add('firstInnerDiv');
                 firstInnerDiv.style.backgroundColor = contact.color;
-                let name = contact.name;
-                let nameParts = name.split(' ');
-                let initials = '';
-                nameParts.forEach(part => { initials += part.charAt(0); });
+                let initials = getInitials(contact.name);
                 firstInnerDiv.innerHTML = `${initials}`;
                 outerDiv.addEventListener('click', () => {
                     openContact(contactInformation, contact);
@@ -94,7 +91,7 @@ function openContact(contactInformation, contact) {
                 </div>
             </div>
     `;
-    contactInformation.classList.add('open');
+    document.getElementById(`user-initials-icon-${contact.id}`).style.backgroundColor = `${contact.color}`;
 }
 
 function openAddNewContact() {
@@ -187,20 +184,39 @@ async function createNewContact() {
     let color = document.getElementById('user-initial-icon-add').style.backgroundColor;
     let name = document.getElementById('add-input-name').value;
     let email = document.getElementById('add-input-email').value;
-    let phone =  document.getElementById('add-input-phone').value;
+    let phone = document.getElementById('add-input-phone').value;
     let nameParts = name.split(' ');
     let initials = '';
     nameParts.forEach(part => { initials += part.charAt(0); });
-    let newContact = {
-        "name": name,
-        "email": email,
-        "phone": phone,
-        "color": color,
-        "initials": initials
-    }
-    contacts.push(newContact);
-    await setItem('contacts', contacts);
-    closeAddNewContact();
+
+    // Laden der Benutzer-ID und Warten, bis sie verfügbar ist
+    await loadUserId().then(async (userId) => {
+        // Neuer Wert für die ID des neuen Kontakts
+        let id = userId + 1;
+
+        let newContact = {
+            "name": name,
+            "email": email,
+            "phone": phone,
+            "color": color,
+            "id": id,
+            "initials": initials
+        };
+
+        // Hinzufügen des neuen Kontakts zur Kontaktliste
+        contacts.push(newContact);
+
+        // Aktualisieren der Kontaktliste in der Datenbank
+        await setItem('contacts', contacts);
+
+        // Aktualisieren der Benutzer-ID in der Datenbank
+        await setItem('userId', id);
+    });
+
+    // Schließen des Formulars zur Hinzufügung neuer Kontakte
+    closeAddNewContact(name, phone, email);
+
+    // Aktualisieren der Kontaktansicht
     renderContacts();
 }
 
