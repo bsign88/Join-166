@@ -14,25 +14,6 @@ async function getItem(key) {
     return fetch(url).then(res => res.json());
 }
 
-async function loadUserId(key) {
-    const url = `${STORAGE_URL}?key=${key}&token=${STORAGE_TOKEN}`;
-    const payload = { key, value, token: STORAGE_TOKEN };
-    return userId = await fetch(url);
-}
-
-async function setUserId(key, value) {
-    const payload = { key, value, token: STORAGE_TOKEN };
-    return fetch(STORAGE_URL, { method: 'POST', body: payload});
-}
-
-async function loadUsers(){
-    try {
-        users = JSON.parse(await getItem('users'));
-    } catch(e){
-        console.error('Loading error:', e);
-    }
-}
-
 async function loadContacts(){
     try {
         contactsAsText = await getItem('contacts');

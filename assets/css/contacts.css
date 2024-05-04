@@ -215,17 +215,31 @@
 
 .contacts-aside {
     width: 453px;
-    height: 928px;
+    height: calc(100% - 96px);
     position: fixed;
     top: 96px;
     left: 232px;
     background: #FFFFFF;
     box-shadow: 4px 0px 6px 0px #00000014;
-    /* // On click
-    // Navigate to: "Contacts default";
-    // Animate: Instant;
-    animation-duration: 0ms; */
+    overflow-y:scroll;
+    overflow-x: hidden;
 }
+
+.contacts-aside::-webkit-scrollbar {
+    width: 1vw;
+}
+
+.contacts-aside::-webkit-scrollbar-thumb {
+    background-color: #A8A8A8;
+    border-radius: 8px;
+    border: 4px solid var(--white-color);
+    cursor: pointer;
+}
+
+.contacts-aside::-webkit-scrollbar-track {
+    background-color: var(--white-color);
+}
+
 
 .aside-top-button-bar {
     display: flex;
@@ -264,21 +278,6 @@
 
 .outerDiv:hover .contactDivName {
     color: var(--white-color);
-}
-
-.contactInformation {
-    position: fixed;
-    top: 300px;
-    
-    right: -100%; /* Startposition: außerhalb des Bildschirms rechts */
-    width: 50%; /* Breite der Kontaktansicht */
-    height: 100%; /* Höhe der Kontaktansicht */
-    z-index: 1000;
-    transition: right 0.1s ease-in-out; /* Transitionseffekt für rechte Position */
-}
-
-.contactInformation.open {
-    right: -58px; /* Endposition: auf dem Bildschirm rechts */
 }
 
 .firstInnerDiv {
