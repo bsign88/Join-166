@@ -23,3 +23,11 @@ async function loadContacts(){
     }
 }
 
+async function loadUserId() {
+    try {
+        userIdAsText = await getItem('userID');
+        userId = JSON.parse(userIdAsText.data.value);
+    } catch(e){
+        console.error('Loading userID error:', e);
+    }
+}

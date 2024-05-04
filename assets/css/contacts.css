@@ -386,6 +386,7 @@
     font-size: 47px;
     font-weight: 500;
     gap: 10px;
+    cursor: pointer;
 }
 
 .user-initials-icon-add {
