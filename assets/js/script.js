@@ -26,16 +26,25 @@ let previousContent = {}; // Dieses Objekt speichert den Inhalt und die ID
 
 async function loadContent(newContent, clickedId) {
     let contentDiv = document.getElementById('includeHtml');
+    let helpLogo = document.getElementById('helpLogo'); // Zugriff auf das Hilfe-Logo
 
-    // Speichern des aktuellen Inhalts und der aktuellen ID vor dem Laden neuer Inhalte
+    // Speichern des aktuellen Inhalts und zusätzliche Speicherung der URL
     previousContent = {
         html: contentDiv.innerHTML,
-        id: clickedId || null
+        id: clickedId || null,
+        url: contentDiv.getAttribute('w3-include-html') // Speichere die aktuelle URL
     };
 
     contentDiv.setAttribute('w3-include-html', newContent);
-    await includeHTML();
-    updateSelectedMenuPoint(clickedId);
+    await includeHTML(); // Asynchrones Laden des neuen Inhalts
+    updateSelectedMenuPoint(clickedId); // Aktualisierung des hervorgehobenen Menüpunkts
+
+    // Überprüfen, ob die neue Seite 'help.html' ist, und entsprechend das Logo ausblenden
+    if (newContent === 'help.html') {
+        helpLogo.classList.add('d-none');
+    } else {
+        helpLogo.classList.remove('d-none');
+    }
 
     if (newContent === 'contacts.html') {
         renderContacts();
@@ -47,16 +56,23 @@ async function loadContent(newContent, clickedId) {
 
 function goBack() {
     let contentDiv = document.getElementById('includeHtml');
+    let helpLogo = document.getElementById('helpLogo'); // Zugriff auf das Hilfe-Logo
 
-    // Überprüfen, ob zuvor gespeicherter Inhalt vorhanden ist
     if (previousContent && previousContent.html) {
         contentDiv.innerHTML = previousContent.html; // Wiederherstellung des gespeicherten Inhalts
+        contentDiv.setAttribute('w3-include-html', previousContent.url); // Setze die vorherige URL zurück
         updateSelectedMenuPoint(previousContent.id); // Aktualisieren des hervorgehobenen Menüpunktes
+
+        // Wenn die vorherige Seite nicht 'help.html' war, stelle sicher, dass das Logo eingeblendet ist
+        if (previousContent.url !== 'help.html') {
+            helpLogo.classList.remove('d-none');
+        }
     } else {
-        // Optional: Standardverhalten oder Weiterleitung, wenn kein gespeicherter Inhalt vorhanden ist
         contentDiv.innerHTML = '<p>Kein vorheriger Inhalt verfügbar.</p>';
     }
 }
+
+
 // Diese Funktion erstellt eine Markierung durch eine CSS Klasse für den Aktullen Menüpunkt
 
 function updateSelectedMenuPoint(newSelectedId) {
@@ -115,4 +131,8 @@ function autoFillEmail() {
   passwordInput.value = 'mypassword123'; 
   passwordInput.type = 'password';
   passwordIcon.src = './assets/img/icons/visibility_off.png'; 
+}
+
+function noHelpLogo(){
+    document.getElementById('helpLogo').classList.add('d-none');
 }
