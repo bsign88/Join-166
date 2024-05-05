@@ -72,7 +72,6 @@ function openContact(contactInformation, contact) {
     // Aktuell ausgewählten Kontakt hervorheben
     let selectedContactDiv = document.getElementById(`contact${contact.id}`);
     selectedContactDiv.classList.add('selectedContact');
-
     if (!contactInformation) {
         console.error('contactInformation element is not found!');
         return;
@@ -83,10 +82,12 @@ function openContact(contactInformation, contact) {
                 <div class="user-edit-delete">
                     <span class="contacts-name" id="contacts-name-${contact.id}">${contact.name}</span>
                     <div class="contacts-change-link">
-                        <div class="contacts-icon-text" id="contacts-edit-${contact.id}" onclick="openEditContact(${contact.id})"><img class="contacts-change-icons"
-                                src="./assets/img/icons/pen-icon.svg">Edit</div>
-                        <div class="contacts-icon-text" id="contacts-delete-${contact.id}"><img class="contacts-change-icons"
-                                src="./assets/img/icons/trash-icon.svg">Delete</div>
+                        <div class="contacts-icon-text" id="contacts-edit-${contact.id}" onclick="openEditContact(${contact.id})">
+                            <img class="contacts-change-icons" src="./assets/img/icons/pen-icon.svg">Edit
+                        </div>
+                        <div class="contacts-icon-text" id="contacts-delete-${contact.id}">
+                            <img class="contacts-change-icons" src="./assets/img/icons/trash-icon.svg">Delete
+                        </div>
                     </div>
                 </div>
             </div>
@@ -110,6 +111,7 @@ function openAddNewContact() {
     let overlay = document.getElementById("background-overlay");
     window.style.display = "flex";
     overlay.style.display = "block";
+    resetInputs();
 }
 
 function closeAddNewContact() {
@@ -117,22 +119,41 @@ function closeAddNewContact() {
     let overlay = document.getElementById("background-overlay");
     window.style.display = "none";
     overlay.style.display = "none";
+    resetInputs();
 }
 
-function openEditContact(id) {
+function resetInputs() {
+    let name = document.getElementById('edit-input-name');
+    let email = document.getElementById('edit-input-email');
+    let phone = document.getElementById('edit-input-phone');
+    name.value = '';
+    email.value = '';
+    phone.value = '';
+}
+
+function openEditContact(contactId) {
     let window = document.getElementById("edit-contact-window");
     let overlay = document.getElementById("background-overlay");
     window.style.display = "flex";
     overlay.style.display = "block";
-    let user = contacts[id];
+    foundContact = getUser(contactId);
     let name = document.getElementById('edit-input-name');
     let email = document.getElementById('edit-input-email');
     let phone = document.getElementById('edit-input-phone');
     let userInitials = document.getElementById('user-initial-icon-edit');
-    name.value = user.name;
-    email.value = user.email;
-    phone.value = user.phone;
-    userInitials.innerHTML = user.initials;
+    name.value = foundContact.name;
+    email.value = foundContact.email;
+    phone.value = foundContact.phone;
+    userInitials.innerHTML = foundContact.initials;
+    userInitials.style.backgroundColor = foundContact.color;
+
+}
+
+function getUser(id) {
+    foundContact = contacts.find(function (contact) {
+        return contact.id === id;
+    });
+    return foundContact;
 }
 
 async function saveEditContact() {
@@ -141,20 +162,39 @@ async function saveEditContact() {
     let phone = document.getElementById('edit-input-phone').value;
     let color = document.getElementById('user-initial-icon-edit').style.backgroundColor;
     let initials = getInitials(name);
-    // hier muss der Code für den update des Kontakts rein updateContact(name, email, phone, color, initials)
+    foundContact.name = name;
+    foundContact.email = email;
+    foundContact.phone = phone;
+    foundContact.color = color;
+    foundContact.initials = initials;
+    updateContact();
     await setItem('contacts', contacts);
-    closeEditContact(name, phone, email);
+    closeEditContact();
     renderContacts();
+    let contactInformation = document.getElementById('contacts-content');
+    openContact(contactInformation, foundContact);
 }
 
-function closeEditContact(name, phone, email) {
+function updateContact() {
+    // Find the index of the foundContact object
+    let index = contacts.findIndex(function (contact) {
+        return contact.id === foundContact.id;
+    });
+
+    // If the contact is found, update its values
+    if (index !== -1) {
+        contacts[index] = foundContact; // Replace the old object with the updated one
+    } else {
+        console.log("Contact not found in the contacts array.");
+    }
+}
+
+function closeEditContact() {
     let window = document.getElementById("edit-contact-window");
     let overlay = document.getElementById("background-overlay");
     window.style.display = "none";
     overlay.style.display = "none";
-    name.value = '';
-    phone.value = '';
-    email.value = '';
+    resetInputs();
 }
 
 function openColorPicker() {
@@ -215,7 +255,7 @@ async function createNewContact() {
 
 
     // Schließen des Formulars zur Hinzufügung neuer Kontakte
-    closeAddNewContact(name, phone, email);
+    closeAddNewContact();
 
     // Aktualisieren der Kontaktansicht
     renderContacts();
@@ -226,19 +266,4 @@ function getInitials(name) {
     let initials = '';
     nameParts.forEach(part => { initials += part.charAt(0); });
     return initials;
-}
-
-function setupHoverEffect() {
-    const blue = document.getElementById('cancel-blue');
-    const button = document.getElementById('delete-add-contact-button');
-
-    // Change the image when the mouse enters the button
-    button.addEventListener('mouseenter', function() {
-        blue.src = './assets/img/icons/close_blue.svg';
-    });
-
-    // Reset the image when the mouse leaves the button
-    button.addEventListener('mouseleave', function() {
-        blue.src = './assets/img/icons/cancel.svg';
-    });
 }

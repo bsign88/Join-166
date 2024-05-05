@@ -18,7 +18,6 @@ async function includeHTML() {
 async function init() {
     includeHTML();
     loadContacts();
-    setupHoverEffect();
 } 
 
 document.addEventListener("DOMContentLoaded", includeHTML);
