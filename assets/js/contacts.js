@@ -85,7 +85,7 @@ function openContact(contactInformation, contact) {
                         <div class="contacts-icon-text" id="contacts-edit-${contact.id}" onclick="openEditContact(${contact.id})">
                             <img class="contacts-change-icons" src="./assets/img/icons/pen-icon.svg">Edit
                         </div>
-                        <div class="contacts-icon-text" id="contacts-delete-${contact.id}">
+                        <div class="contacts-icon-text" id="contacts-delete-${contact.id}" onclick="deleteContact(${contact.id})">
                             <img class="contacts-change-icons" src="./assets/img/icons/trash-icon.svg">Delete
                         </div>
                     </div>
@@ -175,6 +175,30 @@ async function saveEditContact() {
     openContact(contactInformation, foundContact);
 }
 
+async function deleteContact(contactId) {
+    foundContact = getUser(contactId);
+    // Find the index of the foundContact object
+    let index = contacts.findIndex(function (contact) {
+        return contact.id === foundContact.id;
+    });
+    // If the contact is found, delete it from the array
+    if (index !== -1) {
+        contacts.splice(index, 1);
+    } else {
+        console.log("Contact not found in the contacts array.");
+    }
+    await setItem('contacts', contacts);
+    renderContacts();
+    let contactInformation = document.getElementById('contacts-content');
+    contactInformation.innerHTML = '';
+}
+
+async function editDeleteContact() {
+    contactId = foundContact.id;
+    deleteContact(contactId);
+    closeEditContact();
+}
+
 function updateContact() {
     // Find the index of the foundContact object
     let index = contacts.findIndex(function (contact) {
@@ -259,6 +283,10 @@ async function createNewContact() {
 
     // Aktualisieren der Kontaktansicht
     renderContacts();
+
+    // Setz den ausgewählten Kontakt zurück zu Leer
+    let contactInformation = document.getElementById('contacts-content');
+    contactInformation.innerHTML = '';
 }
 
 function getInitials(name) {
