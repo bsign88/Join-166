@@ -3,6 +3,7 @@
   width: fit-content;
   font-size: 20px;
   font-weight: 400;
+  padding-bottom: 64px;
 }
 
 .asterisk {
@@ -145,71 +146,12 @@ select {
 footer {
   display: flex;
   justify-content: space-between;
-  margin-top: 146px;
+  margin-bottom: 79px;
 }
 
 .buttons {
   display: flex;
   gap: 16px;
-}
-
-.clear-form {
-  width: 110px;
-  height: 56px;
-  border-radius: 10px;
-  border: 1px solid var(--main-color);
-  background-color: var(--background-color);
-  color: var(--main-color);
-  font-size: 20px;
-  font-weight: 400;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.clear-form:hover {
-  border: 2px solid var(--second-color);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  color: var(--second-color);
-}
-
-.clear-form:active {
-  border: 2px solid var(--menu-selected-color);
-  color: var(--menu-selected-color);
-}
-
-.clear-form img {
-  margin-left: 4px;
-}
-
-.create-task {
-  width: 183px;
-  height: 56px;
-  border-radius: 10px;
-  border: 1px solid var(--main-color);
-  background-color: var(--main-color);
-  color: white;
-  font-size: 21px;
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.create-task img {
-  margin-left: 4px;
-}
-
-.create-task:hover {
-  background-color: var(--second-color);
-  border: none;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.create-task:active {
-  background-color: var(--menu-selected-color);
 }
 
 /* dropdown */
@@ -291,7 +233,6 @@ footer {
 @media (max-width: 950px) {
   .addtask {
     margin: 110px 20px 0 20px;
-    padding-bottom: 75px;
   }
 
   footer {

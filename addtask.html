@@ -38,21 +38,20 @@
 
         <label>Prio</label>
         <div class="prio" id="prio">
-          <label
-            ><input id="urgent" type="radio" name="prio" value="1" /><span
-              >Urgent<img
+          <label><input id="urgent" type="radio" name="prio" value="urgent" onclick="changeUrgentIcon()" /><span
+              >Urgent<img id="urgent-icon"
                 src="./assets/img/icons/prio_urgent_default.svg" /></span
           ></label>
           <label
-            ><input id="medium" type="radio" name="prio" value="2" /><span
-              >Medium<img
+            ><input id="medium" type="radio" name="prio" value="medium" onclick="changeMediumIcon()" /><span
+              >Medium<img id="medium-icon"
                 src="./assets/img/icons/prio_medium_default.svg" /></span
           ></label>
           <label
-            ><input id="low" type="radio" name="prio" value="3" /><span
-              >Low<img src="./assets/img/icons/prio_low_default.svg" /></span
+            ><input id="low" type="radio" name="prio" value="low" onclick="changeLowIcon()" /><span
+              >Low<img id="low-icon" src="./assets/img/icons/prio_low_default.svg" /></span
           ></label>
-        </div>
+       </div>
 
         <label for="category">Category<span class="asterisk">*</span></label>
         <select required id="category" name="category">
@@ -75,13 +74,16 @@
         <sup><span class="asterisk">* </span></sup>This field is required
       </p>
       <div class="buttons">
-        <button class="clear-form" id="clear-form">
+        <button class="secondary-button" id="clear-form">
           Clear<img src="./assets/img/icons/cancel.svg" />
         </button>
-        <button class="create-task" id="create-task" onclick="addTask()">
+        <button id="create-task" class="primary-button"  onclick="addTask()">
           Create Task<img src="./assets/img/icons/check.svg" />
         </button>
       </div>
     </footer>
   </form>
 </section>
+
+
+<!-- create-task clear-form

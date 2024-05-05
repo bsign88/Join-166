@@ -22,13 +22,30 @@ async function init() {
 
 document.addEventListener("DOMContentLoaded", includeHTML);
 
+let previousContent = {}; // Dieses Objekt speichert den Inhalt und die ID
+
 async function loadContent(newContent, clickedId) {
     let contentDiv = document.getElementById('includeHtml');
-    contentDiv.setAttribute('w3-include-html', newContent);
-    await includeHTML(); 
-    updateSelectedMenuPoint(clickedId);
+    let helpLogo = document.getElementById('helpLogo'); // Zugriff auf das Hilfe-Logo
 
-    // Überprüfe, ob die neue Seite die Contacts-Seite ist und rufe dann renderContacts auf
+    // Speichern des aktuellen Inhalts und zusätzliche Speicherung der URL
+    previousContent = {
+        html: contentDiv.innerHTML,
+        id: clickedId || null,
+        url: contentDiv.getAttribute('w3-include-html') // Speichere die aktuelle URL
+    };
+
+    contentDiv.setAttribute('w3-include-html', newContent);
+    await includeHTML(); // Asynchrones Laden des neuen Inhalts
+    updateSelectedMenuPoint(clickedId); // Aktualisierung des hervorgehobenen Menüpunkts
+
+    // Überprüfen, ob die neue Seite 'help.html' ist, und entsprechend das Logo ausblenden
+    if (newContent === 'help.html') {
+        helpLogo.classList.add('d-none');
+    } else {
+        helpLogo.classList.remove('d-none');
+    }
+
     if (newContent === 'contacts.html') {
         renderContacts();
     }
@@ -37,6 +54,25 @@ async function loadContent(newContent, clickedId) {
         renderTasks();
     }
 }
+
+function goBack() {
+    let contentDiv = document.getElementById('includeHtml');
+    let helpLogo = document.getElementById('helpLogo'); // Zugriff auf das Hilfe-Logo
+
+    if (previousContent && previousContent.html) {
+        contentDiv.innerHTML = previousContent.html; // Wiederherstellung des gespeicherten Inhalts
+        contentDiv.setAttribute('w3-include-html', previousContent.url); // Setze die vorherige URL zurück
+        updateSelectedMenuPoint(previousContent.id); // Aktualisieren des hervorgehobenen Menüpunktes
+
+        // Wenn die vorherige Seite nicht 'help.html' war, stelle sicher, dass das Logo eingeblendet ist
+        if (previousContent.url !== 'help.html') {
+            helpLogo.classList.remove('d-none');
+        }
+    } else {
+        contentDiv.innerHTML = '<p>Kein vorheriger Inhalt verfügbar.</p>';
+    }
+}
+
 
 // Diese Funktion erstellt eine Markierung durch eine CSS Klasse für den Aktullen Menüpunkt
 
