@@ -28,6 +28,7 @@ function renderContacts() {
             contactsByLetter.forEach(contact => {
                 let outerDiv = document.createElement('div');
                 outerDiv.classList.add('outerDiv');
+                outerDiv.setAttribute('id', `contact${contact.id}`);
 
                 let firstInnerDiv = document.createElement('div');
                 firstInnerDiv.classList.add('firstInnerDiv');
@@ -62,6 +63,16 @@ function renderContacts() {
 
 //zeigt die Kontaktdaten des ausgewählten Kontakt
 function openContact(contactInformation, contact) {
+    // Alle Kontakte zurücksetzen
+    let allContactDivs = document.querySelectorAll('.outerDiv');
+    allContactDivs.forEach(div => {
+        div.classList.remove('selectedContact');
+    });
+
+    // Aktuell ausgewählten Kontakt hervorheben
+    let selectedContactDiv = document.getElementById(`contact${contact.id}`);
+    selectedContactDiv.classList.add('selectedContact');
+
     if (!contactInformation) {
         console.error('contactInformation element is not found!');
         return;
@@ -131,16 +142,9 @@ async function saveEditContact() {
     let name = document.getElementById('edit-input-name').value;
     let email = document.getElementById('edit-input-email').value;
     let phone = document.getElementById('edit-input-phone').value;
-    let color = document.getElementById('user-initial-icon-edit').style.backgroundColor;;
+    let color = document.getElementById('user-initial-icon-edit').style.backgroundColor;
     let initials = getInitials(name);
-    let newContact = {
-        "name": name,
-        "email": email,
-        "phone": phone,
-        "color": color,
-        "initials": initials
-    }
-    contacts.push(newContact);
+    // hier muss der Code für den update des Kontakts rein updateContact(name, email, phone, color, initials)
     await setItem('contacts', contacts);
     closeEditContact(name, phone, email);
     renderContacts();
@@ -190,28 +194,28 @@ async function createNewContact() {
     nameParts.forEach(part => { initials += part.charAt(0); });
 
     // Laden der Benutzer-ID und Warten, bis sie verfügbar ist
-    await loadUserId().then(async (userId) => {
-        // Neuer Wert für die ID des neuen Kontakts
-        let id = userId + 1;
+    await loadUserId()
+    // Neuer Wert für die ID des neuen Kontakts
+    let id = userId + 1;
 
-        let newContact = {
-            "name": name,
-            "email": email,
-            "phone": phone,
-            "color": color,
-            "id": id,
-            "initials": initials
-        };
+    let newContact = {
+        "name": name,
+        "email": email,
+        "phone": phone,
+        "color": color,
+        "id": id,
+        "initials": initials
+    };
 
-        // Hinzufügen des neuen Kontakts zur Kontaktliste
-        contacts.push(newContact);
+    // Hinzufügen des neuen Kontakts zur Kontaktliste
+    contacts.push(newContact);
 
-        // Aktualisieren der Kontaktliste in der Datenbank
-        await setItem('contacts', contacts);
+    // Aktualisieren der Kontaktliste in der Datenbank
+    await setItem('contacts', contacts);
 
-        // Aktualisieren der Benutzer-ID in der Datenbank
-        await setItem('userId', id);
-    });
+    // Aktualisieren der Benutzer-ID in der Datenbank
+    await setItem('userId', id);
+
 
     // Schließen des Formulars zur Hinzufügung neuer Kontakte
     closeAddNewContact(name, phone, email);

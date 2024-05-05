@@ -273,11 +273,12 @@
 }
 
 .outerDiv:hover {
-    background-color: var(--main-color);
+    background-color: #F6F7F8;
 }
 
-.outerDiv:hover .contactDivName {
-    color: var(--white-color);
+.selectedContact {
+    background-color: var(--main-color);
+    /* Weitere Stile für den ausgewählten Kontakt */
 }
 
 .firstInnerDiv {
