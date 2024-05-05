@@ -112,14 +112,11 @@ function openAddNewContact() {
     overlay.style.display = "block";
 }
 
-function closeAddNewContact(name, phone, email) {
+function closeAddNewContact() {
     let window = document.getElementById("add-contact-window");
     let overlay = document.getElementById("background-overlay");
     window.style.display = "none";
     overlay.style.display = "none";
-    name.value = '';
-    phone.value = '';
-    email.value = '';
 }
 
 function openEditContact(id) {
@@ -229,4 +226,19 @@ function getInitials(name) {
     let initials = '';
     nameParts.forEach(part => { initials += part.charAt(0); });
     return initials;
+}
+
+function setupHoverEffect() {
+    const blue = document.getElementById('cancel-blue');
+    const button = document.getElementById('delete-add-contact-button');
+
+    // Change the image when the mouse enters the button
+    button.addEventListener('mouseenter', function() {
+        blue.src = './assets/img/icons/close_blue.svg';
+    });
+
+    // Reset the image when the mouse leaves the button
+    button.addEventListener('mouseleave', function() {
+        blue.src = './assets/img/icons/cancel.svg';
+    });
 }
