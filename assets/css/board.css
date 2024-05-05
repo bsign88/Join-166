@@ -124,6 +124,10 @@
   gap: 16px;
 }
 
+.cards-highlight {
+  background-color: #e7e7e7;
+}
+
 .card {
   padding: 16px;
   gap: 10px;

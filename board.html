@@ -21,7 +21,7 @@
       <div class="column-title">
         To do<img src="./assets/img/icons/plus button.svg" />
       </div>
-      <div id="cards-todo" class="cards">
+      <div id="todo" class="cards" ondrop="moveTo('todo')" ondragleave="removeHighlight('todo')" ondragover="allowDrop(event); highlight('todo')">
         <div id="notasks" class="notasks d-none">No tasks To Do</div>
       </div>
     </div>
@@ -30,8 +30,8 @@
       <div class="column-title">
         In progress<img src="./assets/img/icons/plus button.svg" />
       </div>
-      <div id="cards-progress" class="cards">
-        <div class="card" draggable="true" ondragstart="">
+      <div id="progress" class="cards" ondrop="moveTo('progress')" ondragleave="removeHighlight('todo')" ondragover="allowDrop(event); highlight('progress')">
+        <div class="card" draggable="true">
           <div class="label user-story">User Story</div>
           <div class="content">
             <div class="card-title">Kochwelt Page & Recipe Recommender</div>
@@ -63,7 +63,7 @@
       <div class="column-title">
         Await feedback<img src="./assets/img/icons/plus button.svg" />
       </div>
-      <div id="cards-feedback" class="cards">
+      <div id="feedback" class="cards" ondrop="moveTo('feedback')" ondragleave="removeHighlight('todo')" ondragover="allowDrop(event); highlight('feedback')">
         <div class="card">
           <div class="label technical-task">Technical Task</div>
           <div class="content">
@@ -87,7 +87,7 @@
       <div class="column-title">
         Done<img src="./assets/img/icons/plus button.svg" />
       </div>
-      <div id="cards-done" class="cards"></div>
+      <div id="done" class="cards" ondrop="moveTo('done')" ondragleave="removeHighlight('todo')" ondragover="allowDrop(event); highlight('done')"></div>
     </div>
   </section>
 </section>

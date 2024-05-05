@@ -43,12 +43,12 @@ function openDropdown() {
 
   }
 
-  
+  // Ersetzt jeweils das Icon bei der Prio-Auswahl
+
   function changeUrgentIcon() {
     let urgent = document.getElementById('urgent');
     if (urgent.checked) {
       document.getElementById('urgent-icon').src = "./assets/img/icons/prio_urgent_active.svg";
-    } else {
       document.getElementById('medium-icon').src = "./assets/img/icons/prio_medium_default.svg";
       document.getElementById('low-icon').src = "./assets/img/icons/prio_low_default.svg";
     }
@@ -58,7 +58,6 @@ function openDropdown() {
     let medium = document.getElementById('medium');
     if (medium.checked) {
       document.getElementById('medium-icon').src = "./assets/img/icons/prio_medium_active.svg";
-    } else {
       document.getElementById('urgent-icon').src = "./assets/img/icons/prio_urgent_default.svg";
       document.getElementById('low-icon').src = "./assets/img/icons/prio_low_default.svg";
     }
@@ -68,7 +67,6 @@ function openDropdown() {
     let low = document.getElementById('low');
     if (low.checked) {
       document.getElementById('low-icon').src = "./assets/img/icons/prio_low_active.svg";
-    } else {
       document.getElementById('urgent-icon').src = "./assets/img/icons/prio_urgent_default.svg";
       document.getElementById('medium-icon').src = "./assets/img/icons/prio_medium_default.svg";
     }
