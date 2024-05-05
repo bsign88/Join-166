@@ -1,64 +1,83 @@
-// Sortiere die Kontakte alphabetisch nach dem Namen
-
-
 // Funktion zur Anzeige der Kontaktliste
 function renderContacts() {
-    contacts.sort((a, b) => (a.name > b.name) ? 1 : -1);
-    let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-    let contactsDiv = document.getElementById('contacts-list');
-    let contactInformation = document.getElementById('contacts-content');
+    // Sort contacts alphabetically by name
+    contacts.sort((a, b) => a.name.localeCompare(b.name));
+
+    // Clear previous content
+    const contactsDiv = document.getElementById('contacts-list');
+    const contactInformation = document.getElementById('contacts-content');
     contactsDiv.innerHTML = '';
-    alphabet.forEach(letter => {
-        let contactsByLetter = contacts.filter(contact => contact.name.toLowerCase().startsWith(letter));
 
-        if (contactsByLetter.length > 0) {
-            let alphabetDiv = document.createElement('div');
-            alphabetDiv.classList.add('contacts-list-alphabet');
-            alphabetDiv.textContent = letter.toUpperCase();
-            contactsDiv.appendChild(alphabetDiv);
-
-            let separatorDiv = document.createElement('div');
-            separatorDiv.classList.add('contacts-list-separator');
-            contactsDiv.appendChild(separatorDiv);
-
-            let contactsByLetterDiv = document.createElement('div');
-            contactsByLetterDiv.id = `${letter}-contacts`;
-            contactsDiv.appendChild(contactsByLetterDiv);
-
-            contactsByLetter.forEach(contact => {
-                let outerDiv = document.createElement('div');
-                outerDiv.classList.add('outerDiv');
-                outerDiv.setAttribute('id', `contact${contact.id}`);
-
-                let firstInnerDiv = document.createElement('div');
-                firstInnerDiv.classList.add('firstInnerDiv');
-                firstInnerDiv.style.backgroundColor = contact.color;
-                let initials = getInitials(contact.name);
-                firstInnerDiv.innerHTML = `${initials}`;
-                outerDiv.addEventListener('click', () => {
-                    openContact(contactInformation, contact);
-                });
-
-                let secondInnerDiv = document.createElement('div');
-                secondInnerDiv.classList.add('secondInnerDiv');
-
-                let contactDivName = document.createElement('div');
-                contactDivName.classList.add('contactDivName');
-                contactDivName.textContent = contact.name;
-                let contactDivEmail = document.createElement('div');
-                contactDivEmail.classList.add('contactDivEmail');
-                contactDivEmail.textContent = contact.email;
-
-                secondInnerDiv.appendChild(contactDivName);
-                secondInnerDiv.appendChild(contactDivEmail);
-
-                outerDiv.appendChild(firstInnerDiv);
-                outerDiv.appendChild(secondInnerDiv);
-
-                contactsByLetterDiv.appendChild(outerDiv);
-            });
+    // Group contacts by the first letter of their name
+    const contactsByLetter = {};
+    contacts.forEach(contact => {
+        const firstLetter = contact.name.charAt(0).toLowerCase();
+        if (!contactsByLetter[firstLetter]) {
+            contactsByLetter[firstLetter] = [];
         }
+        contactsByLetter[firstLetter].push(contact);
     });
+
+    // Render contacts for each letter
+    Object.entries(contactsByLetter).forEach(([letter, contacts]) => {
+        const alphabetDiv = createAlphabetDiv(letter.toUpperCase());
+        const contactsByLetterDiv = createContactsByLetterDiv(letter);
+        contacts.forEach(contact => {
+            const outerDiv = createOuterDiv(contact);
+            contactsByLetterDiv.appendChild(outerDiv);
+        });
+        contactsDiv.appendChild(alphabetDiv);
+        contactsDiv.appendChild(contactsByLetterDiv);
+    });
+    
+    // Function to create alphabet div
+    function createAlphabetDiv(letter) {
+        const alphabetDiv = document.createElement('div');
+        alphabetDiv.classList.add('contacts-list-alphabet');
+        alphabetDiv.textContent = letter;
+        return alphabetDiv;
+    }
+
+    // Function to create contacts by letter div
+    function createContactsByLetterDiv(letter) {
+        const contactsByLetterDiv = document.createElement('div');
+        contactsByLetterDiv.id = `${letter}-contacts`;
+        return contactsByLetterDiv;
+    }
+
+    // Function to create outer div for each contact
+    function createOuterDiv(contact) {
+        const outerDiv = document.createElement('div');
+        outerDiv.classList.add('outerDiv');
+        outerDiv.setAttribute('id', `contact${contact.id}`);
+        outerDiv.addEventListener('click', () => {
+            openContact(contactInformation, contact);
+        });
+
+        const firstInnerDiv = document.createElement('div');
+        firstInnerDiv.classList.add('firstInnerDiv');
+        firstInnerDiv.style.backgroundColor = contact.color;
+        firstInnerDiv.innerHTML = getInitials(contact.name);
+
+        const secondInnerDiv = document.createElement('div');
+        secondInnerDiv.classList.add('secondInnerDiv');
+
+        const contactDivName = document.createElement('div');
+        contactDivName.classList.add('contactDivName');
+        contactDivName.textContent = contact.name;
+
+        const contactDivEmail = document.createElement('div');
+        contactDivEmail.classList.add('contactDivEmail');
+        contactDivEmail.textContent = contact.email;
+
+        secondInnerDiv.appendChild(contactDivName);
+        secondInnerDiv.appendChild(contactDivEmail);
+
+        outerDiv.appendChild(firstInnerDiv);
+        outerDiv.appendChild(secondInnerDiv);
+
+        return outerDiv;
+    }
 }
 
 //zeigt die Kontaktdaten des ausgewählten Kontakt
@@ -85,7 +104,7 @@ function openContact(contactInformation, contact) {
                         <div class="contacts-icon-text" id="contacts-edit-${contact.id}" onclick="openEditContact(${contact.id})">
                             <img class="contacts-change-icons" src="./assets/img/icons/pen-icon.svg">Edit
                         </div>
-                        <div class="contacts-icon-text" id="contacts-delete-${contact.id}" onclick="deleteContact(${contact.id})">
+                        <div class="contacts-icon-text" id="contacts-delete-${contact.id}" onclick="areYouSureToDelete(${contact.id})">
                             <img class="contacts-change-icons" src="./assets/img/icons/trash-icon.svg">Delete
                         </div>
                     </div>
@@ -95,11 +114,11 @@ function openContact(contactInformation, contact) {
             <div class="contacts-information-box">
                 <div class="contact-details-box">
                     <p class="contacts-info-object-headline">Email</p>
-                    <a class="contacts-info-object-email" id="contacts-email-${contact.id}">${contact.email}</a>
+                    <a class="contacts-info-object-email" id="contacts-email-${contact.id}" href="mailto:${contact.email}">${contact.email}</a>
                 </div>
                 <div class="contact-details-box">
                     <p class="contacts-info-object-headline">Phone</p>
-                    <a class="contacts-info-object-phone" id="contacts-phone-${contact.id}">${contact.phone}</a>
+                    <a class="contacts-info-object-phone" id="contacts-phone-${contact.id}" href="tel:${contact.phone}">${contact.phone}</a>
                 </div>
             </div>
     `;
@@ -112,6 +131,10 @@ function openAddNewContact() {
     window.style.display = "flex";
     overlay.style.display = "block";
     resetInputs();
+    document.getElementById('add-contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        createNewContact(); // Call your function to add the contact
+    });
 }
 
 function closeAddNewContact() {
@@ -294,4 +317,53 @@ function getInitials(name) {
     let initials = '';
     nameParts.forEach(part => { initials += part.charAt(0); });
     return initials;
+}
+
+function areYouSureToDelete(id) {
+    let confirmDeletion = document.getElementById('questionDiv');
+    let blur = document.getElementById('background-overlay');
+    let yes = document.getElementById('yes');
+    let no = document.getElementById('no');
+    confirmDeletion.style.display = 'flex';
+    blur.style.zIndex = '29';
+    if (id == 'edit') {
+        // Change the onclick function
+        yes.onclick = function() {
+            deletionChoice('edit');
+        };
+        no.onclick = function() {
+            denyDeletion('edit');
+        };
+    } else {
+        yes.onclick = function() {
+            deletionChoice(id);
+        }
+        no.onclick = function() {
+            denyDeletion('id');
+        };
+        blur.style.display = 'flex';
+    }
+}
+
+async function deletionChoice(id) {
+        if (id == 'edit') {
+        await editDeleteContact();
+    } else {
+        await deleteContact(id);
+    }
+    let confirmDeletion = document.getElementById('questionDiv');
+    confirmDeletion.style.display = 'none';
+    let blur = document.getElementById('background-overlay');
+    blur.style.display = 'none';
+    blur.style.zIndex = '10';
+}
+
+function denyDeletion(id) {
+    let blur = document.getElementById('background-overlay');
+    if (id !== 'edit') {
+        blur.style.display = 'none';
+    }
+    let confirmDeletion = document.getElementById('questionDiv');
+    confirmDeletion.style.display = 'none';
+    blur.style.zIndex = '10';
 }

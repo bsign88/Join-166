@@ -8,41 +8,61 @@
     <div class="edit-contact-right-side">
         <div class="user-initials-icon-box">
             <div id="color-picker-popup">
-                <div class="color-option" style="--bg-color: var(--color1);" onclick="closeColorPicker('var(--color1)')"></div>
-                <div class="color-option" style="--bg-color: var(--color2);" onclick="closeColorPicker('var(--color2)')"></div>
-                <div class="color-option" style="--bg-color: var(--color3);" onclick="closeColorPicker('var(--color3)')"></div>
-                <div class="color-option" style="--bg-color: var(--color4);" onclick="closeColorPicker('var(--color4)')"></div>
-                <div class="color-option" style="--bg-color: var(--color5);" onclick="closeColorPicker('var(--color5)')"></div>
-                <div class="color-option" style="--bg-color: var(--color6);" onclick="closeColorPicker('var(--color6)')"></div>
-                <div class="color-option" style="--bg-color: var(--color7);" onclick="closeColorPicker('var(--color7)')"></div>
-                <div class="color-option" style="--bg-color: var(--color8);" onclick="closeColorPicker('var(--color8)')"></div>
-                <div class="color-option" style="--bg-color: var(--color9);" onclick="closeColorPicker('var(--color9)')"></div>
-                <div class="color-option" style="--bg-color: var(--color10);" onclick="closeColorPicker('var(--color10)')"></div>
-                <div class="color-option" style="--bg-color: var(--color11);" onclick="closeColorPicker('var(--color11)')"></div>
-                <div class="color-option" style="--bg-color: var(--color12);" onclick="closeColorPicker('var(--color12)')"></div>
-                <div class="color-option" style="--bg-color: var(--color13);" onclick="closeColorPicker('var(--color13)')"></div>
-                <div class="color-option" style="--bg-color: var(--color14);" onclick="closeColorPicker('var(--color14)')"></div>
-                <div class="color-option" style="--bg-color: var(--color15);" onclick="closeColorPicker('var(--color15)')"></div>
+                <div class="color-option" style="--bg-color: var(--color1);"
+                    onclick="closeColorPicker('var(--color1)')"></div>
+                <div class="color-option" style="--bg-color: var(--color2);"
+                    onclick="closeColorPicker('var(--color2)')"></div>
+                <div class="color-option" style="--bg-color: var(--color3);"
+                    onclick="closeColorPicker('var(--color3)')"></div>
+                <div class="color-option" style="--bg-color: var(--color4);"
+                    onclick="closeColorPicker('var(--color4)')"></div>
+                <div class="color-option" style="--bg-color: var(--color5);"
+                    onclick="closeColorPicker('var(--color5)')"></div>
+                <div class="color-option" style="--bg-color: var(--color6);"
+                    onclick="closeColorPicker('var(--color6)')"></div>
+                <div class="color-option" style="--bg-color: var(--color7);"
+                    onclick="closeColorPicker('var(--color7)')"></div>
+                <div class="color-option" style="--bg-color: var(--color8);"
+                    onclick="closeColorPicker('var(--color8)')"></div>
+                <div class="color-option" style="--bg-color: var(--color9);"
+                    onclick="closeColorPicker('var(--color9)')"></div>
+                <div class="color-option" style="--bg-color: var(--color10);"
+                    onclick="closeColorPicker('var(--color10)')"></div>
+                <div class="color-option" style="--bg-color: var(--color11);"
+                    onclick="closeColorPicker('var(--color11)')"></div>
+                <div class="color-option" style="--bg-color: var(--color12);"
+                    onclick="closeColorPicker('var(--color12)')"></div>
+                <div class="color-option" style="--bg-color: var(--color13);"
+                    onclick="closeColorPicker('var(--color13)')"></div>
+                <div class="color-option" style="--bg-color: var(--color14);"
+                    onclick="closeColorPicker('var(--color14)')"></div>
+                <div class="color-option" style="--bg-color: var(--color15);"
+                    onclick="closeColorPicker('var(--color15)')"></div>
             </div>
-            <div class="user-initials-icon-add" id="user-initial-icon-add" onclick="openColorPicker()"><img class="user-placeholder" src="./assets/img/icons/user-white.svg">
+            <div class="user-initials-icon-add" id="user-initial-icon-add" onclick="openColorPicker()"><img
+                    class="user-placeholder" src="./assets/img/icons/user-white.svg">
+            </div>
         </div>
-    </div>
-    <div class="edit-information-box">
-        <div class="edit-close-box" onclick="closeAddNewContact()">
-            <img src="./assets/img/icons/close.svg" class="edit-close-icon" id="add-close-icon">
-        </div>
-        <div class="edit-details-box">
-            <input id="add-input-name" class="edit-input-name" type="text" placeholder="Name">
-            <input id="add-input-email" class="edit-input-email" type="email" placeholder="Email">
-            <input id="add-input-phone" class="edit-input-phone" type="tel" placeholder="Phone">
-        </div>
-        <div class="edit-button-box">
-            <button class="secondary-button" id="delete-add-contact-button" onclick="closeAddNewContact()">Cancel
-                <img class="cross" src="./assets/img/icons/cancel.svg" id="cancel-blue">
-            </button>
-            <button class="primary-button" id="save-add-contact-button" onclick="createNewContact()">Add Contact
-                <img class="tick" src="./assets/img/icons/tick.svg">
-            </button>
+        <div class="edit-information-box">
+            <div class="edit-close-box" onclick="closeAddNewContact()">
+                <img src="./assets/img/icons/close.svg" class="edit-close-icon" id="add-close-icon">
+            </div>
+            <form id="add-contact-form" onsubmit="event.preventDefault(); createNewContact();">
+                <div class="edit-details-box">
+                    <input id="add-input-name" class="edit-input-name" type="text" placeholder="Name" required>
+                    <input id="add-input-email" class="edit-input-email" type="email" placeholder="Email" required>
+                    <input id="add-input-phone" class="edit-input-phone" type="tel" placeholder="Phone">
+                </div>
+                <div class="edit-button-box">
+                    <button type="button" class="secondary-button" id="delete-add-contact-button"
+                        onclick="closeAddNewContact()">Cancel
+                        <img class="cross" src="./assets/img/icons/cancel.svg" id="cancel-blue">
+                    </button>
+                    <button type="submit" class="primary-button" id="save-add-contact-button">Add
+                        Contact
+                        <img class="tick" src="./assets/img/icons/tick.svg">
+                    </button>
+            </form>
         </div>
     </div>
 </div>

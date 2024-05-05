@@ -7,41 +7,61 @@
     <div class="edit-contact-right-side">
         <div class="user-initials-icon-box">
             <div id="color-picker-popup-edit">
-                <div class="color-option" style="--bg-color: var(--color1);" onclick="closeColorPickerEdit('var(--color1)')"></div>
-                <div class="color-option" style="--bg-color: var(--color2);" onclick="closeColorPickerEdit('var(--color2)')"></div>
-                <div class="color-option" style="--bg-color: var(--color3);" onclick="closeColorPickerEdit('var(--color3)')"></div>
-                <div class="color-option" style="--bg-color: var(--color4);" onclick="closeColorPickerEdit('var(--color4)')"></div>
-                <div class="color-option" style="--bg-color: var(--color5);" onclick="closeColorPickerEdit('var(--color5)')"></div>
-                <div class="color-option" style="--bg-color: var(--color6);" onclick="closeColorPickerEdit('var(--color6)')"></div>
-                <div class="color-option" style="--bg-color: var(--color7);" onclick="closeColorPickerEdit('var(--color7)')"></div>
-                <div class="color-option" style="--bg-color: var(--color8);" onclick="closeColorPickerEdit('var(--color8)')"></div>
-                <div class="color-option" style="--bg-color: var(--color9);" onclick="closeColorPickerEdit('var(--color9)')"></div>
-                <div class="color-option" style="--bg-color: var(--color10);" onclick="closeColorPickerEdit('var(--color10)')"></div>
-                <div class="color-option" style="--bg-color: var(--color11);" onclick="closeColorPickerEdit('var(--color11)')"></div>
-                <div class="color-option" style="--bg-color: var(--color12);" onclick="closeColorPickerEdit('var(--color12)')"></div>
-                <div class="color-option" style="--bg-color: var(--color13);" onclick="closeColorPickerEdit('var(--color13)')"></div>
-                <div class="color-option" style="--bg-color: var(--color14);" onclick="closeColorPickerEdit('var(--color14)')"></div>
-                <div class="color-option" style="--bg-color: var(--color15);" onclick="closeColorPickerEdit('var(--color15)')"></div>
+                <div class="color-option" style="--bg-color: var(--color1);"
+                    onclick="closeColorPickerEdit('var(--color1)')"></div>
+                <div class="color-option" style="--bg-color: var(--color2);"
+                    onclick="closeColorPickerEdit('var(--color2)')"></div>
+                <div class="color-option" style="--bg-color: var(--color3);"
+                    onclick="closeColorPickerEdit('var(--color3)')"></div>
+                <div class="color-option" style="--bg-color: var(--color4);"
+                    onclick="closeColorPickerEdit('var(--color4)')"></div>
+                <div class="color-option" style="--bg-color: var(--color5);"
+                    onclick="closeColorPickerEdit('var(--color5)')"></div>
+                <div class="color-option" style="--bg-color: var(--color6);"
+                    onclick="closeColorPickerEdit('var(--color6)')"></div>
+                <div class="color-option" style="--bg-color: var(--color7);"
+                    onclick="closeColorPickerEdit('var(--color7)')"></div>
+                <div class="color-option" style="--bg-color: var(--color8);"
+                    onclick="closeColorPickerEdit('var(--color8)')"></div>
+                <div class="color-option" style="--bg-color: var(--color9);"
+                    onclick="closeColorPickerEdit('var(--color9)')"></div>
+                <div class="color-option" style="--bg-color: var(--color10);"
+                    onclick="closeColorPickerEdit('var(--color10)')"></div>
+                <div class="color-option" style="--bg-color: var(--color11);"
+                    onclick="closeColorPickerEdit('var(--color11)')"></div>
+                <div class="color-option" style="--bg-color: var(--color12);"
+                    onclick="closeColorPickerEdit('var(--color12)')"></div>
+                <div class="color-option" style="--bg-color: var(--color13);"
+                    onclick="closeColorPickerEdit('var(--color13)')"></div>
+                <div class="color-option" style="--bg-color: var(--color14);"
+                    onclick="closeColorPickerEdit('var(--color14)')"></div>
+                <div class="color-option" style="--bg-color: var(--color15);"
+                    onclick="closeColorPickerEdit('var(--color15)')"></div>
             </div>
-            <div class="user-initials-icon" id="user-initial-icon-edit" onclick="openColorPickerEdit()"><img class="user-placeholder" src="./assets/img/icons/user-white.svg">
-            
+            <div class="user-initials-icon" id="user-initial-icon-edit" onclick="openColorPickerEdit()"><img
+                    class="user-placeholder" src="./assets/img/icons/user-white.svg">
+
             </div>
         </div>
         <div class="edit-information-box">
             <div class="edit-close-box">
-                <img src="./assets/img/icons/close.svg" onclick="closeEditContact()" class="edit-close-icon" id="edit-close-icon">
+                <img src="./assets/img/icons/close.svg" onclick="closeEditContact()" class="edit-close-icon"
+                    id="edit-close-icon">
             </div>
-            <div class="edit-details-box">
-                    <input  id="edit-input-name" class="edit-input-name" type="text" placeholder="Name">
-                    <input id="edit-input-email" class="edit-input-email" type="email" placeholder="Email">
+            <form id="edit-contact-form" onsubmit="event.preventDefault(); saveEditContact();">
+                <div class="edit-details-box">
+                    <input id="edit-input-name" class="edit-input-name" type="text" placeholder="Name" required>
+                    <input id="edit-input-email" class="edit-input-email" type="email" placeholder="Email" required>
                     <input id="edit-input-phone" class="edit-input-phone" type="tel" placeholder="Phone">
-            </div>
-            <div class="edit-button-box">
-                <button class="secondary-button" id="delete-edit-contact-button" onclick="editDeleteContact()">Delete</button>
-                <button class="primary-button" id="save-edit-contact-button" onclick="saveEditContact()">Save 
-                    <img class="tick" src="./assets/img/icons/tick.svg">
-                </button>
-            </div>
+                </div>
+                <div class="edit-button-box">
+                    <button type="button" class="secondary-button" id="delete-edit-contact-button"
+                        onclick="areYouSureToDelete('edit')">Delete</button>
+                    <button type="submit" class="primary-button" id="save-edit-contact-button">Save
+                        <img class="tick" src="./assets/img/icons/tick.svg">
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
