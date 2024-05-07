@@ -1,85 +1,44 @@
 let currentDraggedCard;
 
-/*
 function renderTasks() {
-  for (let index = 0; index < tasks.length; index++) {
-    const task = tasks[index];
-
-    let notasks = document.getElementById("notasks");
-    let cardsToDo = document.getElementById("todo");
-    let cardsProgress = document.getElementById("progress");
-    let cardsFeedback = document.getElementById("feedback");
-    let cardsDone = document.getElementById("done");
-    
-    if (task["column"] === "todo") {
-      cardsToDo.innerHTML += generateCards(task, index);
-      notasks.classList.remove("d-none");
-    } else {
-      notasks.classList.add("d-none");
-    }
-    if (task["column"] === "progress") {
-      cardsProgress.innerHTML += generateCards(task, index);
-    }
-    if (task["column"] === "feedback") {
-      cardsFeedback.innerHTML += generateCards(task, index);
-    }
-    if (task["column"] === "done") {
-      cardsDone.innerHTML += generateCards(task, index);
-    }
-    checkLabel(index, task);
-  }
-}
-*/
-
-function renderTasks() {
-  let todo = tasks.filter(t => t['column'] == 'todo');
-
-  document.getElementById('todo').innerHTML = '';
-
+  let todo = tasks.filter((t) => t["column"] == "todo");
+  document.getElementById("todo").innerHTML = "";
   for (let index = 0; index < todo.length; index++) {
-      const card = todo[index];
-      document.getElementById('todo').innerHTML += generateCards(card);
-      checkLabel(card);
+    const card = todo[index];
+    document.getElementById("todo").innerHTML += generateCards(card);
+    checkLabel(card);
   }
 
-  let progress = tasks.filter(t => t['column'] == 'progress');
-
-  document.getElementById('progress').innerHTML = '';
-
+  let progress = tasks.filter((t) => t["column"] == "progress");
+  document.getElementById("progress").innerHTML = "";
   for (let index = 0; index < progress.length; index++) {
-      const card = progress[index];
-      document.getElementById('progress').innerHTML += generateCards(card);
-      checkLabel(card);
+    const card = progress[index];
+    document.getElementById("progress").innerHTML += generateCards(card);
+    checkLabel(card);
   }
 
-  let feedback = tasks.filter(t => t['column'] == 'feedback');
-
-  document.getElementById('feedback').innerHTML = '';
-
+  let feedback = tasks.filter((t) => t["column"] == "feedback");
+  document.getElementById("feedback").innerHTML = "";
   for (let index = 0; index < feedback.length; index++) {
-      const card = feedback[index];
-      document.getElementById('feedback').innerHTML += generateCards(card);
-      checkLabel(card);
+    const card = feedback[index];
+    document.getElementById("feedback").innerHTML += generateCards(card);
+    checkLabel(card);
   }
 
-  let done = tasks.filter(t => t['column'] == 'done');
-
-  document.getElementById('done').innerHTML = '';
-
+  let done = tasks.filter((t) => t["column"] == "done");
+  document.getElementById("done").innerHTML = "";
   for (let index = 0; index < done.length; index++) {
-      const card = done[index];
-      document.getElementById('done').innerHTML += generateCards(card);
-      checkLabel(card);
+    const card = done[index];
+    document.getElementById("done").innerHTML += generateCards(card);
+    checkLabel(card);
   }
-
-
 }
 
 // Generiert HTML der Karten
 function generateCards(card) {
   return /*HTML*/ `
-  <div class="card" draggable="true" ondragstart="startDragging(${card['id']})">
-      <div id="label${card["id"]}" class="label">${card["category"]}</div>
+  <div class="card" draggable="true" ondragstart="startDragging(${card['id']})" onclick="openTask()">
+      <div id="label${card["id"]}" class="card-label">${card["category"]}</div>
         <div class="content">
           <div class="card-title">${card["title"]}</div>
           <div class="description">${card["description"]}</div>
@@ -124,14 +83,45 @@ function allowDrop(ev) {
 }
 
 function moveTo(column) {
-  tasks[currentDraggedCard]['column'] = column;
+  tasks[currentDraggedCard]["column"] = column;
   renderTasks();
 }
 
 function highlight(id) {
-  document.getElementById(id).classList.add('cards-highlight');
+  document.getElementById(id).classList.add("cards-highlight");
+  //document.getElementById(id).innerHTML += '<div class="card-empty"></div>';
 }
 
 function removeHighlight(id) {
-  document.getElementById(id).classList.remove('cards-highlight');
+  document.getElementById(id).classList.remove("cards-highlight");
 }
+
+
+function openTask() {
+  let window = document.getElementById("task");
+  let overlay = document.getElementById("background-overlay");
+  window.style.display = "flex";
+  overlay.style.display = "block";
+}
+
+function closeTask() {
+  let window = document.getElementById("task");
+  let overlay = document.getElementById("background-overlay");
+  window.style.display = "none";
+  overlay.style.display = "none";
+}
+
+
+/*
+function openAddNewContact() {
+  let window = document.getElementById("add-contact-window");
+  let overlay = document.getElementById("background-overlay");
+  window.style.display = "flex";
+  overlay.style.display = "block";
+  resetInputs();
+  document.getElementById('add-contact-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting
+      createNewContact(); // Call your function to add the contact
+  });
+}
+*/
