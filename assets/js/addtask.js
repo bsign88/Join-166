@@ -18,33 +18,46 @@ function addTask() {
     let task = {
         'title': title,
         'decription': description,
+        'assigned to': assignedto,
         'date': date,
         'category': category,
+        'duedate': duedate,
+        'prio': prio,
+        'category': category,
+        'subtask': subtask,
         'column': todo
     }
-
     tasks.push(task);
 }
 
-
 // Öffnet das dropdown "Assigned to" bei Addtask
-
 function openDropdown() {
-    var checkList = document.getElementById("assignedto");
+    let checkList = document.getElementById("assignedto");
     checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
       if (checkList.classList.contains("visible"))
         checkList.classList.remove("visible");
       else checkList.classList.add("visible");
     };
+    showProfilesDropdown()
   }
 
-  function showContactsDropdown() {
+  function showProfilesDropdown() {
+    let items = document.getElementById('items');
 
+    for (let index = 0; index < contacts.length; index++) {
+      const profile = contacts[index];
+
+      items.innerHTML += `
+        <li>
+          <span class="profile">${profile['initials']}</span>${profile['name']}<input type="checkbox" />
+        </li>
+      `;
+    
+    }
 
   }
 
   // Ersetzt jeweils das Icon bei der Prio-Auswahl
-
   function changeUrgentIcon() {
     let urgent = document.getElementById('urgent');
     if (urgent.checked) {

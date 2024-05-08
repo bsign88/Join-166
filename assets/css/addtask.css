@@ -212,6 +212,18 @@ footer {
   align-items: center;
   margin-top: 8px;
   padding: 0 21px 0 21px;
+  cursor: pointer;
+}
+
+.dropdown-check-list ul.items li:hover {
+  border-radius: 10px;
+  background-color: #F6F7F8;
+}
+
+.dropdown-check-list ul.items li:active {
+  border-radius: 10px;
+  background-color: var(--main-color);
+  color: #fff;
 }
 
 .dropdown-check-list.visible .items {
