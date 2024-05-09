@@ -156,21 +156,20 @@
 }
 
 .card-label {
-  height: 27px;
+  width: fit-content;
   border-radius: 8px;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 4px 16px 4px 16px;
 }
 
 .user-story {
-  width: 113px;
   background-color: var(--userstory-color);
 }
 
 .technical-task {
-  width: 144px;
   background-color: var(--technicaltask-color);
 }
 
@@ -259,6 +258,32 @@
 .card-big .top {
   display: flex;
   justify-content: space-between;
+}
+
+.label-big {
+  font-size: 23px;
+  padding: 4px 24px 4px 24px !important;
+}
+
+.card-big .text {
+  font-size: 20px;
+}
+
+.card-big .text p {
+  margin: 24px 0 24px 0;
+}
+
+.card-big .options {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
 }
 
 /* responsove */
