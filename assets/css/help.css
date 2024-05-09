@@ -1,6 +1,6 @@
 .help-head {
     display: flex;
-    width: 1014px;
+    max-width: 1014px;
     align-items: center;
     justify-content: space-between;
 }
@@ -9,11 +9,10 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-    width: 1014px;
+    max-width: 1014px;
     font-size: 16px;
     line-height: 24px;
-    margin-left: 328px;
-    margin-top: 110px;
+    margin: 110px 25px 25px 328px;
 }
 
 .help-main {
@@ -32,7 +31,7 @@
 .how-to-use {
     display: flex;
     flex-direction: column;
-    width: 1014px;
+    max-width: 1014px;
     gap: 16px;
 }
 
@@ -66,5 +65,10 @@
 p {
     font-weight: 400;
     font-size: 16px;
+}
 
+@media (max-width: 950px){
+    .help-section {
+        margin-left:35px;
+    }
 }

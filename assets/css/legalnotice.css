@@ -9,11 +9,9 @@
 .legalnotice-section {
     display: flex;
     flex-direction: column;
-    margin-left: 328px;
-    margin-top: 110px;
     gap: 32px;
     max-width: 1014px;
-    margin-right: 20px;
+    margin: 110px 25px 25px 328px;
 }
 
 .legalnotice-main {
@@ -30,4 +28,10 @@
 
 .imprint-li {
     margin-left: 25px;
+}
+
+@media (max-width: 950px){
+    .legalnotice-section {
+        margin-left:35px;
+    }
 }
