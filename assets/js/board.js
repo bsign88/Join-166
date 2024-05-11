@@ -1,43 +1,65 @@
 let currentDraggedCard;
 
+// Sammelfunktion zum rendern aller Spalten
 function renderTasks() {
+  renderToDo();
+  renderProgress();
+  renderFeedback();
+  renderDone();
+}
+
+// Rendert Spalte "To Do"
+function renderToDo() {
   let todo = tasks.filter((t) => t["column"] == "todo");
   document.getElementById("todo").innerHTML = "";
   for (let index = 0; index < todo.length; index++) {
     const card = todo[index];
     document.getElementById("todo").innerHTML += generateCards(card);
     checkLabel(card);
+    checkPriority(card);
   }
+}
 
+// Rendert Spalte "Progress"
+function renderProgress() {
   let progress = tasks.filter((t) => t["column"] == "progress");
   document.getElementById("progress").innerHTML = "";
   for (let index = 0; index < progress.length; index++) {
     const card = progress[index];
     document.getElementById("progress").innerHTML += generateCards(card);
     checkLabel(card);
+    checkPriority(card);
   }
+}
 
+// Rendert Spalte "Feedback"
+function renderFeedback() {
   let feedback = tasks.filter((t) => t["column"] == "feedback");
   document.getElementById("feedback").innerHTML = "";
   for (let index = 0; index < feedback.length; index++) {
     const card = feedback[index];
     document.getElementById("feedback").innerHTML += generateCards(card);
     checkLabel(card);
+    checkPriority(card);
   }
+}
 
+// Rendert Spalte "Done"
+function renderDone() {
   let done = tasks.filter((t) => t["column"] == "done");
   document.getElementById("done").innerHTML = "";
   for (let index = 0; index < done.length; index++) {
     const card = done[index];
     document.getElementById("done").innerHTML += generateCards(card);
     checkLabel(card);
+    checkPriority(card);
   }
 }
 
 // Generiert HTML der Karten
 function generateCards(card) {
   return /*HTML*/ `
-  <div class="card" draggable="true" ondragstart="startDragging(${card['id']})" onclick="openTask()">
+  <div class="card" draggable="true" ondragstart="startDragging(${card['id']})" onclick="openTask(${card['id']})">
       <div id="label${card["id"]}" class="card-label">${card["category"]}</div>
         <div class="content">
           <div class="card-title">${card["title"]}</div>
@@ -56,13 +78,19 @@ function generateCards(card) {
               <div class="profile">BB</div>
               <div class="profile add-profile">TB</div>
             </div>
-            <div class="priority"><img src="./assets/img/icons/prio_low_default.svg"></div>
+            <div class="priority"><img id="prio-icon${card["id"]}" src="./assets/img/icons/prio_low_default.svg"></div>
           </div>
   </div>
 `;
 }
 
-//Überprüft welches Label definiert ist und wendet die entsprechende Klasse an
+//Überprüft die Priorität und zeigt das entsprechende Symbol an
+function checkPriority(card) {
+    let prioIcon = document.getElementById(`prio-icon${card["id"]}`);
+    prioIcon.src = `./assets/img/icons/prio_${card["prio"]}_default.svg`;
+  }
+
+//Überprüft das Label definiert ist und wendet die entsprechende Klasse an
 function checkLabel(card) {
   let label = document.getElementById(`label${card["id"]}`);
 
@@ -96,32 +124,18 @@ function removeHighlight(id) {
   document.getElementById(id).classList.remove("cards-highlight");
 }
 
-
-function openTask() {
+//Öffnet den jeweiligen Task
+function openTask(id) {
   let window = document.getElementById("task");
   let overlay = document.getElementById("background-overlay");
   window.style.display = "flex";
   overlay.style.display = "block";
 }
 
+//Schließt den jeweiligen Task
 function closeTask() {
   let window = document.getElementById("task");
   let overlay = document.getElementById("background-overlay");
   window.style.display = "none";
   overlay.style.display = "none";
 }
-
-
-/*
-function openAddNewContact() {
-  let window = document.getElementById("add-contact-window");
-  let overlay = document.getElementById("background-overlay");
-  window.style.display = "flex";
-  overlay.style.display = "block";
-  resetInputs();
-  document.getElementById('add-contact-form').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent the form from submitting
-      createNewContact(); // Call your function to add the contact
-  });
-}
-*/

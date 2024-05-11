@@ -240,6 +240,9 @@ footer {
   .form-line {
     display: none;
   }
+  #clear-form {
+    display: none;
+  }
 }
 
 @media (max-width: 950px) {
@@ -249,9 +252,5 @@ footer {
 
   footer {
     margin-top: 0;
-  }
-
-  #clear-form {
-    display: none;
   }
 }

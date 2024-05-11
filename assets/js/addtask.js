@@ -51,10 +51,8 @@ function openDropdown() {
         <li>
           <span class="profile">${profile['initials']}</span>${profile['name']}<input type="checkbox" />
         </li>
-      `;
-    
+      `;   
     }
-
   }
 
   // Ersetzt jeweils das Icon bei der Prio-Auswahl
