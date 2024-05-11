@@ -59,7 +59,7 @@ function renderDone() {
 // Generiert HTML der Karten
 function generateCards(card) {
   return /*HTML*/ `
-  <div class="card" draggable="true" ondragstart="startDragging(${card["id"]})" onclick="openTask(${card["id"]})">
+  <div class="card" draggable="true" ondragstart="startDragging(${card['id']})" onclick="openTask(${card['id']})">
       <div id="label${card["id"]}" class="card-label">${card["category"]}</div>
         <div class="content">
           <div class="card-title">${card["title"]}</div>
@@ -110,18 +110,18 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-function moveTo(column) {
-  tasks[currentDraggedCard]["column"] = column;
+function moveTo(id) {
+  tasks[currentDraggedCard]['column'] = id;
   renderTasks();
 }
 
-function highlight(id) {
-  document.getElementById(id).classList.add("cards-highlight");
+function highlight(column) {
+  document.getElementById(column).classList.add("cards-highlight");
   //document.getElementById(id).innerHTML += '<div class="card-empty"></div>';
 }
 
-function removeHighlight(id) {
-  document.getElementById(id).classList.remove("cards-highlight");
+function removeHighlight(column) {
+  document.getElementById(column).classList.remove("cards-highlight");
 }
 
 //Öffnet den jeweiligen Task
@@ -164,7 +164,6 @@ function closeTask() {
   overlay.style.display = "none";
 }
 
-// Warte, bis das DOM vollständig geladen ist, bevor du Event-Listener hinzufügst
 document.addEventListener("DOMContentLoaded", function() {
   // Event-Listener für das Overlay hinzufügen
   let overlay = document.getElementById("background-overlay");

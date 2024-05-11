@@ -249,8 +249,16 @@ footer {
   .addtask {
     margin: 110px 20px 0 20px;
   }
-
   footer {
     margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .addtask {
+    width: auto;
+  }
+  .formbox {
+    width: auto;
   }
 }
