@@ -4,12 +4,11 @@
   <header class="board-top">
     <h1>Board</h1>
     <div class="action">
-
       <div class="search-wrapper">
         <input type="search" id="findtask" placeholder="Find Task" />
         <div class="line"></div>
       </div>
-      
+
       <button class="secondary-plus">
         Add task<img src="./assets/img/icons/add.svg" />
       </button>
@@ -21,7 +20,13 @@
       <div class="column-title">
         To do<img src="./assets/img/icons/plus button.svg" />
       </div>
-      <div id="todo" class="cards" ondrop="moveTo('todo')" ondragleave="removeHighlight('todo')" ondragover="allowDrop(event); highlight('todo')">
+      <div
+        id="todo"
+        class="cards"
+        ondrop="moveTo('todo')"
+        ondragleave="removeHighlight('todo')"
+        ondragover="allowDrop(event); highlight('todo')"
+      >
         <div id="notasks" class="notasks d-none">No tasks To Do</div>
       </div>
     </div>
@@ -30,64 +35,39 @@
       <div class="column-title">
         In progress<img src="./assets/img/icons/plus button.svg" />
       </div>
-      <div id="progress" class="cards" ondrop="moveTo('progress')" ondragleave="removeHighlight('todo')" ondragover="allowDrop(event); highlight('progress')">
-        <div class="card" draggable="true">
-          <div class="label user-story">User Story</div>
-          <div class="content">
-            <div class="card-title">Kochwelt Page & Recipe Recommender</div>
-            <div class="description">
-              Build start page with recipe recommendation...
-            </div>
-          </div>
-
-          <div class="subtasks">
-            <div class="progressbar">
-              <div class="fill"></div>
-            </div>
-            <div class="text">1/2 Subtasks</div>
-          </div>
-
-          <div class="card-footer">
-            <div class="user">
-              <div class="profile">BB</div>
-              <div class="profile add-profile">TB</div>
-            </div>
-            <div class="priority"><img src="./assets/img/icons/prio_low_default.svg"></div>
-          </div>
-        </div>
-
-      </div>
+      <div
+        id="progress"
+        class="cards"
+        ondrop="moveTo('progress')"
+        ondragleave="removeHighlight('todo')"
+        ondragover="allowDrop(event); highlight('progress')"
+      ></div>
     </div>
 
     <div class="column">
       <div class="column-title">
         Await feedback<img src="./assets/img/icons/plus button.svg" />
       </div>
-      <div id="feedback" class="cards" ondrop="moveTo('feedback')" ondragleave="removeHighlight('todo')" ondragover="allowDrop(event); highlight('feedback')">
-        <div class="card">
-          <div class="label technical-task">Technical Task</div>
-          <div class="content">
-            <div class="card-title">HTML Base Template Creation</div>
-            <div class="description">Create reusable HTML base templates...</div>
-          </div>
-
-          <div class="card-footer">
-          <div class="user">
-            <div class="profile">BB</div>
-            <div class="profile add-profile">TB</div>
-          </div>
-          <div class="priority"><img src="./assets/img/icons/prio_urgent_default.svg"></div>
-        </div>
-
-        </div>
-      </div>
+      <div
+        id="feedback"
+        class="cards"
+        ondrop="moveTo('feedback')"
+        ondragleave="removeHighlight('todo')"
+        ondragover="allowDrop(event); highlight('feedback')"
+      ></div>
     </div>
 
     <div class="column">
       <div class="column-title">
         Done<img src="./assets/img/icons/plus button.svg" />
       </div>
-      <div id="done" class="cards" ondrop="moveTo('done')" ondragleave="removeHighlight('todo')" ondragover="allowDrop(event); highlight('done')"></div>
+      <div
+        id="done"
+        class="cards"
+        ondrop="moveTo('done')"
+        ondragleave="removeHighlight('todo')"
+        ondragover="allowDrop(event); highlight('done')"
+      ></div>
     </div>
   </section>
 </section>
