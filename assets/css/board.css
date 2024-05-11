@@ -260,7 +260,13 @@
   justify-content: space-between;
 }
 
-.label-big {
+.card-label-big {
+  width: fit-content;
+  border-radius: 8px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 23px;
   padding: 4px 24px 4px 24px !important;
 }

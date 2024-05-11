@@ -130,6 +130,15 @@ function openTask(id) {
   let overlay = document.getElementById("background-overlay");
   window.style.display = "flex";
   overlay.style.display = "block";
+
+  let task = tasks.find(task => task.id === id);
+  if (task) {
+    document.getElementById("title-big").innerHTML = task.title;
+    document.getElementById("description-big").innerHTML = task.description;
+    document.getElementById("date-big").innerHTML = task.duedate;
+    document.getElementById("prio-big").innerHTML = task.prio;
+}
+
 }
 
 //Schließt den jeweiligen Task
