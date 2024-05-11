@@ -20,13 +20,15 @@ function renderContacts() {
 
     // Render contacts for each letter
     Object.entries(contactsByLetter).forEach(([letter, contacts]) => {
-        const alphabetDiv = createAlphabetDiv(letter.toUpperCase());
+        const alphabetDiv = createAlphabetDiv(letter.toUpperCase())
+        const seperatorDiv = createAlphabetSeperator();
         const contactsByLetterDiv = createContactsByLetterDiv(letter);
         contacts.forEach(contact => {
             const outerDiv = createOuterDiv(contact);
             contactsByLetterDiv.appendChild(outerDiv);
         });
         contactsDiv.appendChild(alphabetDiv);
+        contactsDiv.appendChild(seperatorDiv);
         contactsDiv.appendChild(contactsByLetterDiv);
     });
     
@@ -36,6 +38,13 @@ function renderContacts() {
         alphabetDiv.classList.add('contacts-list-alphabet');
         alphabetDiv.textContent = letter;
         return alphabetDiv;
+    }
+
+    // Create the Seperator
+    function createAlphabetSeperator() {
+        const seperatorDiv = document.createElement('div');
+        seperatorDiv.classList.add('contacts-list-separator');
+        return seperatorDiv;
     }
 
     // Function to create contacts by letter div
@@ -246,7 +255,7 @@ function closeEditContact() {
 
 function openColorPicker() {
     let colorPickerPopup = document.getElementById('color-picker-popup');
-    colorPickerPopup.style.display = 'block';
+    colorPickerPopup.style.display = 'flex';
 }
 
 function closeColorPicker(color) {
@@ -258,7 +267,7 @@ function closeColorPicker(color) {
 
 function openColorPickerEdit() {
     let colorPickerPopup = document.getElementById('color-picker-popup-edit');
-    colorPickerPopup.style.display = 'block';
+    colorPickerPopup.style.display = 'flex';
 }
 
 function closeColorPickerEdit(color) {
