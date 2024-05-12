@@ -68,16 +68,6 @@ function closeEditContact() {
 }
 
 
-function resetInputs() {
-    let name = document.getElementById('edit-input-name');
-    let email = document.getElementById('edit-input-email');
-    let phone = document.getElementById('edit-input-phone');
-    name.value = '';
-    email.value = '';
-    phone.value = '';
-}
-
-
 function openColorPickerEdit() {
     let colorPickerPopup = document.getElementById('color-picker-popup-edit');
     colorPickerPopup.style.display = 'flex';

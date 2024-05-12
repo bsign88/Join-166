@@ -12,6 +12,7 @@ function openAddNewContact() {
 
 
 async function createNewContact() {
+    document.getElementById('save-add-contact-button').disabled = true;
     let color = document.getElementById('user-initial-icon-add').style.backgroundColor;
     let name = document.getElementById('add-input-name').value;
     let email = document.getElementById('add-input-email').value;
@@ -53,6 +54,7 @@ async function createNewContact() {
     // Setz den ausgewählten Kontakt zurück zu Leer
     let contactInformation = document.getElementById('contacts-content');
     contactInformation.innerHTML = '';
+    document.getElementById('save-add-contact-button').disabled = false;
 }
 
 function closeAddNewContact() {
@@ -61,17 +63,18 @@ function closeAddNewContact() {
     window.style.display = "none";
     overlay.style.display = "none";
     resetInputs();
+    closeColorPicker();
 }
 
 
 function openColorPicker() {
-    let colorPickerPopup = document.getElementById('color-picker-popup');
+    let colorPickerPopup = document.getElementById('color-picker-popup-add');
     colorPickerPopup.style.display = 'flex';
 }
 
 
 function closeColorPicker(color) {
-    let colorPickerPopup = document.getElementById('color-picker-popup');
+    let colorPickerPopup = document.getElementById('color-picker-popup-add');
     colorPickerPopup.style.display = 'none';
     let userColor = document.getElementById('user-initial-icon-add');
     userColor.style.backgroundColor = color;

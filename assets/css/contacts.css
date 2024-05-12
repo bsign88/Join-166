@@ -300,7 +300,12 @@
 
 .selectedContact {
     background-color: var(--main-color);
+    color: var(--white-color);
     /* Weitere Stile für den ausgewählten Kontakt */
+}
+
+.selectedContact:hover {
+    background-color: var(--main-color);
 }
 
 .firstInnerDiv {
@@ -674,10 +679,19 @@
         display: flex;
         position: relative;
         top: -40%;
+        cursor: pointer;
     }
 
-    .color-picker-popup {
-        display: flex;
+    .color-picker-popup-add {
+        display: none;
+        flex-direction: column;
+        position: relative;
+        top: -40%;
+        padding: 20px;
+    }
+
+    .color-picker-popup-edit {
+        display: none;
         position: relative;
         top: -40%;
         padding: 20px;

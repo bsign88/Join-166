@@ -61,6 +61,7 @@ function renderContacts() {
         outerDiv.setAttribute('id', `contact${contact.id}`);
         outerDiv.addEventListener('click', () => {
             openContact(contactInformation, contact);
+            removeHover(contact);
         });
 
         const firstInnerDiv = document.createElement('div');
@@ -89,6 +90,7 @@ function renderContacts() {
     }
 }
 
+
 //zeigt die Kontaktdaten des ausgewählten Kontakt
 function openContact(contactInformation, contact) {
     // Alle Kontakte zurücksetzen
@@ -104,6 +106,12 @@ function openContact(contactInformation, contact) {
         console.error('contactInformation element is not found!');
         return;
     }
+    insertContactInformation(contactInformation, contact);
+    document.getElementById(`user-initials-icon-${contact.id}`).style.backgroundColor = `${contact.color}`;
+}
+
+
+function insertContactInformation(contactInformation, contact) {
     contactInformation.innerHTML = `
     <div class="contact-box">
                 <div class="user-initials-icon" id="user-initials-icon-${contact.id}">${contact.initials}</div>
@@ -131,7 +139,22 @@ function openContact(contactInformation, contact) {
                 </div>
             </div>
     `;
-    document.getElementById(`user-initials-icon-${contact.id}`).style.backgroundColor = `${contact.color}`;
+}
+
+
+function resetInputs() {
+    let editName = document.getElementById('edit-input-name');
+    let editEmail = document.getElementById('edit-input-email');
+    let editPhone = document.getElementById('edit-input-phone');
+    let addName = document.getElementById('add-input-name');
+    let addEmail = document.getElementById('add-input-email');
+    let addPhone = document.getElementById('add-input-phone');
+    editName.value = '';
+    editEmail.value = '';
+    editPhone.value = '';
+    addName.value = '';
+    addEmail.value = '';
+    addPhone.value = '';
 }
 
 
