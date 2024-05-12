@@ -175,3 +175,28 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
+
+//Suchfunktion
+function search() {
+  let searchTerm = document.getElementById('findtask').value.toLowerCase(); // Suchbegriff in Kleinbuchstaben konvertieren
+  let allCards = document.querySelectorAll('.card'); // Alle Karten auswählen
+
+  if (searchTerm.length >= 3) { // Prüfen, ob der Suchbegriff mindestens 3 Zeichen lang ist
+    showResults(searchTerm, allCards); // Ergebnisse anzeigen
+  } else {
+    allCards.forEach(function(card) {
+      card.style.display = 'block'; // Alle Karten anzeigen, wenn der Suchbegriff zu kurz ist
+    });
+  }
+}
+
+function showResults(searchTerm, allCards) {
+  allCards.forEach(function(card) {
+    let cardTitle = card.querySelector('.card-title').textContent.toLowerCase(); // Titel der Karte in Kleinbuchstaben konvertieren
+    if (cardTitle.includes(searchTerm)) { // Überprüfen, ob der Titel der Karte den Suchbegriff enthält
+      card.style.display = 'block'; // Karte anzeigen, wenn sie den Suchkriterien entspricht
+    } else {
+      card.style.display = 'none'; // Karte ausblenden, wenn sie nicht den Suchkriterien entspricht
+    }
+  });
+}
