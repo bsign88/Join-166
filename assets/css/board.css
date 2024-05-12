@@ -103,10 +103,6 @@
   flex-wrap: wrap;
 }
 
-.board-distribution .column {
-  width: 252px;
-}
-
 .notasks {
   height: 48px;
   border: 1px dashed #a8a8a8;
@@ -119,7 +115,6 @@
 }
 
 .cards {
-  min-height: 200px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -141,6 +136,8 @@
 }
 
 .card {
+  min-width: 252px;
+  max-width: 252px;
   padding: 16px;
   gap: 10px;
   border-radius: 24px;
@@ -306,10 +303,31 @@
   cursor: pointer;
 }
 
-/* responsove */
+/* responsive */
 
 @media (max-width: 950px) {
   .board {
     margin: 110px 20px 0 20px;
+    padding-bottom: 120px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 576px) {
+  .column {
+    width: 100%;
+  }
+  .column-title {
+    width: 100%;
+  }
+  .cards {
+    flex-direction: row;
+    overflow: auto;
+  }
+  .board-top {
+    display: block;
+  }
+  #addTask-btn {
+    display: none;
   }
 }
