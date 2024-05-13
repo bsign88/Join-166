@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join 166</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/logoforfavicon .png">
+    <link rel="stylesheet" href="./assets/css/addtask.css">
+    <link rel="stylesheet" href="./assets/css/board.css">
+    <link rel="stylesheet" href="./assets/css/contacts.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/help.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/legalnotice.css">
+    <link rel="stylesheet" href="./assets/css/nav.css" />
+    <link rel="stylesheet" href="./assets/css/privacy.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/summary.css">
+    <script src="./assets/js/storage.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/contacts.js"></script>
+    <script src="./assets/js/addtask.js"></script>
+    <script src="./assets/js/tasks-array.js"></script>
+    <script src="./assets/js/board.js"></script>
+    <script src="./assets/js/addcontact.js"></script>
+    <script src="./assets/js/editcontact.js"></script>
+
+</head>
+
+<body onload="init()">
+    <div class="blur" id="blur"></div>
+    <div id="background-overlay" class="background-overlay"></div>
+    <section w3-include-html="edit-contact.html"></section>
+    <section w3-include-html="add-contact.html"></section>
+    <section w3-include-html="confirmDeletion.html"></section>
+    <section w3-include-html="task.html"></section>
+    <section class="nav-bar-container">
+        <div class="nav-bar-menu">
+            <div class="nav-bar-logo">
+                <img src="./assets/img/logosmall.png" alt="logo">
+            </div>
+            <a href="summary.html" onclick="loadContent('summary.html', 'menuPointSummary'); return false;"
+                style="text-decoration: none; color: inherit;">
+                <div id="menuPointSummary" class="nav-bar-menu-point selected-menu-point">
+                    <img src="./assets/img/icons/selected/summarysmall.png" alt="SummaryLogo">
+                    <img class="d-none" src="./assets/img/icons/unselected/summarysmall.png"
+                        alt="UnselectedSummaryLogo">
+                    <span style="cursor: context-menu;">Summary</span>
+                </div>
+            </a>
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <div id="menuPointAddTask" class="nav-bar-menu-point">
+                    <img src="./assets/img/icons/unselected/addtasksmall.png" alt="AddTaskLogo">
+                    <img class="d-none" src="./assets/img/icons/selected/addtasksmall.png" alt="AddTaskLogo">
+                    <span>Add Task</span>
+                </div>
+            </a>            
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <div id="menuPointBoard" class="nav-bar-menu-point">
+                    <img src="./assets/img/icons/unselected/boardsmall.png" alt="BoardLogo">
+                    <img class="d-none" src="./assets/img/icons/selected/boardsmall.png" alt="BoardLogo">
+                    <span>Board</span>
+                </div>
+            </a>            
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <div id="menuPointContacts" class="nav-bar-menu-point">
+                    <img src="./assets/img/icons/unselected/contactssmall.png" alt="ContactsLogo">
+                    <img class="d-none" src="./assets/img/icons/selected/contactssmall.png" alt="ContactsLogo">
+                    <span>Contacts</span>
+                </div>
+            </a>            
+        </div>
+        <div class="nav-bar-info">
+            <a href="#" onclick="loadContent('privacy.html'); return false;">Privacy Policy</a>
+
+            <a href="#" onclick="loadContent('legalnotice.html'); return false;">Legal notice</a>
+        </div>
+    </section>
+
+    <section class="right-container">
+
+        <section class="header-container">
+            <div>
+                <p>Kanban Project Management Tool</p>
+            </div>
+            <div class="help-profile">
+                <div class="help">
+                    <img id="helpLogo" onclick="loadContent('help.html'); return false;" src="./assets/img/icons/help.png" alt="">
+                </div>
+                <div class="profile-logo" onclick="toggleMenu()">
+                    <img src="./assets/img/icons/profilpictureplaceholder.png" alt="">
+                    <img src="./assets/img/icons/profilpictureplaceholderhover.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <div id="dropOutMenu" class="drop-out-menu d-none">
+            <div onclick="menuPointClicked('legalnotice.html');" class="drop-out-menu-point">
+                <p>Legal Notice</p>
+            </div>
+            <div onclick="menuPointClicked('privacy.html');" class="drop-out-menu-point">
+                <p>Privacy Police</p>
+            </div>
+            <div onclick="menuPointClicked('logout');" class="drop-out-menu-point">
+                <p>Log out</p>
+            </div>
+        </div>
+
+        <section id="includeHtml" w3-include-html="summary-external.html"></section>
+
+
+    </section>
+</body>
+</html>
