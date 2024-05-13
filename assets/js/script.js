@@ -64,7 +64,8 @@ function goBack() {
         contentDiv.innerHTML = previousContent.html; // Wiederherstellung des gespeicherten Inhalts
         contentDiv.setAttribute('w3-include-html', previousContent.url); // Setze die vorherige URL zurück
         updateSelectedMenuPoint(previousContent.id); // Aktualisieren des hervorgehobenen Menüpunktes
-
+        renderContacts();
+        
         // Wenn die vorherige Seite nicht 'help.html' war, stelle sicher, dass das Logo eingeblendet ist
         if (previousContent.url !== 'help.html') {
             helpLogo.classList.remove('d-none');
