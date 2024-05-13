@@ -128,5 +128,22 @@
     gap: 16px;
 }
 
+.log-in-member button:hover {
+    background-color: var(--second-color);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); 
+    transform: scale(1.02); 
+}
+
+.log-in-guest button:hover {
+    border-color: var(--second-color); 
+    color: var(--second-color); 
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); 
+    transform: scale(1.02); 
+}
+
+#email-input {
+    background: none !important;  /* Entfernt das Hintergrundbild */
+}
+
 
 
