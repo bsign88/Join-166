@@ -309,7 +309,6 @@
   .board {
     margin: 110px 20px 0 20px;
     padding-bottom: 120px;
-    overflow: hidden;
   }
 }
 
@@ -323,6 +322,9 @@
   .cards {
     flex-direction: row;
     overflow: auto;
+    height: fit-content;
+    padding: 8px;
+    margin: -8px;
   }
   .board-top {
     display: block;
