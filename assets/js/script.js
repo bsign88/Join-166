@@ -75,7 +75,6 @@ function goBack() {
     }
 }
 
-
 // Diese Funktion erstellt eine Markierung durch eine CSS Klasse für den Aktullen Menüpunkt
 
 function updateSelectedMenuPoint(newSelectedId) {
@@ -133,24 +132,6 @@ function menuPointClicked(page) {
     }
     closeMenu(); // Schließe das Dropdown-Menü
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    const emailInput = document.getElementById('email-input');
-    const passwordInput = document.getElementById('password-input');
-    const loginButton = document.getElementById('login-button');
-
-    // Funktion zum Überprüfen der Inputfelder und Aktivierung/Deaktivierung des Buttons
-    function checkInputs() {
-        // Überprüfe, ob beide Felder Werte enthalten
-        loginButton.disabled = !emailInput.value || !passwordInput.value;
-    }
-
-    // Event Listener für beide Inputfelder
-    emailInput.addEventListener('input', checkInputs);
-    passwordInput.addEventListener('input', checkInputs);
-});
-
-
 
 function autoFillEmail() {
   let emailInput = document.getElementById('email-input');

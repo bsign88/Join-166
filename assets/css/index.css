@@ -141,9 +141,9 @@
     transform: scale(1.02); 
 }
 
-#email-input {
-    background: none !important;  /* Entfernt das Hintergrundbild */
-}
+input[type=text]::-webkit-input-placeholder {
+    background: none;
+  }
 
 
 
