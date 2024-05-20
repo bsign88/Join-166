@@ -49,10 +49,11 @@ function openDropdown() {
 
       items.innerHTML += `
         <li>
-          <span class="profile">${profile['initials']}</span>${profile['name']}<input type="checkbox" />
+          <span id="profile${index}" class="profile">${profile['initials']}</span>${profile['name']}<input type="checkbox" />
         </li>
-      `;   
-    }
+      `;
+      document.getElementById(`profile${index}`).style.backgroundColor = `${profile['color']}`
+       }
   }
 
   // Ersetzt jeweils das Icon bei der Prio-Auswahl

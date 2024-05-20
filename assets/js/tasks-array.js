@@ -47,7 +47,7 @@ let tasks = [
       "id": 5,
       "title": "5 Toller Task",
       "description": "5 Build start page with recipe recommendation...",
-      "assignedto": ["Albert Dreistein", "Dagobert Duck"],
+      "assignedto": ["Claudia Schiffer", "Dagobert Duck"],
       "duedate": "22.05.2024",
       "prio": "urgent",
       "category": "Technical Task",

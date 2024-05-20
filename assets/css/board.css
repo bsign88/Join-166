@@ -79,6 +79,10 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.column {
+  min-width: 255px;
+}
+
 .titles-columns {
   display: flex;
   /* padding: 0px 64px 0px 64px; */
@@ -148,7 +152,7 @@
   cursor: pointer;
 }
 
-.card:active {
+.card:hover {
   rotate: 5deg;
 }
 
