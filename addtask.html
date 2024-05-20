@@ -3,7 +3,7 @@
 <section class="addtask">
   <h1>Add Task</h1>
 
-  <form>
+  <form onsubmit="addTask()">
     <div class="form-wrapper">
       <div class="formbox">
         <label for="title">Title<span class="asterisk">*</span></label>
@@ -16,6 +16,7 @@
           <span class="anchor" onclick="openDropdown()">Assigned to:</span>
           <ul id="items" class="items">
           </ul>
+          <div id="selecteditems"></div>
         </div>
       </div>
 
@@ -65,12 +66,11 @@
         <sup><span class="asterisk">* </span></sup>This field is required
       </p>
       <div class="buttons">
-        <button class="secondary-button" id="clear-form">
+        <button type="reset" class="secondary-button" id="clear-form">
           Clear<img src="./assets/img/icons/cancel.svg" />
         </button>
-        <button id="create-task" class="primary-button"  onclick="addTask()">
+        <button type="submit" id="create-task" class="primary-button">
           Create Task<img src="./assets/img/icons/check.svg" />
-        </button>
       </div>
     </footer>
   </form>

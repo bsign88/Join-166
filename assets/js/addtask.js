@@ -41,20 +41,47 @@ function openDropdown() {
     showProfilesDropdown()
   }
 
+  // Zeigt alle verfübaren Profile aus dem Kontaktbuch
   function showProfilesDropdown() {
     let items = document.getElementById('items');
-
+  
     for (let index = 0; index < contacts.length; index++) {
       const profile = contacts[index];
-
+  
       items.innerHTML += `
-        <li>
-          <span id="profile${index}" class="profile">${profile['initials']}</span>${profile['name']}<input type="checkbox" />
+        <li id="listItem${index}" onclick="selectName(${index}), ${profile['initials']}, ${profile['color']}">
+          <span id="profile${index}" class="profile">${profile['initials']}</span>
+          ${profile['name']}
+          <input type="checkbox" id="checkbox${index}" value="${profile['name']}" onclick="toggleCheckbox(${index}, event)" />
         </li>
       `;
-      document.getElementById(`profile${index}`).style.backgroundColor = `${profile['color']}`
-       }
+      document.getElementById(`profile${index}`).style.backgroundColor = `${profile['color']}`;
+    }
   }
+  
+  // Selektiert das angeklickte Profil oder entfernt die Klasse bei erneutem Klick
+  function selectName(index, initials, color) {
+    let listItem = document.getElementById(`listItem${index}`);
+    let checkbox = document.getElementById(`checkbox${index}`);
+    listItem.classList.toggle('ul-item-select');
+    checkbox.checked = !checkbox.checked;
+
+    /*
+      let selecteditems = document.getElementById('selecteditems');
+    selecteditems.innerHTML += `
+    <div id="selectedprofile${index}" class="profile">${initials}</div>
+    `;
+    document.getElementById(`selectedprofile${index}`).style.backgroundColor = color;
+    */
+    }
+  
+  // Toggles the class and checkbox state when the checkbox is clicked
+  function toggleCheckbox(index, event) {
+    event.stopPropagation(); // Verhindert das Auslösen des Listenelement-Click-Events
+    let listItem = document.getElementById(`listItem${index}`);
+    listItem.classList.toggle('ul-item-select');
+  }
+
 
   // Ersetzt jeweils das Icon bei der Prio-Auswahl
   function changeUrgentIcon() {
