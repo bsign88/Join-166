@@ -49,7 +49,7 @@ function openDropdown() {
       const profile = contacts[index];
   
       items.innerHTML += `
-        <li id="listItem${index}" onclick="selectName(${index}), ${profile['initials']}, ${profile['color']}">
+        <li id="listItem${index}" onclick="selectName(${index}, '${profile['initials']}', '${profile['color']}')">
           <span id="profile${index}" class="profile">${profile['initials']}</span>
           ${profile['name']}
           <input type="checkbox" id="checkbox${index}" value="${profile['name']}" onclick="toggleCheckbox(${index}, event)" />
