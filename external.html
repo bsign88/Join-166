@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="./assets/css/contacts.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/help.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/legalnotice.css">
     <link rel="stylesheet" href="./assets/css/nav.css" />
-    <link rel="stylesheet" href="./assets/css/privacy.css">    
+    <link rel="stylesheet" href="./assets/css/privacy.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/summary.css">
     <script src="./assets/js/storage.js"></script>
     <script src="./assets/js/script.js"></script>
@@ -49,30 +49,27 @@
                     <span style="cursor: context-menu;">Summary</span>
                 </div>
             </a>
-            <a href="addtask.html" onclick="loadContent('addtask.html', 'menuPointAddTask'); return false;"
-                style="text-decoration: none; color: inherit;">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
                 <div id="menuPointAddTask" class="nav-bar-menu-point">
                     <img src="./assets/img/icons/unselected/addtasksmall.png" alt="AddTaskLogo">
                     <img class="d-none" src="./assets/img/icons/selected/addtasksmall.png" alt="AddTaskLogo">
                     <span>Add Task</span>
                 </div>
-            </a>
-            <a href="board.html" onclick="loadContent('board.html', 'menuPointBoard'); return false;"
-                style="text-decoration: none; color: inherit;">
+            </a>            
+            <a href="index.html" style="text-decoration: none; color: inherit;">
                 <div id="menuPointBoard" class="nav-bar-menu-point">
                     <img src="./assets/img/icons/unselected/boardsmall.png" alt="BoardLogo">
                     <img class="d-none" src="./assets/img/icons/selected/boardsmall.png" alt="BoardLogo">
                     <span>Board</span>
                 </div>
-            </a>
-            <a href="contacts.html" onclick="loadContent('contacts.html', 'menuPointContacts'); return false;"
-                style="text-decoration: none; color: inherit;">
+            </a>            
+            <a href="index.html" style="text-decoration: none; color: inherit;">
                 <div id="menuPointContacts" class="nav-bar-menu-point">
                     <img src="./assets/img/icons/unselected/contactssmall.png" alt="ContactsLogo">
                     <img class="d-none" src="./assets/img/icons/selected/contactssmall.png" alt="ContactsLogo">
                     <span>Contacts</span>
                 </div>
-            </a>
+            </a>            
         </div>
         <div class="nav-bar-info">
             <a href="#" onclick="loadContent('privacy.html'); return false;">Privacy Policy</a>
@@ -110,7 +107,7 @@
             </div>
         </div>
 
-        <section id="includeHtml" w3-include-html="summary.html"></section>
+        <section id="includeHtml" w3-include-html="summary-external.html"></section>
 
 
     </section>

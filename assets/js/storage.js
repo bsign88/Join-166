@@ -5,6 +5,7 @@ FIREBASE_URL = 'https://join-166-default-rtdb.europe-west1.firebasedatabase.app/
 let contacts;
 let userId;
 let foundContact;
+//let tasks;
 
 async function setItem(key, value) {
     const payload = { key, value, token: STORAGE_TOKEN };
@@ -35,7 +36,16 @@ async function loadUserId(){
     }
 }
 
-
+/*
+async function loadTasks(){
+    try {
+        tasksAsText = await getItem('tasks');
+        contacts = JSON.parse(tasksAsText.data.value);
+    } catch(e){
+        console.error('Loading error:', e);
+    }
+}
+*/
 
 
 

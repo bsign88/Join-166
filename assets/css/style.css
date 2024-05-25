@@ -191,11 +191,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
   background: url(../img/icons/calender.svg) no-repeat scroll;
 }
 
-input[type=text]::-webkit-input-placeholder {
+/* input[type=text]::-webkit-input-placeholder {
   background-color: #D4D4D4;
   background: url(../img/icons/user.svg) no-repeat scroll;
   background-position: top 0px right 21px;
-}
+} */
 
 input[type=email]::-webkit-input-placeholder {
   background-color: #D4D4D4;

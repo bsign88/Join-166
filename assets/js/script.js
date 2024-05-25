@@ -18,6 +18,7 @@ async function includeHTML() {
 async function init() {
     includeHTML();
     loadContacts();
+    //loadTasks();
 } 
 
 document.addEventListener("DOMContentLoaded", includeHTML);
@@ -63,7 +64,8 @@ function goBack() {
         contentDiv.innerHTML = previousContent.html; // Wiederherstellung des gespeicherten Inhalts
         contentDiv.setAttribute('w3-include-html', previousContent.url); // Setze die vorherige URL zurück
         updateSelectedMenuPoint(previousContent.id); // Aktualisieren des hervorgehobenen Menüpunktes
-
+        renderContacts();
+        
         // Wenn die vorherige Seite nicht 'help.html' war, stelle sicher, dass das Logo eingeblendet ist
         if (previousContent.url !== 'help.html') {
             helpLogo.classList.remove('d-none');
@@ -72,7 +74,6 @@ function goBack() {
         contentDiv.innerHTML = '<p>Kein vorheriger Inhalt verfügbar.</p>';
     }
 }
-
 
 // Diese Funktion erstellt eine Markierung durch eine CSS Klasse für den Aktullen Menüpunkt
 
@@ -121,6 +122,15 @@ function togglePasswordVisibility() {
     passwordInput.type = 'password';
     passwordIcon.src = './assets/img/icons/visibility_off.png'; 
   }
+}
+
+function menuPointClicked(page) {
+    if (page === 'logout') {
+        window.location.href = 'index.html'; // Leite den Benutzer zur Startseite um
+    } else {
+        loadContent(page); // Lade den angeforderten Inhalt
+    }
+    closeMenu(); // Schließe das Dropdown-Menü
 }
 
 function autoFillEmail() {
