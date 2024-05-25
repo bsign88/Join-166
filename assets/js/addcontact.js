@@ -69,7 +69,9 @@ function closeAddNewContact() {
 
 function openColorPicker() {
     let colorPickerPopup = document.getElementById('color-picker-popup-add');
-    colorPickerPopup.style.display = 'flex';
+    colorPickerPopup.style.display = 'inline-block';
+    let positionIcon = document.getElementById('user-initial-icon-add');
+    positionIcon.style.left = '-25%';
 }
 
 
@@ -78,5 +80,7 @@ function closeColorPicker(color) {
     colorPickerPopup.style.display = 'none';
     let userColor = document.getElementById('user-initial-icon-add');
     userColor.style.backgroundColor = color;
+    let positionIcon = document.getElementById('user-initial-icon-add');
+    positionIcon.style.left = '0';
 }
 

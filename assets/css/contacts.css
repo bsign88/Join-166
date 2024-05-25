@@ -409,15 +409,14 @@
     border-radius: 60px;
     box-shadow: 0px 0px 4px 0px #0000001A;
     border: 3px solid #FFFFFF;
-    line-height: 56.4px;
     font-size: 47px;
     font-weight: 500;
-    gap: 10px;
     cursor: pointer;
 }
 
 .user-initials-icon-add {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
@@ -426,16 +425,16 @@
     background-color: #d1d1d1;
     border-radius: 50%;
     box-shadow: 0px 0px 4px 0px #0000001A;
-    line-height: 56.4px;
+    line-height: 0;/* Adjust to vertically center the icon */
     font-size: 47px;
     font-weight: 500;
-    gap: 10px;
     cursor: pointer;
+    text-align: center;
 }
 
 .user-placeholder {
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
 }
 
 .contacts-change-icons {
@@ -533,7 +532,35 @@
     margin: 5px;
     cursor: pointer;
     background-color: var(--bg-color);
+    position: absolute;
 }
+
+.color-picker-popup-add {
+    position: relative;
+    z-index: 100;
+    left: 90px;
+    top: 40px;
+    display: none; /* Initially hidden */
+    width: 120px; /* Diameter of the circle */
+    height: 120px; /* Diameter of the circle */
+}
+
+.color-option:nth-child(1) { transform: translate(0px, -100px); }
+.color-option:nth-child(2) { transform: translate(38px, -92px); }
+.color-option:nth-child(3) { transform: translate(71px, -71px); }
+.color-option:nth-child(4) { transform: translate(92px, -38px); }
+.color-option:nth-child(5) { transform: translate(100px, 0px); }
+.color-option:nth-child(6) { transform: translate(92px, 38px); }
+.color-option:nth-child(7) { transform: translate(71px, 71px); }
+.color-option:nth-child(8) { transform: translate(38px, 92px); }
+.color-option:nth-child(9) { transform: translate(0px, 100px); }
+.color-option:nth-child(10) { transform: translate(-38px, 92px); }
+.color-option:nth-child(11) { transform: translate(-71px, 71px); }
+.color-option:nth-child(12) { transform: translate(-92px, 38px); }
+.color-option:nth-child(13) { transform: translate(-100px, 0px); }
+.color-option:nth-child(14) { transform: translate(-92px, -38px); }
+.color-option:nth-child(15) { transform: translate(-71px, -71px); }
+.color-option:nth-child(16) { transform: translate(-38px, -92px); }
 
 .questionDiv {
     position: absolute;
@@ -675,19 +702,15 @@
         min-width: 320px;
     }
 
-    .user-initials-icon-add {
-        display: flex;
-        position: relative;
-        top: -40%;
-        cursor: pointer;
-    }
-
+    
     .color-picker-popup-add {
-        display: none;
-        flex-direction: column;
         position: relative;
-        top: -40%;
-        padding: 20px;
+        margin: 0px;
+        top: 100px;
+        left: 40px;
+        display: none; /* Initially hidden */
+        width: 120px; /* Diameter of the circle */
+        height: 120px; /* Diameter of the circle */
     }
 
     .color-picker-popup-edit {
@@ -744,6 +767,15 @@
 
     .user-initials-icon-box {
         flex-direction: column;
-        margin: -60px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        top: -120px;
+
+    }
+
+    .user-initials-icon-add {
+        top: 60px;
+        left: 0;
     }
 }

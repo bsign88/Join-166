@@ -1,7 +1,7 @@
 // Funktion zur Anzeige der Kontaktliste
 function renderContacts() {
     // Sort contacts alphabetically by name
-    contacts.sort((a, b) => a.name.localeCompare(b.name));
+    let sortedContacts = contacts.toSorted();
 
     // Clear previous content
     const contactsDiv = document.getElementById('contacts-list');
@@ -10,7 +10,7 @@ function renderContacts() {
 
     // Group contacts by the first letter of their name
     const contactsByLetter = {};
-    contacts.forEach(contact => {
+    sortedContacts.forEach(contact => {
         const firstLetter = contact.name.charAt(0).toLowerCase();
         if (!contactsByLetter[firstLetter]) {
             contactsByLetter[firstLetter] = [];
@@ -19,11 +19,11 @@ function renderContacts() {
     });
 
     // Render contacts for each letter
-    Object.entries(contactsByLetter).forEach(([letter, contacts]) => {
+    Object.entries(contactsByLetter).forEach(([letter, sortedContacts]) => {
         const alphabetDiv = createAlphabetDiv(letter.toUpperCase())
         const seperatorDiv = createAlphabetSeperator();
         const contactsByLetterDiv = createContactsByLetterDiv(letter);
-        contacts.forEach(contact => {
+        sortedContacts.forEach(contact => {
             const outerDiv = createOuterDiv(contact);
             contactsByLetterDiv.appendChild(outerDiv);
         });
