@@ -62,13 +62,14 @@
   font-size: 20px;
 }
 
-select {
+#category {
   height: 48px;
   padding: 10px 16px 10px 16px;
   font-size: 20px;
   border: 1px solid #d1d1d1;
   border-radius: 10px;
   margin-bottom: 32px;
+  cursor: pointer;
 }
 
 #title {
@@ -80,6 +81,11 @@ select {
   font-family: "Inter", sans-serif;
   font-size: 20px;
   color: #d1d1d1;
+}
+
+#subtasks {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
 }
 
 .prio {
@@ -154,7 +160,7 @@ footer {
   gap: 16px;
 }
 
-/* dropdown */
+/* Assignedto Dropdown */
 
 .dropdown-check-list {
   display: inline-block;
@@ -177,6 +183,11 @@ footer {
 
 .dropdown-check-list .anchor:after {
   position: absolute;
+  content: url(../img/icons/arrow_dropdown.svg);
+  padding: 5px;
+  right: 12px;
+  top: 6px;
+  /*
   content: "";
   border-left: 2px solid black;
   border-top: 2px solid black;
@@ -188,12 +199,15 @@ footer {
   -o-transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
+  */
 }
 
+/*
 .dropdown-check-list .anchor:active:after {
-  right: 19px;
-  top: 21%;
+  right: 16px;
+  top: 6px;
 }
+*/
 
 .dropdown-check-list ul.items {
   padding: 2px;
@@ -217,7 +231,7 @@ footer {
 
 .dropdown-check-list ul.items li:hover {
   border-radius: 10px;
-  background-color: #F6F7F8;
+  background-color: #f6f7f8;
 }
 
 .ul-item-select {
@@ -230,11 +244,15 @@ footer {
   background-color: #091931 !important;
 }
 
-
 .dropdown-check-list.visible .items {
   display: block;
   background-color: #fff;
 }
+
+/* Subtasks */
+
+
+
 
 /* responsive */
 

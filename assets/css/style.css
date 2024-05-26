@@ -186,9 +186,25 @@ h5 {
   background: none;
 }
 
+#subtasks {
+  background: white url(../img/icons/plus.svg) no-repeat scroll;
+  background-position: top 12px right 12px;
+}
+
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white url(../img/icons/arrow_dropdown.svg) no-repeat scroll;
+  background-position: top 12px right 12px;
+}
+
 input[type=date]::-webkit-calendar-picker-indicator {
   background-color: #0038FF;
   background: url(../img/icons/calender.svg) no-repeat scroll;
+  cursor: pointer;
 }
 
 /* input[type=text]::-webkit-input-placeholder {
