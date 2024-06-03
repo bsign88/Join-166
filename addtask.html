@@ -54,7 +54,15 @@
         </select>
 
         <label for="subtask">Subtasks</label>
-        <input type="text" id="subtasks" name="subtasks" placeholder="Add new Subtask"/>        
+        <div class="input-wrapper">
+          <input type="text" id="subtasks" name="subtasks" placeholder="Add new Subtask" onkeyup="showOptions()"/>
+          <div class="icon-container">
+            <img src="./assets/img/icons/clear.svg" alt="Close" onclick="clearInput()" />
+            <div class="icon-line"></div>
+            <img src="./assets/img/icons/hook.svg" alt="Hook" onclick="submitSubtask()" />
+          </div>
+        </div>
+        <ul id="subtaskstext"></ul>    
 
       </div>
     </div>

@@ -259,32 +259,25 @@ footer {
 
 /* Subtasks */
 
+.input-wrapper {
+  position: relative;
+}
+
 #subtasks {
-  background: white url('../img/icons/plus.svg') no-repeat scroll;
+  width: 100%;
+  background: white url(../img/icons/plus.svg) no-repeat scroll;
   background-position: top 12px right 12px;
   padding-right: 60px; /* Space for the icons */
-  position: relative;
 }
 
 #subtasks.show-options {
   background: white;
 }
 
-#subtasks.show-options::after {
-  content: '';
-  display: inline-block;
-  width: 1px;
-  height: 20px;
-  background-color: #ccc;
-  position: absolute;
-  right: 36px; /* Position for the divider line */
-  top: 12px;
-}
-
 .icon-container {
   display: none;
   position: absolute;
-  top: 10px;
+  top: 12px;
   right: 10px;
 }
 
@@ -293,10 +286,26 @@ footer {
   margin-left: 10px;
 }
 
-#subtasks.show-options + .icon-container {
-  display: inline-block;
+.icon-line {
+  width: 1px;
+  background-color: #D1D1D1;
+  margin-right: -4px;
+  margin-left: 4px;
 }
 
+#subtasks.show-options + .icon-container {
+  display: flex;
+}
+
+#subtaskstext {
+  padding-left: 36px;
+  margin-top: -16px;
+  margin-bottom: 32px;
+}
+
+#subtaskstext li {
+  margin-bottom: 16px;
+}
 
 
 /* responsive */

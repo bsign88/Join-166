@@ -131,3 +131,37 @@ function openDropdown() {
   }
 
 //Subtasks
+function showOptions() {
+  const subtasksInput = document.getElementById('subtasks');
+  const iconContainer = document.querySelector('.icon-container');
+  
+  if (subtasksInput.value.trim() !== '') {
+    subtasksInput.classList.add('show-options');
+    iconContainer.style.display = 'flex';
+  } else {
+    subtasksInput.classList.remove('show-options');
+    iconContainer.style.display = 'none';
+  }
+}
+
+function clearInput() {
+  const subtasksInput = document.getElementById('subtasks');
+  subtasksInput.value = '';
+  subtasksInput.classList.remove('show-options');
+  const iconContainer = document.querySelector('.icon-container');
+  iconContainer.style.display = 'none';
+}
+
+function submitSubtask() {
+  const subtasksInput = document.getElementById('subtasks');
+  const subtaskText = document.getElementById('subtaskstext');
+  if (subtasksInput.value.trim() !== '') {
+    // Implement your logic to handle the submission of the subtask
+    //alert(`Subtask submitted: ${subtasksInput.value}`);
+
+    subtaskText.innerHTML += `
+    <li>${subtasksInput.value}</li>
+    `;
+    clearInput();
+  }
+}
