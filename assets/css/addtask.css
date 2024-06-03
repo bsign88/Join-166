@@ -249,8 +249,53 @@ footer {
   background-color: #fff;
 }
 
+#assignedprofiles {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: -24px;
+  margin-bottom: 32px;
+}
+
 /* Subtasks */
 
+#subtasks {
+  background: white url('../img/icons/plus.svg') no-repeat scroll;
+  background-position: top 12px right 12px;
+  padding-right: 60px; /* Space for the icons */
+  position: relative;
+}
+
+#subtasks.show-options {
+  background: white;
+}
+
+#subtasks.show-options::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  background-color: #ccc;
+  position: absolute;
+  right: 36px; /* Position for the divider line */
+  top: 12px;
+}
+
+.icon-container {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.icon-container img {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#subtasks.show-options + .icon-container {
+  display: inline-block;
+}
 
 
 

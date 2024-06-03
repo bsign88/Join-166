@@ -65,25 +65,44 @@ function openDropdown() {
     let checkbox = document.getElementById(`checkbox${index}`);
     listItem.classList.toggle('ul-item-select');
     checkbox.checked = !checkbox.checked;
-
-    /*
-      let selecteditems = document.getElementById('selecteditems');
-    selecteditems.innerHTML += `
-    <div id="selectedprofile${index}" class="profile">${initials}</div>
-    `;
-    document.getElementById(`selectedprofile${index}`).style.backgroundColor = color;
-    */
-    }
+    updateAssignedProfiles(index, initials, color, checkbox.checked);
+  }
   
   // Toggles the class and checkbox state when the checkbox is clicked
   function toggleCheckbox(index, event) {
     event.stopPropagation(); // Verhindert das Auslösen des Listenelement-Click-Events
     let listItem = document.getElementById(`listItem${index}`);
     listItem.classList.toggle('ul-item-select');
+
+    let checkbox = document.getElementById(`checkbox${index}`);
+    checkbox.checked = !checkbox.checked;
+
+    // Update assigned profiles section
+    updateAssignedProfiles(index, contacts[index]['initials'], contacts[index]['color'], checkbox.checked);
   }
 
+  function updateAssignedProfiles(index, initials, color, isChecked) {
+    let assignedProfiles = document.getElementById('assignedprofiles');
+    let profileDiv = document.getElementById(`assignedProfile${index}`);
+    
+    if (isChecked) {
+      if (!profileDiv) {
+        let newProfileDiv = document.createElement('div');
+        newProfileDiv.id = `assignedProfile${index}`;
+        newProfileDiv.className = 'assigned-profile';
+        newProfileDiv.innerHTML = `
+          <span class="profile" style="background-color: ${color};">${initials}</span>
+        `;
+        assignedProfiles.appendChild(newProfileDiv);
+      }
+    } else {
+      if (profileDiv) {
+        assignedProfiles.removeChild(profileDiv);
+      }
+    }
+  }
 
-  // Ersetzt jeweils das Icon bei der Prio-Auswahl
+  // Ersetzt jeweils das Icon bei der Prioritäts-Auswahl
   function changeUrgentIcon() {
     let urgent = document.getElementById('urgent');
     if (urgent.checked) {
@@ -110,3 +129,5 @@ function openDropdown() {
       document.getElementById('medium-icon').src = "./assets/img/icons/prio_medium_default.svg";
     }
   }
+
+//Subtasks
