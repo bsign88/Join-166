@@ -61,7 +61,6 @@ function renderContacts() {
         outerDiv.setAttribute('id', `contact${contact.id}`);
         outerDiv.addEventListener('click', () => {
             openContact(contactInformation, contact);
-            removeHover(contact);
         });
 
         const firstInnerDiv = document.createElement('div');
@@ -93,14 +92,22 @@ function renderContacts() {
 
 //zeigt die Kontaktdaten des ausgewählten Kontakt
 function openContact(contactInformation, contact) {
-    // Alle Kontakte zurücksetzen
-    let allContactDivs = document.querySelectorAll('.outerDiv');
-    allContactDivs.forEach(div => {
-        div.classList.remove('selectedContact');
-    });
+    
 
     // Aktuell ausgewählten Kontakt hervorheben
     let selectedContactDiv = document.getElementById(`contact${contact.id}`);
+    if (selectedContactDiv.classList.contains('selectedContact')) {
+        // If already selected, remove the class and animation
+        selectedContactDiv.classList.remove('selectedContact');
+        removeAnimation();
+        document.getElementById('contacts-content').innerHTML = "";
+    } else {
+        // Alle Kontakte zurücksetzen
+        let allContactDivs = document.querySelectorAll('.outerDiv');
+            allContactDivs.forEach(div => {
+            div.classList.remove('selectedContact');
+        });
+
     selectedContactDiv.classList.add('selectedContact');
     if (!contactInformation) {
         console.error('contactInformation element is not found!');
@@ -108,6 +115,18 @@ function openContact(contactInformation, contact) {
     }
     insertContactInformation(contactInformation, contact);
     document.getElementById(`user-initials-icon-${contact.id}`).style.backgroundColor = `${contact.color}`;
+    addAnimation();
+}}
+
+
+function addAnimation() {
+    let move = document.getElementById('contacts-content');
+    move.classList.add('animation-slideIn');
+}
+
+function removeAnimation() {
+    let move = document.getElementById('contacts-content');
+    move.classList.remove('animation-slideIn');
 }
 
 

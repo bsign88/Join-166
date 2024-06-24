@@ -370,6 +370,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    overflow-x: hidden;
 }
 
 .contacts-header {
@@ -384,6 +385,20 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+/* Keyframes for sliding in from the right */
+@keyframes slideInAnimation {
+    from {
+        transform: translatex(100%);/* Start outside the viewport */
+    }
+    to {
+        transform: translatex(0);/* End at the original position */
+    }
+}
+
+.animation-slideIn {
+    animation: slideInAnimation 1s ease-out forwards;
 }
 
 .contacts-seperator {

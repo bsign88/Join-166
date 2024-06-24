@@ -18,7 +18,7 @@ async function setItem(key, value) {
 //     const url = `${FIREBASE_URL}/item.json`;
   
 //     return fetch(url, {
-//       method: 'POST',
+//       method: 'PUT',
 //       headers: {
 //         'Content-Type': 'application/json'
 //       },
