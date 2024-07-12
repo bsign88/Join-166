@@ -261,13 +261,15 @@ footer {
 
 .input-wrapper {
   position: relative;
+  margin-bottom: 32px;
 }
 
 #subtasks {
   width: 100%;
   background: white url(../img/icons/plus.svg) no-repeat scroll;
   background-position: top 12px right 12px;
-  padding-right: 60px; /* Space for the icons */
+  padding-right: 60px;
+  margin-bottom: 0px !important;
 }
 
 #subtasks.show-options {
@@ -298,15 +300,21 @@ footer {
 }
 
 #subtaskstext {
-  padding-left: 36px;
   margin-top: -16px;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 }
 
 #subtaskstext li {
-  margin-bottom: 16px;
+  font-size: 16px;
+  margin-left: 36px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
 }
 
+#subtaskstext .list-content:hover {
+  background-color: #ffffff;
+}
 
 /* responsive */
 

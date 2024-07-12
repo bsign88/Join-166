@@ -159,9 +159,18 @@ function submitSubtask() {
     // Implement your logic to handle the submission of the subtask
     //alert(`Subtask submitted: ${subtasksInput.value}`);
 
-    subtaskText.innerHTML += `
-    <li>${subtasksInput.value}</li>
+    const listItem = document.createElement('div');
+    listItem.className = 'list-content';
+    listItem.innerHTML = `
+      <li>${subtasksInput.value}<img src="./assets/img/icons/trash-icon.svg" alt="Delete" class="trash-icon" onclick="deleteSubtask(this)" /></li>
+      
     `;
+    subtaskText.appendChild(listItem);
     clearInput();
   }
+}
+
+function deleteSubtask(element) {
+  const listItem = element.parentElement;
+  listItem.remove();
 }

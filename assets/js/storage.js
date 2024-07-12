@@ -5,7 +5,7 @@ const FIREBASE_URL = 'https://join-166-default-rtdb.europe-west1.firebasedatabas
 let contacts;
 let userId;
 let foundContact;
-let tasks;
+/*let tasks;*/
 
 async function setItem(key, value) {
     const payload = { key, value, token: STORAGE_TOKEN };
