@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="./assets/css/legalnotice.css">
     <link rel="stylesheet" href="./assets/css/help.css">
     <script src="./assets/js/script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">    
 </head>
-<body>
+<body class="d-flex flex-column justify-content-center align-items-center body">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <div id="login-animation-box" class="login-animation-box">
     <img src="./assets/img/login-animation-logo.svg" id="login-animation-logo" class="login-animation-logo">
 </div>
@@ -24,18 +26,20 @@
         <div class="head-index-logo-box">
         
         </div>
-        <div class="d-flex justify-content-between">
-            <p>Not a Join user?</p>
-            <button class="#" href="#">Sign up</button>
+        <div class="head-index-rightbox d-flex justify-content-between align-items-center">
+            <a href="#">Not a Join user?</a>
+            <button class="primary-button hug" href="#">Sign up</button>
         </div>
     </section>
-    <section class="body-index">
-        <h1>Login</h1>
-        <div class="body-index-sperator"></div>
-        <div class="body-index-login">
+    <section class="body-index d-flex justify-content-center flex-column">
+        <h1 class="d-flex justify-content-center">Login</h1>
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="body-index-sperator"></div>
+        </div>
+        <div class="body-index-login d-flex align-items-center justify-content-center flex-column">
             <input class="body-index-login-email" id="body-index-login-email" placeholder="Email">
             <input class="body-index-login-password" id="body-index-login-password" placeholder="Password">
-            <div>
+            <div class="d-flex flex-row">
                 <input class="body-index-login-checkbox" id="body-index-login-checkbox" type="checkbox">
                 <p>Remember me</p>
             </div>
@@ -46,7 +50,7 @@
             </div>
         </div>
     </section>
-    <section class="body-index-footer">
+    <section class="body-index-footer d-flex justify-content-center">
         <a href="#" class="body-index-footer-link" id="body-index-footer-link-privacy">Privacy Policy</a>
         <a href="#" class="body-index-footer-legal" id="body-index-footer-link-legal">Legal notice</a>
     </section>

@@ -1,8 +1,40 @@
+.body {
+    background-color: var(--background-color);
+}
+
+.head-index {
+    margin-top: 67px;
+    margin-right: 122px;
+    width: 100%;
+}
+
+.head-index-rightbox {
+    width: 279px;
+    height: fit-content;   
+}
+
+.hug {
+    height: max-content;
+    width: max-content;
+}
+
 .head-index-logo-box {
     width: 100.03px;
     height: 121.97px;
     margin-top: 80px;
     margin-left: 77px;
+}
+
+.body-index {
+    width: 652px;
+    height: 493px;
+    background-color: var(--white-color);
+}
+
+.body-index-sperator {
+    height: 0;
+    width: 150px;
+    border: 3px solid var(--second-color);
 }
 
 .login-animation-box {
@@ -30,9 +62,7 @@
     justify-content: space-between;
 }
 
-.head-index-rightbox {
-    width: 500px;
-}
+
 
 @keyframes shrink-box {
     0% {
