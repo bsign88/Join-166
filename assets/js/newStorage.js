@@ -1,11 +1,11 @@
 const url = 'https://join-166-default-rtdb.europe-west1.firebasedatabase.app/item/contacts.json';
-const users = [];
+let users = [];
 
 async function addContactsToFirebase(users) {
 
-    for (const user of users) {
+    for (let user of users) {
         try {
-            const response = await fetch(url, {
+            let response = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -17,7 +17,7 @@ async function addContactsToFirebase(users) {
                 throw new Error('Failed to add contact to Firebase: ' + response.statusText);
             }
 
-            const data = await response.json();
+            let data = await response.json();
             console.log('Contact added successfully:', data);
         } catch (error) {
             console.error('Error adding contact:', error);
@@ -27,7 +27,7 @@ async function addContactsToFirebase(users) {
 
 // // Example usage:
 
-// const users = [
+// let users = [
 //     {
 //         color: "var(--color1)",
 //         email: "adrian@kolb.de",
@@ -55,17 +55,17 @@ async function loadContacts() {
     window.users = [];
 
     try {
-        const response = await fetch(url);
+        let response = await fetch(url);
 
         if (!response.ok) {
             throw new Error('Failed to load contacts from Firebase: ' + response.statusText);
         }
 
-        const data = await response.json();
+        let data = await response.json();
 
         if (data) {
             // Firebase returns an object where keys are unique IDs
-            for (const key in data) {
+            for (let key in data) {
                 if (data.hasOwnProperty(key)) {
                     window.users.push(data[key]);
                 }

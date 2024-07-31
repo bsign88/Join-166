@@ -1,0 +1,63 @@
+.head-index-logo-box {
+    width: 100.03px;
+    height: 121.97px;
+    margin-top: 80px;
+    margin-left: 77px;
+}
+
+.login-animation-box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    animation: shrink-box 1s forwards 3s;
+}
+
+.login-animation-logo {
+    width: 275px; /* Initial width */
+    height: 335px; /* Initial height */
+    animation: move-and-shrink-logo 1s forwards 3s;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.head-index-rightbox {
+    width: 500px;
+}
+
+@keyframes shrink-box {
+    0% {
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+    }
+    100% {
+        width: 100.03px;
+        height: 121.97px;
+        top: 80px;
+        left: 77px;
+    }
+}
+
+@keyframes move-and-shrink-logo {
+    0% {
+        width: 274px; /* Initial width */
+        height: 334px; /* Initial height */
+        transform: translate(0, 0);
+    }
+    100% {
+        width: 100.03px; /* Final width */
+        height: 121.97px; /* Final height */
+        transform: translate(-calc(50vw - 77px), -calc(50vh - 80px));
+    }
+}
