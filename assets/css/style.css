@@ -232,3 +232,9 @@ input[type=search]::-webkit-input-placeholder {
   background: url(../img/icons/search.svg) no-repeat scroll;
   background-position: top 0px right 0px;
 }
+
+input[type=password]::-webkit-input-placeholder {
+  background-color: #D4D4D4;
+  background: url(../img/icons/lock.svg) no-repeat scroll;
+  background-position: top 0px right 21px;
+}

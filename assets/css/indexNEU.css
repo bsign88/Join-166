@@ -29,6 +29,7 @@
     width: 652px;
     height: 493px;
     background-color: var(--white-color);
+    border-radius: 30px 30px;
 }
 
 .body-index-sperator {
@@ -91,3 +92,8 @@
         transform: translate(-calc(50vw - 77px), -calc(50vh - 80px));
     }
 }
+
+.g-20 {
+    gap: 20px;
+}
+
