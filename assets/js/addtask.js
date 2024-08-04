@@ -1,33 +1,40 @@
 // Fügt To dos hinzu
 
+let aufgaben =[];
+
 function addTask() {
+
+  event.preventDefault();
+
+
     let title = document.getElementById('title').value;
     let description = document.getElementById('description').value;
-    //let assignedto = document.getElementById('assignedto');
-    let date = document.getElementById('date').value;
-    //prio
-    let category = document.getElementById('category').value;
-    let subtask = document.getElementById('subtask').value;
 
-    console.log('Titel: ', title);
-    console.log('Beschreibung: ', description);
-    console.log('Datum: ', date);
-    console.log('Kategorie: ', category);
-    console.log('Subtask: ', subtask);
+    let date = document.getElementById('date').value;
+
+
+    //let assignedto = document.getElementById('assignedto');
+    //prio
+    //let category = document.getElementById('category').value;
+    //let subtask = document.getElementById('subtask').value;
 
     let task = {
         'title': title,
         'decription': description,
+        'duedate': date,
+
+        /*
         'assigned to': assignedto,
         'date': date,
         'category': category,
-        'duedate': duedate,
         'prio': prio,
         'category': category,
         'subtask': subtask,
         'column': todo
+        */
     }
-    tasks.push(task);
+    aufgaben.push(task);
+    console.log(aufgaben);
 }
 
 // Öffnet das dropdown "Assigned to" bei Addtask

@@ -316,6 +316,10 @@ footer {
   background-color: #ffffff;
 }
 
+.trash-icon {
+  cursor: pointer;
+}
+
 /* responsive */
 
 @media (max-width: 1340px) {

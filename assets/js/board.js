@@ -1,3 +1,4 @@
+
 let currentDraggedCard;
 
 // Sammelfunktion zum rendern aller Spalten
