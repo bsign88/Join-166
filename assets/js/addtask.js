@@ -33,7 +33,7 @@ function addTask() {
         'column': todo
         */
     }
-    aufgaben.push(task);
+    tasks.push(task);
     console.log(aufgaben);
 }
 
