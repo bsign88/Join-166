@@ -233,13 +233,14 @@
 }
 
 .contacts-aside {
-    width: 376px;
+    width: calc(400px - 1vw);
     height: calc(100% - 96px);
     position: fixed;
     top: 96px;
     background: #FFFFFF;
     box-shadow: 4px 0px 6px 0px #00000014;
     overflow-y: scroll;
+    padding: 32px 24px 32px 24px;
 }
 
 .contacts-aside::-webkit-scrollbar {
@@ -260,7 +261,6 @@
 
 .aside-top-button-bar {
     display: flex;
-    width: 400px;
     height: 101px;
     justify-content: center;
     align-items: center;
@@ -271,7 +271,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 352px;
 }
 
 .contacts-list-separator {
@@ -287,7 +286,6 @@
     gap: 35px;
     border-radius: 10px 10px;
     cursor: pointer;
-    margin-left: 36px;
 }
 
 .outerDiv:hover {
@@ -657,7 +655,7 @@
         left: 0px;
         padding-top: 25px;
         top: 80px;
-        width: 100%;
+        width: calc(400px - 1vw);
         position: fixed;
         justify-content: center;
         height: calc(100% - 160px);
