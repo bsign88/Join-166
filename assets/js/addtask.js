@@ -2,38 +2,32 @@
 
 let aufgaben =[];
 
+let prio = [];
+let selectedProfiles = [];
+let subtask = [];
+
 function addTask() {
 
   event.preventDefault();
 
-
     let title = document.getElementById('title').value;
     let description = document.getElementById('description').value;
-
     let date = document.getElementById('date').value;
+    let category = document.getElementById('category').value;
 
-
-    //let assignedto = document.getElementById('assignedto');
-    //prio
-    //let category = document.getElementById('category').value;
-    //let subtask = document.getElementById('subtask').value;
+        //let subtask = document.getElementById('subtask').value;
 
     let task = {
         'title': title,
         'decription': description,
+        'assigned to': selectedProfiles,
         'duedate': date,
-
-        /*
-        'assigned to': assignedto,
-        'date': date,
-        'category': category,
         'prio': prio,
+        'column': 'todo',
         'category': category,
         'subtask': subtask,
-        'column': todo
-        */
     }
-    tasks.push(task);
+    aufgaben.push(task);
     console.log(aufgaben);
 }
 
@@ -66,7 +60,6 @@ function openDropdown() {
     }
   }
   
-  // Selektiert das angeklickte Profil oder entfernt die Klasse bei erneutem Klick
   function selectName(index, initials, color) {
     let listItem = document.getElementById(`listItem${index}`);
     let checkbox = document.getElementById(`checkbox${index}`);
@@ -75,24 +68,26 @@ function openDropdown() {
     updateAssignedProfiles(index, initials, color, checkbox.checked);
   }
   
-  // Toggles the class and checkbox state when the checkbox is clicked
   function toggleCheckbox(index, event) {
     event.stopPropagation(); // Verhindert das Auslösen des Listenelement-Click-Events
     let listItem = document.getElementById(`listItem${index}`);
     listItem.classList.toggle('ul-item-select');
-
+  
     let checkbox = document.getElementById(`checkbox${index}`);
     checkbox.checked = !checkbox.checked;
-
+  
     // Update assigned profiles section
     updateAssignedProfiles(index, contacts[index]['initials'], contacts[index]['color'], checkbox.checked);
   }
-
+  
   function updateAssignedProfiles(index, initials, color, isChecked) {
     let assignedProfiles = document.getElementById('assignedprofiles');
     let profileDiv = document.getElementById(`assignedProfile${index}`);
     
     if (isChecked) {
+      // Wenn das Profil ausgewählt ist, zum Array 'selectedProfiles' hinzufügen
+      selectedProfiles.push(contacts[index]);
+  
       if (!profileDiv) {
         let newProfileDiv = document.createElement('div');
         newProfileDiv.id = `assignedProfile${index}`;
@@ -103,10 +98,18 @@ function openDropdown() {
         assignedProfiles.appendChild(newProfileDiv);
       }
     } else {
+      // Wenn das Profil abgewählt ist, aus dem Array 'selectedProfiles' entfernen
+      const assignedIndex = selectedProfiles.findIndex(profile => profile.name === contacts[index].name);
+      if (assignedIndex > -1) {
+        selectedProfiles.splice(assignedIndex, 1);
+      }
+  
       if (profileDiv) {
         assignedProfiles.removeChild(profileDiv);
       }
     }
+  
+    console.log(selectedProfiles); // Ausgabe des aktuellen Standes des Arrays
   }
 
   // Ersetzt jeweils das Icon bei der Prioritäts-Auswahl
@@ -116,6 +119,8 @@ function openDropdown() {
       document.getElementById('urgent-icon').src = "./assets/img/icons/prio_urgent_active.svg";
       document.getElementById('medium-icon').src = "./assets/img/icons/prio_medium_default.svg";
       document.getElementById('low-icon').src = "./assets/img/icons/prio_low_default.svg";
+      prio = [];
+      prio.push('urgent');    
     }
   }
 
@@ -125,6 +130,8 @@ function openDropdown() {
       document.getElementById('medium-icon').src = "./assets/img/icons/prio_medium_active.svg";
       document.getElementById('urgent-icon').src = "./assets/img/icons/prio_urgent_default.svg";
       document.getElementById('low-icon').src = "./assets/img/icons/prio_low_default.svg";
+      prio = [];
+      prio.push('medium');    
     }
   }
 
@@ -134,6 +141,8 @@ function openDropdown() {
       document.getElementById('low-icon').src = "./assets/img/icons/prio_low_active.svg";
       document.getElementById('urgent-icon').src = "./assets/img/icons/prio_urgent_default.svg";
       document.getElementById('medium-icon').src = "./assets/img/icons/prio_medium_default.svg";
+      prio = [];
+      prio.push('low');
     }
   }
 
@@ -163,14 +172,11 @@ function submitSubtask() {
   const subtasksInput = document.getElementById('subtasks');
   const subtaskText = document.getElementById('subtaskstext');
   if (subtasksInput.value.trim() !== '') {
-    // Implement your logic to handle the submission of the subtask
-    //alert(`Subtask submitted: ${subtasksInput.value}`);
-
+    subtask.push(subtasksInput.value);
     const listItem = document.createElement('div');
     listItem.className = 'list-content';
     listItem.innerHTML = `
       <li>${subtasksInput.value}<img src="./assets/img/icons/trash-icon.svg" alt="Delete" class="trash-icon" onclick="deleteSubtask(this)" /></li>
-      
     `;
     subtaskText.appendChild(listItem);
     clearInput();
