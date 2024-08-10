@@ -662,7 +662,6 @@
         top: 80px;
         width: 100%;
         position: fixed;
-        display: flex;
         justify-content: center;
         height: calc(100% - 160px);
     }
