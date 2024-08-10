@@ -233,15 +233,13 @@
 }
 
 .contacts-aside {
-    width: 453px;
+    width: 376px;
     height: calc(100% - 96px);
     position: fixed;
     top: 96px;
-    left: 232px;
     background: #FFFFFF;
     box-shadow: 4px 0px 6px 0px #00000014;
     overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 .contacts-aside::-webkit-scrollbar {
@@ -262,7 +260,7 @@
 
 .aside-top-button-bar {
     display: flex;
-    width: 453px;
+    width: 400px;
     height: 101px;
     justify-content: center;
     align-items: center;
@@ -271,17 +269,15 @@
 .contacts-list-alphabet-order {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-self: center;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 352px;
 }
 
 .contacts-list-separator {
     width: 352px;
     border: 1px solid var(--contactlist-seperator);
     margin: 8px 0px 8px 0px;
-    margin-left: 36px;
-
 }
 
 .outerDiv {
@@ -404,6 +400,7 @@
 .contacts-seperator {
     height: 59px;
     border: 3px solid var(--second-color);
+    padding: 8px, 0px, 8px, 0px;
 }
 
 .contact-slogan {
