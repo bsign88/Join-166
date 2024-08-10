@@ -18,6 +18,7 @@ function renderToDo() {
     document.getElementById("todo").innerHTML += generateCards(card);
     checkLabel(card);
     checkPriority(card);
+    checkProfiles(card);
   }
 }
 
@@ -76,13 +77,22 @@ function generateCards(card) {
 
           <div class="card-footer">
             <div class="user">
-              <div class="profile">BB</div>
+              <div class="profile">bb</div>
               <div class="profile add-profile">TB</div>
             </div>
             <div class="priority"><img id="prio-icon${card["id"]}" src="./assets/img/icons/prio_low_default.svg"></div>
           </div>
   </div>
 `;
+}
+
+//Überprüft die zugewiesenen Profile
+function checkProfiles(card) {
+  for (let i = 0; i < card["assigned to"].length; i++) {
+      let assignedPerson = card["assigned to"][i];
+      let initials = assignedPerson.initials;
+      let color = assignedPerson.color;
+  }
 }
 
 //Überprüft die Priorität und zeigt das entsprechende Symbol an

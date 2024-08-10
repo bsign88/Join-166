@@ -1,25 +1,21 @@
 // Fügt To dos hinzu
 
-let aufgaben =[];
+let tasks = [];
 
 let prio = [];
 let selectedProfiles = [];
 let subtask = [];
 
 function addTask() {
-
   event.preventDefault();
-
     let title = document.getElementById('title').value;
     let description = document.getElementById('description').value;
     let date = document.getElementById('date').value;
     let category = document.getElementById('category').value;
 
-        //let subtask = document.getElementById('subtask').value;
-
     let task = {
         'title': title,
-        'decription': description,
+        'description': description,
         'assigned to': selectedProfiles,
         'duedate': date,
         'prio': prio,
@@ -27,8 +23,7 @@ function addTask() {
         'category': category,
         'subtask': subtask,
     }
-    aufgaben.push(task);
-    console.log(aufgaben);
+    tasks.push(task);
 }
 
 // Öffnet das dropdown "Assigned to" bei Addtask
@@ -108,8 +103,6 @@ function openDropdown() {
         assignedProfiles.removeChild(profileDiv);
       }
     }
-  
-    console.log(selectedProfiles); // Ausgabe des aktuellen Standes des Arrays
   }
 
   // Ersetzt jeweils das Icon bei der Prioritäts-Auswahl

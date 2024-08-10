@@ -3,6 +3,7 @@
   width: fit-content;
   font-size: 20px;
   font-weight: 400;
+  padding-bottom: 120px;
 }
 
 .asterisk {
@@ -322,9 +323,6 @@ footer {
 /* responsive */
 
 @media (max-width: 1340px) {
-  .addtask {
-    padding-bottom: 120px;
-  }
   .form-wrapper {
     flex-direction: column;
   }

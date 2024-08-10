@@ -5,6 +5,7 @@
   font-weight: 400;
   color: #a8a8a8;
   background-color: var(--background-color);
+  padding-bottom: 120px;
 }
 
 .board-top {
@@ -312,7 +313,6 @@
 @media (max-width: 950px) {
   .board {
     margin: 110px 20px 0 20px;
-    padding-bottom: 120px;
   }
 }
 
