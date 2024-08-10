@@ -4,12 +4,7 @@ function openAddNewContact() {
     window.style.display = "flex";
     overlay.style.display = "block";
     resetInputs();
-    document.getElementById('add-contact-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the form from submitting
-        createNewContact(); // Call your function to add the contact
-    });
 }
-
 
 async function createNewContact() {
     document.getElementById('save-add-contact-button').disabled = true;
