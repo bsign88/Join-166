@@ -499,10 +499,6 @@
     color: var(--main-color);
 }
 
-.cross:hover {
-    src: "./assets/img/icons/cancel-blue.svg";
-}
-
 .contacts-delete {
     display: flex;
     align-items: center;
@@ -638,13 +634,7 @@
 }
 
 @media (max-width: 950px) {
-    .contacts-main {
-        margin-left: 16px;
-        margin-right: 16px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        display: none;
-    }
+   
 
     .contacts {
         margin-top: 80px;
@@ -655,7 +645,7 @@
         left: 0px;
         padding-top: 25px;
         top: 80px;
-        width: calc(400px - 1vw);
+        width: 100%;
         position: fixed;
         justify-content: center;
         height: calc(100% - 160px);
@@ -676,6 +666,17 @@
 
 @media (max-width: 1220px) {
 
+    .contacts-main {
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        display: none;
+    }
+
+    .contacts-aside {
+        width: 100%;
+    }
     /* add-contact-mobile-version */
     .add-contact-window {
         flex-direction: column;
@@ -787,4 +788,60 @@
         top: 60px;
         left: 0;
     }
+}
+
+@media (max-width: 400px) {
+    .contacts-aside {
+        left: 0px;
+        padding-top: 12px;
+        top: 80px;
+        width: 100%;
+        height: calc(100% - 160px);
+    }  
+
+    .contacts-list-alphabet {
+        font-size: 10px;
+        font-weight: 200;
+        line-height: 12px;
+        width: 176px;
+        height: 19px;
+        padding: 8px 19px 8px 19px;
+        gap: 4px;
+    }
+
+    .contacts-list-separator {
+        width: 176px;
+        margin: 4px 0px 4px 0px;
+        transform: scaleY(0.5);
+    }
+
+    .outerDiv {
+        width: 176px;
+        padding: 8px 12px 8px 12px;
+        gap: 17px;
+        border-radius: 5px 5px;
+    }
+
+    .firstInnerDiv {
+        border-radius: 22px;
+        height: 22px;
+        width: 22px;
+        font-size: 10px;
+        font-weight: 200;
+    }
+
+    .contactDivName {
+        font-weight: 200;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .contactDivEmail {
+        font-weight: 200;
+        font-size: 8px;
+        line-height: 9px;
+    }
+
+
+
 }

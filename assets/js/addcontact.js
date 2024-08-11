@@ -78,4 +78,3 @@ function closeColorPicker(color) {
     let positionIcon = document.getElementById('user-initial-icon-add');
     positionIcon.style.left = '0';
 }
-
