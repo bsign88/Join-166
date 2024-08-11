@@ -12,16 +12,18 @@ function addTask() {
     let description = document.getElementById('description').value;
     let date = document.getElementById('date').value;
     let category = document.getElementById('category').value;
+    let id = tasks.length + 1;
 
     let task = {
+        'id': id,
         'title': title,
         'description': description,
         'assigned to': selectedProfiles,
         'duedate': date,
         'prio': prio,
-        'column': 'todo',
         'category': category,
         'subtask': subtask,
+        'column': 'todo'
     }
     tasks.push(task);
 }

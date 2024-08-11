@@ -1,4 +1,6 @@
 
+let initialsArray = [];
+let colorsArray = [];
 let currentDraggedCard;
 
 // Sammelfunktion zum rendern aller Spalten
@@ -31,6 +33,7 @@ function renderProgress() {
     document.getElementById("progress").innerHTML += generateCards(card);
     checkLabel(card);
     checkPriority(card);
+    checkProfiles(card);
   }
 }
 
@@ -43,6 +46,7 @@ function renderFeedback() {
     document.getElementById("feedback").innerHTML += generateCards(card);
     checkLabel(card);
     checkPriority(card);
+    checkProfiles(card);
   }
 }
 
@@ -55,6 +59,7 @@ function renderDone() {
     document.getElementById("done").innerHTML += generateCards(card);
     checkLabel(card);
     checkPriority(card);
+    checkProfiles(card);
   }
 }
 
@@ -72,12 +77,12 @@ function generateCards(card) {
           <div class="progressbar">
              <div class="fill"></div>
            </div>
-           <div class="text">1/2 Subtasks</div>
+           <div class="text">0/${card["subtask"].length} Subtasks</div>
           </div>
 
           <div class="card-footer">
             <div class="user">
-              <div class="profile">bb</div>
+              <div class="profile">${initialsArray}</div>
               <div class="profile add-profile">TB</div>
             </div>
             <div class="priority"><img id="prio-icon${card["id"]}" src="./assets/img/icons/prio_low_default.svg"></div>
@@ -88,11 +93,17 @@ function generateCards(card) {
 
 //Überprüft die zugewiesenen Profile
 function checkProfiles(card) {
+ 
+  initialsArray.length = 0;
+  colorsArray.length = 0;
+
   for (let i = 0; i < card["assigned to"].length; i++) {
       let assignedPerson = card["assigned to"][i];
       let initials = assignedPerson.initials;
-      let color = assignedPerson.color;
-  }
+      let color = assignedPerson.color;  
+      initialsArray.push(initials);
+      colorsArray.push(color);
+    }
 }
 
 //Überprüft die Priorität und zeigt das entsprechende Symbol an
