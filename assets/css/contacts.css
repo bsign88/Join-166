@@ -500,7 +500,7 @@
 }
 
 .cross:hover {
-    fill: var(--second-color);
+    src: "./assets/img/icons/cancel-blue.svg";
 }
 
 .contacts-delete {
