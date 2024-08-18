@@ -223,7 +223,6 @@
   width: 32px;
   border-radius: 50%;
   border: 1px solid #fff;
-  background-color: #fc71ff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -231,7 +230,6 @@
 }
 
 .add-profile {
-  background-color: #6e52ff !important;
   margin-left: -8px;
 }
 

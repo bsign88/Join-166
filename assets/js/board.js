@@ -17,10 +17,10 @@ function renderToDo() {
   document.getElementById("todo").innerHTML = "";
   for (let index = 0; index < todo.length; index++) {
     const card = todo[index];
+    checkProfiles(card);
     document.getElementById("todo").innerHTML += generateCards(card);
     checkLabel(card);
     checkPriority(card);
-    checkProfiles(card);
   }
 }
 
@@ -30,10 +30,10 @@ function renderProgress() {
   document.getElementById("progress").innerHTML = "";
   for (let index = 0; index < progress.length; index++) {
     const card = progress[index];
+    checkProfiles(card);
     document.getElementById("progress").innerHTML += generateCards(card);
     checkLabel(card);
     checkPriority(card);
-    checkProfiles(card);
   }
 }
 
@@ -43,10 +43,10 @@ function renderFeedback() {
   document.getElementById("feedback").innerHTML = "";
   for (let index = 0; index < feedback.length; index++) {
     const card = feedback[index];
+    checkProfiles(card);
     document.getElementById("feedback").innerHTML += generateCards(card);
     checkLabel(card);
     checkPriority(card);
-    checkProfiles(card);
   }
 }
 
@@ -56,47 +56,57 @@ function renderDone() {
   document.getElementById("done").innerHTML = "";
   for (let index = 0; index < done.length; index++) {
     const card = done[index];
+    checkProfiles(card);
     document.getElementById("done").innerHTML += generateCards(card);
     checkLabel(card);
     checkPriority(card);
-    checkProfiles(card);
   }
 }
 
 // Generiert HTML der Karten
 function generateCards(card) {
+  checkProfiles(card); // Ruft die Funktion auf, um das initialsArray und colorsArray zu füllen
+  let profilesHTML = '';
+
+  // Erzeugt die Profile-Divs basierend auf initialsArray und colorsArray
+  for (let i = 0; i < initialsArray.length; i++) {
+    let profileClass = i === 0 ? 'profile' : 'profile add-profile';
+    profilesHTML += `
+      <div class="${profileClass}" style="background-color: ${colorsArray[i]};">
+        ${initialsArray[i]}
+      </div>
+    `;
+  }
+
   return /*HTML*/ `
-  <div class="card" draggable="true" ondragstart="startDragging(${card['id']})" onclick="openTask(${card['id']})">
-      <div id="label${card["id"]}" class="card-label">${card["category"]}</div>
-        <div class="content">
-          <div class="card-title">${card["title"]}</div>
-          <div class="description">${card["description"]}</div>
-        </div> 
+    <div class="card" draggable="true" ondragstart="startDragging(${card['id']})" onclick="openTask(${card['id']})">
+        <div id="label${card["id"]}" class="card-label">${card["category"]}</div>
+          <div class="content">
+            <div class="card-title">${card["title"]}</div>
+            <div class="description">${card["description"]}</div>
+          </div> 
 
-        <div class="subtasks">
-          <div class="progressbar">
-             <div class="fill"></div>
-           </div>
-           <div class="text">0/${card["subtask"].length} Subtasks</div>
-          </div>
-
-          <div class="card-footer">
-            <div class="user">
-              <div class="profile">${initialsArray}</div>
-              <div class="profile add-profile">TB</div>
+          <div class="subtasks">
+            <div class="progressbar">
+               <div class="fill"></div>
+             </div>
+             <div class="text">0/${card["subtask"].length} Subtasks</div>
             </div>
-            <div class="priority"><img id="prio-icon${card["id"]}" src="./assets/img/icons/prio_low_default.svg"></div>
-          </div>
-  </div>
-`;
+
+            <div class="card-footer">
+              <div class="user" id="user">
+                ${profilesHTML}
+              </div>
+              <div class="priority"><img id="prio-icon${card["id"]}" src="./assets/img/icons/prio_low_default.svg"></div>
+            </div>
+    </div>
+  `;
 }
 
 //Überprüft die zugewiesenen Profile
 function checkProfiles(card) {
- 
   initialsArray.length = 0;
   colorsArray.length = 0;
-
   for (let i = 0; i < card["assigned to"].length; i++) {
       let assignedPerson = card["assigned to"][i];
       let initials = assignedPerson.initials;
