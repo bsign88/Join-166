@@ -1,18 +1,27 @@
-// Fügt To dos hinzu
-
-let tasks = [];
+// Fügt Aufgaben hinzu
 
 let prio = [];
 let selectedProfiles = [];
 let subtask = [];
 
-function addTask() {
+async function addTask() {
   event.preventDefault();
-    let title = document.getElementById('title').value;
-    let description = document.getElementById('description').value;
-    let date = document.getElementById('date').value;
-    let category = document.getElementById('category').value;
-    let id = tasks.length + 1;
+
+  // Lade vorhandene Aufgaben, falls noch nicht geschehen
+  if (!tasks) {
+      await loadTasks(); // Diese Funktion lädt die Aufgaben von der API
+      if (!tasks) {
+          tasks = []; // Falls keine Aufgaben vorhanden sind, initialisiere ein leeres Array
+      }
+  }
+
+  let title = document.getElementById('title').value;
+  let description = document.getElementById('description').value;
+  let date = document.getElementById('date').value;
+  let category = document.getElementById('category').value;
+
+    await loadTaskId()
+    let id = taskId + 1;
 
     let task = {
         'id': id,
@@ -25,8 +34,18 @@ function addTask() {
         'subtask': subtask,
         'column': 'todo'
     }
+
+    // Hinzufügen der neuen Aufgabe zum Board
     tasks.push(task);
+
+    // Aktualisieren der Aufgaben in der Datenbank
+    await setItem('tasks', tasks);
+
+    // Aktualisieren der Aufgaben-ID in der Datenbank
+    await setItem('taskId', id);
 }
+
+
 
 // Öffnet das dropdown "Assigned to" bei Addtask
 function openDropdown() {

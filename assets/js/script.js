@@ -18,7 +18,7 @@ async function includeHTML() {
 async function init() {
     includeHTML();
     loadContacts();
-    //loadTasks();
+    loadTasks();
 } 
 
 document.addEventListener("DOMContentLoaded", includeHTML);
