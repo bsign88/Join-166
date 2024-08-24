@@ -6,7 +6,6 @@ let contacts;
 let userId;
 let foundContact;
 let tasks;
-let taskId;
 
 async function setItem(key, value) {
     const payload = { key, value, token: STORAGE_TOKEN };
@@ -64,16 +63,6 @@ async function loadTasks(){
 //         return items.length ? items[0] : null;  // Return the first matched item or null if not found
 //       });
 //   }
-  
-
-async function loadTaskId(){
-    try {
-        taskIdAsText = await getItem('taskId');
-        taskId = JSON.parse(taskIdAsText.data.value);
-    } catch(e){
-        console.error('Loading error:', e);
-    }
-}
 
 async function loadUserId(){
     try {

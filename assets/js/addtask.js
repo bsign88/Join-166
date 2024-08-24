@@ -6,22 +6,12 @@ let subtask = [];
 
 async function addTask() {
   event.preventDefault();
-
-  // Lade vorhandene Aufgaben, falls noch nicht geschehen
-  if (!tasks) {
-      await loadTasks(); // Diese Funktion lädt die Aufgaben von der API
-      if (!tasks) {
-          tasks = []; // Falls keine Aufgaben vorhanden sind, initialisiere ein leeres Array
-      }
-  }
-
+  await initTasks();
   let title = document.getElementById('title').value;
   let description = document.getElementById('description').value;
   let date = document.getElementById('date').value;
   let category = document.getElementById('category').value;
-
-    await loadTaskId()
-    let id = taskId + 1;
+  let id = tasks.length + 1;
 
     let task = {
         'id': id,
@@ -45,7 +35,15 @@ async function addTask() {
     await setItem('taskId', id);
 }
 
-
+async function initTasks() {
+    // Lade vorhandene Aufgaben, falls noch nicht geschehen
+    if (!tasks) {
+      await loadTasks(); // Diese Funktion lädt die Aufgaben von der API
+      if (!tasks) {
+          tasks = []; // Falls keine Aufgaben vorhanden sind, initialisiere ein leeres Array
+      }
+  }
+}
 
 // Öffnet das dropdown "Assigned to" bei Addtask
 function openDropdown() {

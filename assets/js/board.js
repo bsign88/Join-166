@@ -171,6 +171,7 @@ function openTask(id) {
 //Überprüft das Label in der großen Ansicht und wendet die entsprechende Klasse an
 function renderTask(task) {
   if (task) {
+    document.getElementById("label-big").innerHTML = task.category;
     document.getElementById("title-big").innerHTML = task.title;
     document.getElementById("description-big").innerHTML = task.description;
     document.getElementById("date-big").innerHTML = task.duedate;
@@ -232,3 +233,12 @@ function showResults(searchTerm, allCards) {
     }
   });
 }
+
+/*
+Task löschen in Console
+
+tasks.splice(1, 0);
+await setItem('tasks', tasks);
+renderTasks();
+
+*/
