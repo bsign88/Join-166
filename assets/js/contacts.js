@@ -100,13 +100,10 @@ function openContact(contactInformation, contact) {
         // If already selected, remove the class and animation
         selectedContactDiv.classList.remove('selectedContact');
         removeAnimation();
-        document.getElementById('contacts-content').innerHTML = "";
+        contactInformation.innerHTML = "";
     } else {
         // Alle Kontakte zurücksetzen
-        let allContactDivs = document.querySelectorAll('.outerDiv');
-            allContactDivs.forEach(div => {
-            div.classList.remove('selectedContact');
-        });
+        resetAllSelectedContacts();
 
     selectedContactDiv.classList.add('selectedContact');
     if (!contactInformation) {
@@ -116,7 +113,24 @@ function openContact(contactInformation, contact) {
     insertContactInformation(contactInformation, contact);
     document.getElementById(`user-initials-icon-${contact.id}`).style.backgroundColor = `${contact.color}`;
     addAnimation();
+    checkScreenWidthForLayoutSwitch(contact);
 }}
+
+function checkScreenWidthForLayoutSwitch(contact) {
+    // Check the screen width and switch layout if necessary
+    if (window.innerWidth <= 1220) {
+        document.querySelector('.contacts-aside').style.display = 'none';
+        document.querySelector('.contacts-main').classList.add('show');
+        changeContactsHeader(contact);
+    }
+}
+function resetAllSelectedContacts() {
+    let allContactDivs = document.querySelectorAll('.outerDiv');
+            allContactDivs.forEach(div => {
+            div.classList.remove('selectedContact');
+        });
+}
+
 
 
 function addAnimation() {
@@ -135,12 +149,12 @@ function insertContactInformation(contactInformation, contact) {
     <div class="contact-box">
                 <div class="user-initials-icon" id="user-initials-icon-${contact.id}">${contact.initials}</div>
                 <div class="user-edit-delete">
-                    <span class="contacts-name" id="contacts-name-${contact.id}">${contact.name}</span>
+                    <span class="contacts-name">${contact.name}</span>
                     <div class="contacts-change-link">
-                        <div class="contacts-icon-text" id="contacts-edit-${contact.id}" onclick="openEditContact(${contact.id})">
+                        <div class="contacts-icon-text" onclick="openEditContact(${contact.id})">
                             <img class="contacts-change-icons" src="./assets/img/icons/pen-icon.svg">Edit
                         </div>
-                        <div class="contacts-icon-text" id="contacts-delete-${contact.id}" onclick="areYouSureToDelete(${contact.id})">
+                        <div class="contacts-icon-text" onclick="areYouSureToDelete(${contact.id})">
                             <img class="contacts-change-icons" src="./assets/img/icons/trash-icon.svg">Delete
                         </div>
                     </div>
@@ -150,11 +164,11 @@ function insertContactInformation(contactInformation, contact) {
             <div class="contacts-information-box">
                 <div class="contact-details-box">
                     <p class="contacts-info-object-headline">Email</p>
-                    <a class="contacts-info-object-email" id="contacts-email-${contact.id}" href="mailto:${contact.email}">${contact.email}</a>
+                    <a class="contacts-info-object-email" href="mailto:${contact.email}">${contact.email}</a>
                 </div>
                 <div class="contact-details-box">
                     <p class="contacts-info-object-headline">Phone</p>
-                    <a class="contacts-info-object-phone" id="contacts-phone-${contact.id}" href="tel:${contact.phone}">${contact.phone}</a>
+                    <a class="contacts-info-object-phone" href="tel:${contact.phone}">${contact.phone}</a>
                 </div>
             </div>
     `;
@@ -258,4 +272,48 @@ function denyDeletion(id) {
     let confirmDeletion = document.getElementById('questionDiv');
     confirmDeletion.style.display = 'none';
     blur.style.zIndex = '10';
+}
+
+function goBackToContacts() {
+    document.querySelector('.contacts-aside').style.display = 'block';
+    document.querySelector('.contacts-main').classList.remove('show');
+    changeContactsHeaderBack();
+}
+
+function changeContactsHeader(contact) {
+    let contactsHeader = document.getElementById('contacts-header');
+    contactsHeader.innerHTML = `
+    <div class="changeContactsHelperDiv">
+        <div class="changeContactsHelperInnerDiv">
+            <h1>Contacts</h1>
+            <span class="contacts-slogan">Better with a team</span>
+            <div class="contacts-seperator-mobile"></div>
+        </div>
+        <a id="back-button"><img src="assets/img/icons/arrow-left-line.png" class="backarrow" onclick="goBackToContacts()"></a>
+    </div>
+    <button class="add-contact-mobil-button" id="bottom-menu-mobile-button" onclick="openBottomMenu()">
+        <img class="mobil-add-contact" src="./assets/img/icons/3-vert-dots.svg">
+        <div class="bottomMenu">
+            <a class="bottomMenuPoint" onclick="openEditContact(${contact.id})">
+            <img href="">Edit</a>
+            <a class="bottomMenuPoint" onclick="areYouSureToDelete(${contact.id})">
+            Delete</a>
+        </div>
+    </button>
+    `;
+}
+
+function changeContactsHeaderBack() {
+    let contactsHeader = document.getElementById('contacts-header');
+    contactsHeader.innerHTML = `
+    <h1>Contacts</h1>
+    <div class="contacts-seperator"></div>
+    <span class="contacts-slogan">Better with a team</span>
+    `;
+    resetAllSelectedContacts();
+}
+
+function openBottomMenu() {
+    let bottomMenu = document.getElementById('bottomMenu');
+    bottomMenu.style.display = "box";
 }

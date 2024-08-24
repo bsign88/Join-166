@@ -1,0 +1,234 @@
+.edit-contact-window {
+    z-index: 10;
+    background-color: var(--white-color);
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 592px;
+    width: 1212px;
+    border-radius: 30px 30px 30px 30px;
+}
+
+.edit-join-logo {
+    width: 53.93px;
+    height: 66.48px;
+    position: absolute;
+    top: 25%;
+    left: 46px;
+}
+
+.edit-contact-left-side {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    height: 594px;
+    padding: 66px 46px 66px 46px;
+    border-radius: 30px 0 0 30px;
+    gap: 12px;
+    background-color: var(--main-color);
+}
+
+.edit-contact-right-side {
+    display: flex;
+    height: 594px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.edit-information-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 48px;
+    padding-right: 48px;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.edit-close-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    padding-bottom: 32px;
+}
+
+.edit-close-icon {
+    height: 32px;
+    width: 32px;
+}
+
+.edit-close-icon:hover {
+    background-color: #E4E4E4;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.edit-close-icon-mobile {
+    height: 32px;
+    width: 32px;
+    display: none;
+}
+
+.edit-close-icon-mobile:hover {
+    background-color: var(--second-color);
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.edit-details-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.edit-button-box {
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px;
+    width: 100%;
+}
+
+.edit-input-name {
+    width: 422px;
+    Height: 50px;
+    border-radius: 10px 10px 10px 10px;
+    padding: 13px 21px 13px 21px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 8px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--black-color);
+    margin: 0px;
+}
+
+.edit-input-name:before {
+    background-image: url('./assets/img/icons/user.svg');
+}
+
+.edit-input-name:focus {
+    outline: none;
+    border: 1px solid var(--second-color);
+}
+
+.edit-input-phone {
+    width: 422px;
+    Height: 50px;
+    border-radius: 10px 10px 10px 10px;
+    padding: 13px 21px 13px 21px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 8px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--black-color);
+    margin: 0px;
+}
+
+.edit-input-phone:focus {
+    outline: none;
+    border: 1px solid var(--second-color);
+}
+
+.edit-input-email {
+    width: 422px;
+    Height: 50px;
+    border-radius: 10px 10px 10px 10px;
+    padding: 13px 21px 13px 21px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 8px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--black-color);
+    margin: 0px;
+}
+
+.edit-input-email:focus {
+    outline: none;
+    border: 1px solid var(--second-color);
+}
+
+.edit-close-box-mobile {
+    display: none;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+@media (max-width: 1220px) {
+    .edit-contact-right-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
+    .edit-close-box-mobile {
+        display: flex;
+    }
+
+    .edit-join-logo {
+        display: none;
+    }
+    .edit-close-icon {
+        display: flex;
+        position: relative;
+        top: -42px;
+    }
+
+    .edit-close-box {
+        display: none;
+    }
+
+    .edit-information-box {
+        justify-content: center;
+        align-items: center;
+        padding-right: 0px;
+        padding-top: 0px;
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 100%;
+
+    }
+
+    .edit-button-box {
+        justify-content: center;
+    }
+
+    .edit-input-name {
+        width: 100%;
+    }
+
+    .edit-input-email {
+        width: 100%;
+    }
+
+    .edit-input-phone {
+        width: 100%;
+    }
+
+    .color-picker-popup-edit {
+        position: relative;
+        margin: 0px;
+        top: 100px;
+        left: 40px;
+        display: none; /* Initially hidden */
+        width: 120px; /* Diameter of the circle */
+        height: 120px; /* Diameter of the circle */
+    }
+}
