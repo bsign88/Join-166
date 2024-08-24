@@ -65,6 +65,7 @@ function closeEditContact() {
     window.style.display = "none";
     overlay.style.display = "none";
     resetInputs();
+    closeColorPickerEdit();
 }
 
 

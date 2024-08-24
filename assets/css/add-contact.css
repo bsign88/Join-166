@@ -1,5 +1,5 @@
 .add-contact-window {
-    z-index: 10;
+    z-index: 1000;
     background-color: var(--white-color);
     display: none;
     position: absolute;
@@ -32,11 +32,9 @@
 .color-picker-popup-add {
     position: relative;
     z-index: 100;
-    left: 90px;
-    top: 40px;
+    left: 40px;
+    top: -20px;
     display: none; /* Initially hidden */
-    width: 120px; /* Diameter of the circle */
-    height: 120px; /* Diameter of the circle */
 }
 
 
@@ -45,24 +43,25 @@
     .add-contact-window {
         flex-direction: column;
         width: 80vw;
-        height: 80vh;
+        height: calc(100vh - 180px);
+        position: fixed;
+        
     }
 
     .add-contact-left-side {
         border-radius: 30px 30px 0px 0px;
-        padding: 66px 24px 132px 24px;
+        padding: 24px 24px 132px 24px;
         justify-content: flex-start;
         height: auto;
+        gap: 0px;
     }
 
     .color-picker-popup-add {
         position: relative;
         margin: 0px;
         top: 100px;
-        left: 40px;
+        left: -20px;
         display: none; /* Initially hidden */
-        width: 120px; /* Diameter of the circle */
-        height: 120px; /* Diameter of the circle */
     }
 
     .add-contact-left-side {
@@ -72,5 +71,9 @@
     .user-initials-icon-add {
         top: 60px;
         left: 0;
+    }
+
+    .user-initials-icon-box {
+        width: 100%;
     }
 }

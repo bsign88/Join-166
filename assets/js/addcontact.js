@@ -66,7 +66,6 @@ function openColorPicker() {
     let colorPickerPopup = document.getElementById('color-picker-popup-add');
     colorPickerPopup.style.display = 'inline-block';
     let positionIcon = document.getElementById('user-initial-icon-add');
-    positionIcon.style.left = '-25%';
 }
 
 

@@ -34,7 +34,7 @@
 }
 
 #findtask::placeholder {
-  color: var(--contactlist-seperator: );
+  color: var(--contactlist-seperator);
 }
 
 #findtask:focus {
