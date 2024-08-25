@@ -233,23 +233,6 @@
     cursor: pointer;
 }
 
-.user-initials-icon-add {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    background-color: #d1d1d1;
-    border-radius: 50%;
-    box-shadow: 0px 0px 4px 0px #0000001A;
-    line-height: 0;/* Adjust to vertically center the icon */
-    font-size: 47px;
-    font-weight: 500;
-    cursor: pointer;
-    text-align: center;
-}
 
 .user-placeholder {
     width: 80px;
@@ -375,7 +358,6 @@
     align-items: center;
     z-index: 30;
     top: 50%;
-    left: 50%;
     transform: translateX(-50%);
     transform: translateY(-50%);
     background-color: var(--main-color);
@@ -392,6 +374,12 @@
     gap: 10px;
     padding: 25px;
 }
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 .add-contact-button {
     padding: 16px;
@@ -437,7 +425,38 @@
     flex-direction: column;
 }
 
+.bottomMenu {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1010;
+    width: 116px;
+    height: 100px;
+    bottom: 85px;
+    right: 5px;
+    padding: 10px 0px 0px 10px;
+    gap: 0px;
+    border-radius: 20px 20px 0px 20px;
+    background-color: var(--white-color);
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
 
+.bottomMenu.active {
+    display: flex;
+}
+
+.bottomMenuPoint {
+    color: var(--black-color);
+    display: flex;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.p8 {
+    padding-right: 8px;
+}
 
 
 
@@ -525,6 +544,10 @@
 
     .add-contact-mobil-button {
         display: flex;
+    }
+
+    .contacts-change-link {
+        display: none;
     }
 }
 

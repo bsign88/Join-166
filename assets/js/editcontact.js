@@ -13,7 +13,7 @@ function openEditContact(contactId) {
     phone.value = foundContact.phone;
     userInitials.innerHTML = foundContact.initials;
     userInitials.style.backgroundColor = foundContact.color;
-
+    closeBottomMenu();
 }
 
 

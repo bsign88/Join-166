@@ -58,6 +58,24 @@
     padding-bottom: 32px;
 }
 
+.edit-user-initials-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    min-width: 120px;
+    min-height: 120px;
+    height: 120px;
+    color: white;
+    background-color: var(--color10);
+    border-radius: 60px;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+    border: 3px solid #FFFFFF;
+    font-size: 47px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
 .edit-close-icon {
     height: 32px;
     width: 32px;
@@ -187,11 +205,11 @@
         position: fixed;
     }
 
-
     .edit-contact-left-side {
         padding-top: 24px;
+        padding-bottom: 132px;
         border-radius: 30px 30px 0px 0px;
-        height: auto;
+        height: 352px;
     }
 
     .edit-contact-right-side {
@@ -201,6 +219,11 @@
     .edit-details-box {
         gap: 15px;
         margin: 0px;
+    }
+
+    .edit-user-initials-icon {
+        position: relative;
+        top: 40px;
     }
 
     .edit-close-box-mobile {
@@ -259,11 +282,10 @@
         position: relative;
         margin: 0px;
         z-index: 100;
-        left: 90px;
-        top: 40px;
+        left: -20px;
+        top: -40px;
         display: none; /* Initially hidden */
-        width: 120px; /* Diameter of the circle */
-        height: 120px; /* Diameter of the circle */
+        height: 0;
     }
 
     h1 {

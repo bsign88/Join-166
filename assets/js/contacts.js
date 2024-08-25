@@ -124,6 +124,8 @@ function checkScreenWidthForLayoutSwitch(contact) {
         changeContactsHeader(contact);
     }
 }
+
+
 function resetAllSelectedContacts() {
     let allContactDivs = document.querySelectorAll('.outerDiv');
             allContactDivs.forEach(div => {
@@ -132,11 +134,13 @@ function resetAllSelectedContacts() {
 }
 
 
-
 function addAnimation() {
-    let move = document.getElementById('contacts-content');
-    move.classList.add('animation-slideIn');
+    if (window.innerWidth > 1220) {
+        let move = document.getElementById('contacts-content');
+        move.classList.add('animation-slideIn');    
+    }
 }
+
 
 function removeAnimation() {
     let move = document.getElementById('contacts-content');
@@ -249,6 +253,7 @@ function areYouSureToDelete(id) {
         };
         blur.style.display = 'flex';
     }
+    closeBottomMenu();
 }
 
 async function deletionChoice(id) {
@@ -256,6 +261,7 @@ async function deletionChoice(id) {
         await editDeleteContact();
     } else {
         await deleteContact(id);
+        goBackToContacts();
     }
     let confirmDeletion = document.getElementById('questionDiv');
     confirmDeletion.style.display = 'none';
@@ -293,15 +299,16 @@ function changeContactsHeader(contact) {
     </div>
     <button class="add-contact-mobil-button" id="bottom-menu-mobile-button" onclick="openBottomMenu()">
         <img class="mobil-add-contact" src="./assets/img/icons/3-vert-dots.svg">
-        <div class="bottomMenu">
-            <a class="bottomMenuPoint" onclick="openEditContact(${contact.id})">
-            <img href="">Edit</a>
-            <a class="bottomMenuPoint" onclick="areYouSureToDelete(${contact.id})">
-            Delete</a>
-        </div>
     </button>
+    <div class="bottomMenu" id="bottomMenu">
+            <a class="bottomMenuPoint" onclick="openEditContact(${contact.id})">
+            <img class="p8" src="./assets/img/icons/pen-icon.svg">Edit</a>
+            <a class="bottomMenuPoint" onclick="areYouSureToDelete(${contact.id})">
+            <img class="p8" src="./assets/img/icons/trash-icon.svg">Delete</a>
+    </div>
     `;
 }
+
 
 function changeContactsHeaderBack() {
     let contactsHeader = document.getElementById('contacts-header');
@@ -315,5 +322,33 @@ function changeContactsHeaderBack() {
 
 function openBottomMenu() {
     let bottomMenu = document.getElementById('bottomMenu');
-    bottomMenu.style.display = "box";
+    bottomMenu.classList.add("active");
+    addMenuAnimation();
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        let isClickInside = bottomMenu.contains(event.target);
+
+        if (!isClickInside) {
+            bottomMenu.classList.remove("active");
+            removeMenuAnimation(); 
+            document.removeEventListener('click', arguments.callee); // Remove event listener after closing
+        }
+    });
+}
+
+function closeBottomMenu() {
+    let bottomMenu = document.getElementById('bottomMenu');
+    bottomMenu.classList.remove("active");
+    removeMenuAnimation();
+}
+
+function addMenuAnimation() {
+        let move = document.getElementById('bottomMenu');
+        move.classList.add('animation-slideIn');    
+}
+
+function removeMenuAnimation() {
+    let move = document.getElementById('bottomMenu');
+    move.classList.remove('animation-slideIn');
 }
