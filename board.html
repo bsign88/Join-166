@@ -21,7 +21,7 @@
       <div
         id="todo"
         class="cards"
-        ondrop="moveTo('todo')"
+        ondrop="moveTo('todo'); removeHighlight('todo')"
         ondragleave="removeHighlight('todo')"
         ondragover="allowDrop(event); highlight('todo')"
       >
@@ -36,8 +36,8 @@
       <div
         id="progress"
         class="cards"
-        ondrop="moveTo('progress')"
-        ondragleave="removeHighlight('todo')"
+        ondrop="moveTo('progress'); removeHighlight('progress')"
+        ondragleave="removeHighlight('progress')"
         ondragover="allowDrop(event); highlight('progress')"
       ></div>
     </div>
@@ -49,8 +49,8 @@
       <div
         id="feedback"
         class="cards"
-        ondrop="moveTo('feedback')"
-        ondragleave="removeHighlight('todo')"
+        ondrop="moveTo('feedback'); removeHighlight('feedback')"
+        ondragleave="removeHighlight('feedback')"
         ondragover="allowDrop(event); highlight('feedback')"
       ></div>
     </div>
@@ -62,8 +62,8 @@
       <div
         id="done"
         class="cards"
-        ondrop="moveTo('done')"
-        ondragleave="removeHighlight('todo')"
+        ondrop="moveTo('done'); removeHighlight('done')"
+        ondragleave="removeHighlight('done')"
         ondragover="allowDrop(event); highlight('done')"
       ></div>
     </div>

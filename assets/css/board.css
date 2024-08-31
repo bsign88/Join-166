@@ -120,6 +120,8 @@
 }
 
 .cards {
+  height: 100%;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   gap: 16px;

@@ -143,7 +143,7 @@ function allowDrop(ev) {
 }
 
 function moveTo(id) {
-  tasks[currentDraggedCard]['column'] = id;
+  tasks[currentDraggedCard-1]['column'] = id;
   renderTasks();
 }
 
