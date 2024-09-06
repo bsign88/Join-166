@@ -7,8 +7,8 @@
         <div class="line"></div>
       </div>
 
-      <button id="addTask-btn" class="secondary-plus">
-        Add task<img src="./assets/img/icons/add.svg" />
+      <button id="addTask-btn" class="secondary-plus" onclick="loadContent('addtask.html', 'menuPointAddTask'); return false;">
+        Add task<img src="./assets/img/icons/add.svg"/>
       </button>
     </div>
   </header>
@@ -16,7 +16,7 @@
   <section class="board-distribution">
     <div class="column">
       <div class="column-title">
-        To do<img src="./assets/img/icons/plus button.svg" />
+        To do<img class="plus-btn" src="./assets/img/icons/plus button.svg" onclick="loadContent('addtask.html', 'menuPointAddTask'); return false;"/>
       </div>
       <div
         id="todo"
@@ -31,7 +31,7 @@
 
     <div class="column">
       <div class="column-title">
-        In progress<img src="./assets/img/icons/plus button.svg" />
+        In progress<img class="plus-btn" src="./assets/img/icons/plus button.svg" onclick="loadContent('addtask.html', 'menuPointAddTask'); return false;"/>
       </div>
       <div
         id="progress"
@@ -44,7 +44,7 @@
 
     <div class="column">
       <div class="column-title">
-        Await feedback<img src="./assets/img/icons/plus button.svg" />
+        Await feedback<img class="plus-btn" src="./assets/img/icons/plus button.svg" onclick="loadContent('addtask.html', 'menuPointAddTask'); return false;" />
       </div>
       <div
         id="feedback"
@@ -57,7 +57,7 @@
 
     <div class="column">
       <div class="column-title">
-        Done<img src="./assets/img/icons/plus button.svg" />
+        Done<img class="plus-btn" src="./assets/img/icons/plus button.svg" onclick="loadContent('addtask.html', 'menuPointAddTask'); return false;"/>
       </div>
       <div
         id="done"

@@ -142,8 +142,9 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-function moveTo(id) {
-  tasks[currentDraggedCard-1]['column'] = id;
+async function moveTo(columnId) {
+  tasks[currentDraggedCard-1]['column'] = columnId;
+  await setItem('tasks', tasks);
   renderTasks();
 }
 

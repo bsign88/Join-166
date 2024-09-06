@@ -89,6 +89,10 @@
   /* padding: 0px 64px 0px 64px; */
 }
 
+.plus-btn {
+  cursor: pointer;
+}
+
 .column-title {
   width: 244px;
   height: 24px;
@@ -120,7 +124,6 @@
 }
 
 .cards {
-  height: 100%;
   min-height: 200px;
   display: flex;
   flex-direction: column;
@@ -335,5 +338,11 @@
   }
   #addTask-btn {
     display: none;
+  }
+  .search-wrapper {
+    width: 100%;
+  }
+  #findtask {
+    width: inherit;
   }
 }
