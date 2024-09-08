@@ -203,7 +203,7 @@
 }
 
 .progressbar .fill {
-  width: 50%;
+  width: 0%;
   height: 100%;
   border-radius: 8px;
   background-color: #4589ff;
@@ -292,10 +292,15 @@
 
 .card-big .text {
   font-size: 20px;
+  color: black !important;
 }
 
 .card-big .text p {
   margin: 24px 0 24px 0;
+}
+
+.taskdata {
+  color: black;
 }
 
 .card-big .options {

@@ -1,6 +1,7 @@
 
 let initialsArray = [];
 let colorsArray = [];
+let namesArray = [];
 let currentDraggedCard;
 
 // Sammelfunktion zum rendern aller Spalten
@@ -110,9 +111,11 @@ function checkProfiles(card) {
   for (let i = 0; i < card["assigned to"].length; i++) {
       let assignedPerson = card["assigned to"][i];
       let initials = assignedPerson.initials;
-      let color = assignedPerson.color;  
+      let color = assignedPerson.color;
+      let names = assignedPerson.name;  
       initialsArray.push(initials);
       colorsArray.push(color);
+      namesArray.push(names);
     }
 }
 
@@ -169,15 +172,50 @@ function openTask(id) {
   checkLabelBig(task);
 }
 
-//Überprüft das Label in der großen Ansicht und wendet die entsprechende Klasse an
+//Rendert den Task in der großen Ansicht
 function renderTask(task) {
-  if (task) {
-    document.getElementById("label-big").innerHTML = task.category;
-    document.getElementById("title-big").innerHTML = task.title;
-    document.getElementById("description-big").innerHTML = task.description;
-    document.getElementById("date-big").innerHTML = task.duedate;
-    document.getElementById("prio-big").innerHTML = task.prio;
+  document.getElementById("label-big").innerHTML = task.category;
+  document.getElementById("taskcontent").innerHTML = "";
+  document.getElementById("taskcontent").innerHTML = generateTaskContent(task);
+  checkPriority(task);
+}
+
+function generateTaskContent(task) {
+  //Bringt das Datum in das richtige Format
+  let str = task.duedate;
+  let arr = str.split('-');
+  let date = arr[2] + '/' + arr[1] + '/' + arr[0];
+
+  checkProfiles(task);
+  let profilesHTML = '';
+  // Erzeugt die Profile-Divs basierend auf initialsArray und colorsArray
+  for (let i = 0; i < initialsArray.length; i++) {
+    let profileClass = i === 0 ? 'profile' : 'profile add-profile';
+    profilesHTML += `
+      <div class="${profileClass}" style="background-color: ${colorsArray[i]};">
+        ${initialsArray[i]}
+      </div>
+      ${namesArray[i]}
+    `;
   }
+
+  return /*HTML*/ `
+  <h1 id="title-big">${task["title"]}</h1>
+    <div class="text">
+      <p id="description-big">${task["description"]}</p> 
+      <p>Due date: <span class="taskdata" id="date-big">${date}</span></p>
+      <p>Priority: <span class="taskdata" id="prio-big">${task["prio"]}<img id="prio-icon${task["id"]}" src="./assets/img/icons/prio_low_default.svg">
+</span></p>
+      <p>Assigned to: <span class="taskdata" id="user"><div class="user" id="user">${profilesHTML}</div></span></p>
+      <p>Subtasks: <span class="taskdata" id="subtasks-big"></span>${task["subtask"]}</p>
+    </div>
+
+    <div class="options">
+      <div class="option-btn" id="DeleteBtn"><img class="contacts-change-icons" src="./assets/img/icons/trash-icon.svg">Delete</div>
+      |
+      <div class="option-btn"><img class="contacts-change-icons" src="./assets/img/icons/pen-icon.svg">Edit</div>
+    </div>
+`;
 }
 
 //Rendert die Daten des jeweiligen Tasks
