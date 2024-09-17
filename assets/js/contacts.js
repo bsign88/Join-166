@@ -324,17 +324,6 @@ function openBottomMenu() {
     let bottomMenu = document.getElementById('bottomMenu');
     bottomMenu.classList.add("active");
     addMenuAnimation();
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        let isClickInside = bottomMenu.contains(event.target);
-
-        if (!isClickInside) {
-            bottomMenu.classList.remove("active");
-            removeMenuAnimation(); 
-            document.removeEventListener('click', arguments.callee); // Remove event listener after closing
-        }
-    });
 }
 
 function closeBottomMenu() {
@@ -345,7 +334,7 @@ function closeBottomMenu() {
 
 function addMenuAnimation() {
         let move = document.getElementById('bottomMenu');
-        move.classList.add('animation-slideIn');    
+        move.classList.add('animation-slideIn');
 }
 
 function removeMenuAnimation() {

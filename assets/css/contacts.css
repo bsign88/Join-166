@@ -356,7 +356,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 30;
+    z-index: 1030;
     top: 50%;
     transform: translateX(-50%);
     transform: translateY(-50%);
@@ -427,7 +427,7 @@
 
 .bottomMenu {
     display: none;
-    position: absolute;
+    position: fixed;
     flex-direction: column;
     align-items: flex-start;
     z-index: 1010;
