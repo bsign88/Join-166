@@ -532,6 +532,7 @@
         top: 80px;
         width: 100%;
         position: fixed;
+        padding-bottom: 100px;
     }
 
     .add-contact-button {
