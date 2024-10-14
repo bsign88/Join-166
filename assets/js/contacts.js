@@ -235,7 +235,7 @@ function areYouSureToDelete(id) {
     let yes = document.getElementById('yes');
     let no = document.getElementById('no');
     confirmDeletion.style.display = 'flex';
-    blur.style.zIndex = '29';
+    blur.style.zIndex = '1010';
     if (id == 'edit') {
         // Change the onclick function
         yes.onclick = function() {
