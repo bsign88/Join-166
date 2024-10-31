@@ -50,6 +50,9 @@ async function createNewContact() {
     let contactInformation = document.getElementById('contacts-content');
     contactInformation.innerHTML = '';
     document.getElementById('save-add-contact-button').disabled = false;
+
+    //zeigt ein Infofeld an, welches anzeigt das ein Kontakt erstellt wurde.
+    addContactNotification();
 }
 
 function closeAddNewContact() {
@@ -75,4 +78,27 @@ function closeColorPicker(color) {
     userColor.style.backgroundColor = color;
     let positionIcon = document.getElementById('user-initial-icon-add');
     positionIcon.style.left = '0';
+}
+
+function addContactNotification() {
+    // Create the notification container
+    const notification = document.createElement('div');
+    notification.textContent = "Contact successfully created";
+    
+    // Set styles
+    notification.classList.add('notification');
+    
+    // Add the notification to the document
+    document.body.appendChild(notification);
+    
+    // Trigger opacity change to fade in
+    setTimeout(() => {
+        notification.style.opacity = "1";
+    }, 10); // Short delay to allow the transition to apply
+    
+    // Remove the notification after 800ms
+    setTimeout(() => {
+        notification.style.opacity = "0"; // Start fading out
+        setTimeout(() => notification.remove(), 300); // Delay remove to allow fade-out
+    }, 800);
 }
